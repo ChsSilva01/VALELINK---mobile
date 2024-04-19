@@ -78,6 +78,10 @@ export default function App(){
   return(
     
     <NavigationContainer style={{backgroundColor: '#fff'}}>
+      {/* <Drawer.Navigator>
+        <Drawer.Screen name = "Pesquisar" component={Pesquisar} />
+        <Drawer.Screen name = "Configurações" component={Configuracoes} />
+      </Drawer.Navigator> */}
     <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: true, headerTitle: null  }} >
 
       <Stack.Screen 
@@ -103,11 +107,4 @@ export default function App(){
 
   )
 }
-function DrawerNavigator() {
-  return (
-    <Drawer.Navigator>
-        <Drawer.Screen name = "Pesquisar" component={Pesquisar} />
-        <Drawer.Screen name = "Configurações" component={Configuracoes} />
-      </Drawer.Navigator>
-  );
-}
+
