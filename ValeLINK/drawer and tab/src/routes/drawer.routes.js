@@ -1,21 +1,21 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Feather } from '@expo/vector-icons';
 
-import Home from '../screens/Home/index.js';
+import TabRoutes from './tab.routes.js';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerRoutes(){
     return (
-        <Drawer.Navitor>
+        <Drawer.Navigator>
             <Drawer.Screen 
                 name = "home"
-                component = {Home}
+                component={TabRoutes}
                 options = {{
-                    drawerIcon: ({ color,size }) => <Feather name='home' color={color} size={size}/>,
-                    drawerLabel: 'icon'
+                    drawerIcon: ({ color, size }) => <Feather name='home' color={color} size={size} />,
+                    drawerLabel: 'Início'
                 }}
             />
-        </Drawer.Navitor>
+        </Drawer.Navigator>
     )
 }

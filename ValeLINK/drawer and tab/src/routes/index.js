@@ -1,10 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
-import TabRoutes from './tab.routes.js';
+import DrawerRoutes from './drawer.routes.js';
 
 export default function Routes(){
     return (
         <NavigationContainer>
-            <TabRoutes />
+            <DrawerRoutes />
         </NavigationContainer>
     )
 }
+
+//O drawer chama o tab e depois chamamos ele lá no app.js
