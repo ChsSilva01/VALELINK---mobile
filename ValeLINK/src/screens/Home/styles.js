@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     // Post
     post: {
       width: '90%',
-      height: 570,
+      height: 500,
       display: 'flex',
       backgroundColor: '#b1b1b1',
       borderRadius: 15,
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
     infopost: {
       width: '100%', 
       height: '90%',
-      backgroundColor: '#d9d9'
+      backgroundColor: '#b7b789'
     },
     textpost: {
       width: '100%',
