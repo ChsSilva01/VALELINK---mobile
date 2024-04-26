@@ -6,7 +6,7 @@ import {Ionicons} from '@expo/vector-icons';
 import icone from '../../../assets/icone_post_reserve.png';
 import logo from '../../../assets/logo.png'
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.containerheader}>  

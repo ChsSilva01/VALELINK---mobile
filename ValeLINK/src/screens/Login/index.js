@@ -1,16 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground } from 'react-native';
+import { styles } from './styles';
 
-import {Ionicons} from '@expo/vector-icons';
-
-export default function App() {
+export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={{width: '100%', height: '10%', top: '7%'}}>
-        <Text style={{bottom: '5%', color: '#04BD66', fontWeight: 'bold', fontSize: 25}}>VALELINK</Text>
+      <View style={styles.headerlogin}>
+        <Text style={styles.headerlabel}>VALELINK</Text>
       </View>
 
-      <View style={{width: "100%", height: '40%', display: 'flex', alignItems: 'center'}}>
-      <Image source={require('../../../assets/meio.png')} style={{width: '75%', height: "100%", top: '4%'}}></Image>
+      <View style={styles.imagelogin}>
+        <Image source={require('../../../assets/login_image.png')} style={styles.imagedimensions}></Image>
       </View>
       
       <View style={{display: 'flex', width: '100%', height: '50%', justifyContent: 'space-evenly', alignItems: 'center'}}>
@@ -22,29 +21,10 @@ export default function App() {
         <TextInput style={styles.cx_senha}
           placeholder='Senha'
         ></TextInput>
-        <TouchableOpacity style={{width: 223, height: 58, backgroundColor: '#03BD60',borderRadius: 13}}><Text style={{color: '#fff'}}>Entrar</Text></TouchableOpacity>
+        <TouchableOpacity style={{width: 223, height: 58, backgroundColor: '#03BD60',borderRadius: 13}} onPress = {() => navigation.navigate('Home')}><Text style={{color: '#fff'}}>Entrar</Text></TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FCFFF9',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cx_email: {
-    width: 303,
-    height: 58,
-    backgroundColor: '#F5F5F5',
-    borderRadius: 13
-  },
-  cx_senha: {
-    width: 303,
-    height: 58,
-    backgroundColor: '#F5F5F5',
-    borderRadius: 13
-  }
-});
+
