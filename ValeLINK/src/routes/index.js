@@ -7,11 +7,11 @@ export default function Routes(){
 
     return (
         <NavigationContainer>
-             {userLoggedIn ? (
+             {/* {userLoggedIn ? ( */}
                 <DrawerRoutes />
-            ) : (
+            {/* ) : (
                 <LoginScreen />
-            )}
+            )} */}
         </NavigationContainer>
     )
 }

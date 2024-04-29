@@ -9,7 +9,7 @@ import Empresas from '../screens/Empresas';
 
 const Tab = createBottomTabNavigator();
 
-export default function TabRoutes(){
+const TabRoutes = () => {
     return (
      <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -64,3 +64,4 @@ export default function TabRoutes(){
     </Tab.Navigator>
     )
 }
+export default TabRoutes;
