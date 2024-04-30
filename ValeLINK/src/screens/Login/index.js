@@ -21,7 +21,7 @@ export default function Login({ navigation }) {
         <TextInput style={styles.cx_senha}
           placeholder='Senha'
         ></TextInput>
-        <TouchableOpacity style={{width: 223, height: 58, backgroundColor: '#03BD60',borderRadius: 13}} onPress = {() => navigation.reset('Home')}><Text style={{color: '#fff'}}>Entrar</Text></TouchableOpacity>
+        <TouchableOpacity style={{width: 223, height: 58, backgroundColor: '#03BD60',borderRadius: 13}} onPress = {() => navigation.navigate('Home')}><Text style={{color: '#fff'}}>Entrar</Text></TouchableOpacity>
       </View>
     </View>
   );

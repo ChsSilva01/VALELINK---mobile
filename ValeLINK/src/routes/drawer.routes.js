@@ -7,13 +7,23 @@ import ProfileScreen from '../screens/Perfil';
 import HomeScreen from '../screens/Home';
 import ConfigScreen from '../screens/Configuracoes';
 import FeedbackScreen from '../screens/FeedBack';
-import HelpScreen from '../screens/Ajuda'
+import HelpScreen from '../screens/Ajuda';
+
+import CustomDrawer from '../components/DrawerHeader/index.js';
 
 const Drawer = createDrawerNavigator();  
 
 const DrawerRoutes = () => {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator screenOptions={{headerShown: true, drawerStyle:{
+            width: 250,
+            height: '100%',
+            justifyContent: 'center',
+            backgroundColor: '#f2f2f2',
+            zIndex: 11,
+            
+            }}} drawerContent={props => <CustomDrawer />}>
+            
             <Drawer.Screen 
                 name = "ValeLINK"
                 component={TabRoutes}

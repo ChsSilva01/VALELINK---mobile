@@ -7,12 +7,13 @@ export default function Routes(){
 
     return (
         <NavigationContainer>
-             {/* {userLoggedIn ? ( */}
+             {userLoggedIn ? (
                 <DrawerRoutes />
-            {/* ) : (
+            ) : (
                 <LoginScreen />
-            )} */}
+            )}
         </NavigationContainer>
     )
 }
 //Aqui eu deixo bagulhado eu tiro esse Drawer ae, e coloco no login para quando clicar ir para esse lugar. bruh sei la
+//Colocar para o home carregar o tab
