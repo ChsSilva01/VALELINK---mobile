@@ -7,7 +7,38 @@ export const styles = StyleSheet.create({
         padding: 10,
         
     },
-
+    HeaderDrawer: {
+        width: '100%',
+        height: 150,
+        justifyContent: 'center'
+    },
+    logo: {
+        width: '100%',
+        height: '20%'
+    },
+    boxpicture: {
+        width: '45%',
+        height: '75%',
+        borderWidth: 2,
+        borderRadius: 50,
+        left: 10
+    },
+    pictureprofile: {
+        width: '100%',
+        height: '100%',
+        borderRadius: 50
+    },
+    nameprofile: {
+        left: 10
+    },
+    separate: { 
+        width: '90%', 
+        backgroundColor: '#c1c1c1', 
+        height: 0.5, 
+        alignSelf: 'center', 
+        marginBottom: 5, 
+        marginTop: 20 
+    },
     Pages:{
         flexDirection: 'row',
         marginTop: 15,
@@ -44,10 +75,5 @@ export const styles = StyleSheet.create({
         padding: 10,
     },
 
-    logo:{
-        width: 135,
-        height: 50,
-        alignSelf: "center",
-        marginTop: 10,
-    },
+    
 })

@@ -1,11 +1,18 @@
 import React from 'react';
 import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 import { styles } from './styles';
 import { DrawerActions, useNavigation } from '@react-navigation/core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import PictureProfile from '../../../assets/bonitão.jpg';
+
+import ProfileScreen from '../../screens/Perfil';
+import HomeScreen from '../../screens/Home';
+import ConfigScreen from '../../screens/Configuracoes';
+import FeedbackScreen from '../../screens/FeedBack';
+import HelpScreen from '../../screens/Ajuda';
 
 const CustomDrawer= FC = () => {
     const navigation=  any= useNavigation();
@@ -32,10 +39,14 @@ const CustomDrawer= FC = () => {
     }
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#000' }}>
-            <Image style={styles.logo} source={require('../../../assets/icon.png')} />
+        <View style={{ flex: 1, backgroundColor: '#fff' }}>
+            <View style={styles.HeaderDrawer}>
+                <View style={styles.logo}></View>
+                <View style={styles.boxpicture}><Image source={PictureProfile} style={styles.pictureprofile}></Image></View>
+                <Text style={styles.nameprofile}>Carlos</Text>
+            </View>
 
-            <View style={{ width: '90%', backgroundColor: '#c1c1c1', height: 0.5, alignSelf: 'center', marginBottom: 5, marginTop: 20 }}></View>
+            <View style={styles.separate}></View>
 
             <ScrollView
                 style={styles.container}
@@ -44,15 +55,62 @@ const CustomDrawer= FC = () => {
                     <TouchableOpacity
                         style={styles.Pages}
                         onPress={() => {
-                            navigation.navigate("Usuario")
+                            navigation.navigate("Perfil")
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
-                        <MaterialIcons style={styles.iconRegistered} name="people-alt" size={30} color="gray" />
+                        <Ionicons style={styles.iconRegistered} name="person" size={30} color="gray" />
 
-                        <Text style={styles.PagesText}>Usuários</Text>
+                        <Text style={styles.PagesText}>Perfil</Text>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                        style={styles.Pages}
+                        onPress={() => {
+                            navigation.navigate("Configuracoes")
+                            navigation.dispatch(DrawerActions.closeDrawer())
+                        }}
+                    >
+                        <Ionicons style={styles.iconRegistered} name="map" size={30} color="gray" />
+
+                        <Text style={styles.PagesText}>Mapa</Text>
                     </TouchableOpacity>
 
+                    <TouchableOpacity
+                        style={styles.Pages}
+                        onPress={() => {
+                            navigation.navigate("Configuracoes")
+                            navigation.dispatch(DrawerActions.closeDrawer())
+                        }}
+                    >
+                        <Ionicons style={styles.iconRegistered} name="flower" size={30} color="gray" />
+
+                        <Text style={styles.PagesText}>Configurações</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.Pages}
+                        onPress={() => {
+                            navigation.navigate("FeedBack")
+                            navigation.dispatch(DrawerActions.closeDrawer())
+                        }}
+                    >
+                        <Ionicons style={styles.iconRegistered} name="chatbubble" size={30} color="gray" />
+
+                        <Text style={styles.PagesText}>FeedBack</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.Pages}
+                        onPress={() => {
+                            navigation.navigate("Ajuda")
+                            navigation.dispatch(DrawerActions.closeDrawer())
+                        }}
+                    >
+                        <Ionicons style={styles.iconRegistered} name="help-circle" size={30} color="gray" />
+
+                        <Text style={styles.PagesText}>Ajuda e FAQs</Text>
+                    </TouchableOpacity>
                    
                 </View>
 
@@ -65,7 +123,7 @@ const CustomDrawer= FC = () => {
                     onPress={() => logout()}
                     style={styles.Sair}
                 >
-                    <MaterialIcons name="subdirectory-arrow-left" size={25} color="gray" />
+                    <Ionicons name="exit" size={25} color="gray" />
                     <Text style={styles.SairText}>Sair da conta</Text>
                 </TouchableOpacity>
             </View>

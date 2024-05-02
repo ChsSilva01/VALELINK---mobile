@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { Drawer } from 'react-native-paper';
 import { Badge } from 'react-native-paper';
 
-export default function Configuracoes() {
+export default function Configuracoes({ navigation }) {
   const [active, setActive] = useState('');
 
 return (

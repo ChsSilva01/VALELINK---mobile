@@ -1,7 +1,16 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground } from 'react-native';
 import { styles } from './styles';
+import { useFonts, Poppins_300Light, Poppins_100Thin} from '@expo-google-fonts/poppins'
+
 
 export default function Login({ navigation }) {
+  const [fontLoaded] = useFonts({
+    Poppins_300Light,
+    Poppins_100Thin
+  });
+  if (!fontLoaded){
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.headerlogin}>
@@ -13,7 +22,7 @@ export default function Login({ navigation }) {
       </View>
       
       <View style={{display: 'flex', width: '100%', height: '50%', justifyContent: 'space-evenly', alignItems: 'center'}}>
-        <Text style={{fontWeight: 'bold', color: '#696969', fontSize: 50}}>Login</Text>
+        <Text style={{fontWeight: 'bold', color: '#696969', fontSize: 50, fontFamily: 'Poppins_100Thin'}}>Login</Text>
         <TextInput style={styles.cx_email}
           Ionicons = 'lock-closed-outline'
           placeholder='Email'

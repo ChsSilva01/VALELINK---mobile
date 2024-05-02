@@ -3,7 +3,7 @@ import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Ionicons} from '@expo/vector-icons';
 
-export default function HelpScreen(){
+export default function Perfil(){
     return(
         <LinearGradient
             colors={['#01E581', '#00C16C', '#00755C']}
