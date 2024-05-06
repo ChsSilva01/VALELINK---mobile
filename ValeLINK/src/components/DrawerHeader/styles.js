@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     },
     logo: {
         width: '100%',
-        height: '20%'
+        height: '40%'
     },
     boxpicture: {
         width: '45%',
