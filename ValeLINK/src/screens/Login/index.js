@@ -43,6 +43,10 @@ export default function Login() {
       });
     }
   }
+  async function cadastrar(){
+    navigation.navigate('NovoUsuario')
+  }
+
   const checkLogin = async () => {
     const user = await AsyncStorage.getItem('@user');
     
@@ -89,7 +93,9 @@ export default function Login() {
           onChangeText={ (senha) => setSenha(senha)}
         ></TextInput>
         <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
+        <TouchableOpacity onPress={cadastrar}><Text>Criar conta</Text></TouchableOpacity>
         {/* onPress = {() => navigation.navigate('Home')} */}
+
       </View>
     </View>
   );

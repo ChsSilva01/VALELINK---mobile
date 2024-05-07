@@ -9,14 +9,14 @@ export const styles = StyleSheet.create({
     },
     cx_email: {
         width: 303,
-        height: 58,
+        height: 40,
         backgroundColor: '#F5F5F5',
         borderRadius: 13,
         fontSize: 20
     },
     cx_senha: {
         width: 303,
-        height: 58,
+        height: 40,
         backgroundColor: '#F5F5F5',
         borderRadius: 13,
         fontSize: 20,   
