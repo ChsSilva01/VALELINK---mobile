@@ -1,11 +1,27 @@
 import { StyleSheet } from "react-native";
-import fonts from "../../styles/fonts";
 
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
     },
-
+    // Header
+    containerheader: {
+        top: '10%',
+        width: '100%',
+        height: 75,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    menuheaderbutton: {
+        width: 30,
+        height: 30
+    },
+    logoheader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '45%',
+        left: '20%',
+    },
     header:{
         backgroundColor: '#fafafa',
         shadowColor: 'rgba(0, 0, 0, 0.1)',
@@ -15,7 +31,8 @@ export const styles = StyleSheet.create({
         shadowOffset : { width: 1, height: 5},
         borderBottomRightRadius: 5,
         borderBottomLeftRadius: 5,
-        height: 60,
+        height: 85,
+        borderBottomWidth: 0.5
     },
 
     menu:{
@@ -41,7 +58,6 @@ export const styles = StyleSheet.create({
     tituloHeader:{
         color: '#000', 
         fontSize: 18, 
-        fontFamily: fonts.text,
         marginLeft: 10,
         marginTop: 17,
     },

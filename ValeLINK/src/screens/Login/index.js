@@ -43,9 +43,6 @@ export default function Login() {
       });
     }
   }
-  async function cadastrar(){
-    navigation.navigate('NovoUsuario')
-  }
 
   const checkLogin = async () => {
     const user = await AsyncStorage.getItem('@user');
@@ -82,6 +79,7 @@ export default function Login() {
         <TextInput style={styles.cx_email}
           Ionicons = 'lock-closed-outline'
           placeholder='Email'
+          placeholderTextColor={'#696969'}
           value={Email}
           onChangeText={ (Email) => setEmail(Email)}
           rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
@@ -89,11 +87,11 @@ export default function Login() {
         <TextInput 
           style={styles.cx_senha}
           placeholder='Senha'
+          placeholderTextColor={'#696969'}
           value={senha}
           onChangeText={ (senha) => setSenha(senha)}
         ></TextInput>
         <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
-        <TouchableOpacity onPress={cadastrar}><Text>Criar conta</Text></TouchableOpacity>
         {/* onPress = {() => navigation.navigate('Home')} */}
 
       </View>

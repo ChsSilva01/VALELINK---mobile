@@ -9,17 +9,17 @@ export const styles = StyleSheet.create({
     },
     cx_email: {
         width: 303,
-        height: 40,
-        backgroundColor: '#F5F5F5',
-        borderRadius: 13,
-        fontSize: 20
+        height: 55,
+        fontSize: 20,
+        borderBottomWidth: 1,
+        borderColor: '#d9d9d9'
     },
     cx_senha: {
         width: 303,
-        height: 40,
-        backgroundColor: '#F5F5F5',
-        borderRadius: 13,
-        fontSize: 20,   
+        height: 55,
+        fontSize: 20,  
+        borderBottomWidth: 1,
+        borderColor: '#d9d9d9'
     },
     headerlogin: {
         width: '100%', 
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     },
     imagedimensions: {
         width: '75%', 
-        height: '100%', 
+        height: '90%', 
         top: '4%'
     },
     inputslogin: {
@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
         width: '100%', 
         height: '50%', 
         justifyContent: 'space-evenly', 
-        alignItems: 'center'
+        alignItems: 'center',
     },
     tittlelogin: {
         fontWeight: 'bold', 

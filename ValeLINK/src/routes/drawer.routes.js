@@ -1,6 +1,7 @@
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
+import { Header } from '../components/Header'
 
 import TabRoutes from './tab.routes.js';
 
@@ -9,9 +10,11 @@ import CustomDrawer from '../components/DrawerHeader/index.js';
 
 const Drawer = createDrawerNavigator();  
 
+
+
 const DrawerRoutes = () => {
     return (
-        <Drawer.Navigator screenOptions={{headerShown: true, drawerStyle:{
+        <Drawer.Navigator screenOptions={{headerShown: true, header: () => <Header /> ,drawerStyle:{
             width: 250,
             height: '100%',
             justifyContent: 'center',

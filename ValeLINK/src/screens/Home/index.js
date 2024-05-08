@@ -4,15 +4,12 @@ import { styles } from './styles.js';
 import {Ionicons} from '@expo/vector-icons';
 
 import icone from '../../../assets/icone_post_reserve.png';
-import logo from '../../../assets/logo.png'
+
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.containerheader}>  
-          <Image source={logo} style={{width: '15%', height: '50%'}} resizeMode='stretch'></Image>
-          <Text style={{color: '#00C16C', fontSize: 25, fontWeight: 'bold'}}>VALELINK</Text>
-      </View>
+      
       <ScrollView style={styles.scrollfunctions}>
         <View style={styles.post}>
           <View style={styles.profile}>

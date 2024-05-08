@@ -7,7 +7,6 @@ import ProfileScreen from '../screens/Perfil';
 import ConfigScreen from '../screens/Configuracoes';
 import FeedbackScreen from '../screens/FeedBack';
 import HelpScreen from '../screens/Ajuda';
-import RegisterScreen from '../screens/NovoUsuario';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +19,6 @@ const AuthStack = () => (
     <Stack.Screen name="Configuracoes" component={ConfigScreen} />
     <Stack.Screen name="FeedBack" component={FeedbackScreen} />
     <Stack.Screen name="Ajuda" component={HelpScreen} />
-    <Stack.Screen name="NovoUsuario" component={RegisterScreen} />
   </Stack.Navigator>
 );
 

@@ -7,15 +7,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    // Header
-    containerheader: {
-      width: '100%',
-      height: '8%',
-      backgroundColor: '#d9d9',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
+    
     // Área para as postagens
     scrollfunctions: {
       width: '100%',
