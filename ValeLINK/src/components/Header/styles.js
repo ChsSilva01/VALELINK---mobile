@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         height: 75,
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: '3%'
     },
     menuheaderbutton: {
         width: 30,
@@ -24,11 +25,6 @@ export const styles = StyleSheet.create({
     },
     header:{
         backgroundColor: '#fafafa',
-        shadowColor: 'rgba(0, 0, 0, 0.1)',
-        shadowOpacity: 0.1,
-        elevation: 6,
-        shadowRadius: 15,
-        shadowOffset : { width: 1, height: 5},
         borderBottomRightRadius: 5,
         borderBottomLeftRadius: 5,
         height: 85,
