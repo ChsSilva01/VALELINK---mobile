@@ -40,7 +40,7 @@ export default function Perfil({ navigation }){
                                     <Ionicons name='lock-closed-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Segurança</Text>
                                 </View>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Segurança")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>
@@ -49,7 +49,7 @@ export default function Perfil({ navigation }){
                                     <Ionicons name='filter-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Filtragem</Text>  
                                 </View>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Filtragem")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>

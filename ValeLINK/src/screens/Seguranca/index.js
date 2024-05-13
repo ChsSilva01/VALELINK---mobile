@@ -4,12 +4,12 @@ import { styles } from "./styles";
 
 import {Ionicons} from '@expo/vector-icons';
 
-export default function InformacoesPessoais(){
+export default function Seguranca(){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
                 <Ionicons name="close" size={30}></Ionicons>
-                <Text style={styles.tittle}>Informações Pessoais</Text>
+                <Text style={styles.tittle}>Segurança</Text>
             </View>
         </View>
     )

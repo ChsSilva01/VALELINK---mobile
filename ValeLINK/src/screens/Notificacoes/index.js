@@ -1,7 +1,15 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground } from 'react-native';
+import { Text, View, Image } from 'react-native';
+
+import { styles } from './styles'
 
 export default function Notificacoes(){
     return(
-        <Text>Carlos</Text>
+        <View style={styles.NotificationArea}>
+            <Image></Image>
+            <View>
+                <Text>Fatec</Text>
+                <Text>Vaga Perdente</Text>
+            </View>
+        </View>
     )
 }
