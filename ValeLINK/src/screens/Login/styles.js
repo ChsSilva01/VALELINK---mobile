@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold', 
         color: '#696969', 
         fontSize: 50,
-        right: '25%'
+        right: '25%',
     },
     buttonlogin: {
         width: 223, 

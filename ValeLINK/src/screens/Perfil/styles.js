@@ -65,9 +65,10 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-        height: 50,
+        height: 70,
         borderBottomWidth: 0.5,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        padding: 10
         
     },
     textpersonalinformation: {
