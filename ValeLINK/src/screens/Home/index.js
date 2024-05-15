@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Button, ScrollView, Image, TouchableOpacity } f
 import { styles } from './styles.js';
 import {Ionicons} from '@expo/vector-icons';
 
-import icone from '../../../assets/icone_post_reserve.png';
-
+import icone from '../../../assets/coca-cola-logo.png';
+import post from '../../../assets/image-post.png'
 
 export default function Home({ navigation }) {
   return (
@@ -17,15 +17,16 @@ export default function Home({ navigation }) {
               <Image source={icone} style={styles.imageIcon}></Image>
             </View>
             <View style={styles.nameUser}>
-              <Text>Carlos</Text>
+              <Text>Coca-Cola</Text>
             </View>
-            <TouchableOpacity style={styles.buttonS}>
-                <Text style={styles.textButton}>Seguir</Text>
-            </TouchableOpacity>
           </View>
           <View style={styles.infopost}>
-            <View style={styles.textpost}></View>
-            <View style={styles.imagepost}></View>
+            <View style={styles.textpost}>
+              <Text>Venha trabalhar em nossa empresa</Text>
+            </View>
+            <View style={styles.imagepost}>
+              <Image source={post}></Image>
+            </View>
             <View style={styles.actionspost}>
                 <Ionicons name='heart-outline' size={30}></Ionicons>
                 <Ionicons name='chatbubble-outline' size={25}></Ionicons>

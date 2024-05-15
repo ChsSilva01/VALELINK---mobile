@@ -5,12 +5,15 @@ export const styles = StyleSheet.create({
     container:{
         flex: 1,
         padding: 10,
+        top: 155
         
     },
     HeaderDrawer: {
+        top: 114,
+        left: 24,
         width: '100%',
         height: 150,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     logo: {
         width: '100%',
@@ -29,7 +32,8 @@ export const styles = StyleSheet.create({
         borderRadius: 50
     },
     nameprofile: {
-        left: 10
+        left: 10,
+        fontSize: 20
     },
     separate: { 
         width: '90%', 
@@ -37,7 +41,7 @@ export const styles = StyleSheet.create({
         height: 0.5, 
         alignSelf: 'center', 
         marginBottom: 5, 
-        marginTop: 20 
+        top: 150 
     },
     Pages:{
         flexDirection: 'row',

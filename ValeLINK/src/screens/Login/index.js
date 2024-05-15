@@ -65,35 +65,35 @@ export default function Login() {
   
   return (
     <View style={styles.container}>
-      <View style={styles.headerlogin}>
-        <Image source={logo} style={styles.logologin} resizeMode='stretch'></Image>
-        <Text style={styles.headerlabel}>VALELINK</Text>
-      </View>
+      <View style={styles.containergrid}>
+        <View style={styles.headerlogin}>
+          <Image source={logo} style={styles.logologin} resizeMode='stretch'></Image>
+          <Text style={styles.headerlabel}>VALELINK</Text>
+        </View>
 
-      <View style={styles.imagelogin}>
-        <Image source={require('../../../assets/login_image.png')} style={styles.imagedimensions} resizeMode='stretch'></Image>
-      </View>
-      
-      <View style={styles.inputslogin}>
-        <Text style={styles.tittlelogin}>Login</Text>
-        <TextInput style={styles.cx_email}
-          Ionicons = 'lock-closed-outline'
-          placeholder='Email'
-          placeholderTextColor={'#696969'}
-          value={Email}
-          onChangeText={ (Email) => setEmail(Email)}
-          rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
-        ></TextInput>
-        <TextInput 
-          style={styles.cx_senha}
-          placeholder='Senha'
-          placeholderTextColor={'#696969'}
-          value={senha}
-          onChangeText={ (senha) => setSenha(senha)}
-        ></TextInput>
-        <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
-        {/* onPress = {() => navigation.navigate('Home')} */}
+          <Image source={require('../../../assets/login_image.png')} style={styles.imagedimensions} resizeMode='stretch'></Image>
+        
+        <View style={styles.inputslogin}>
+          <Text style={styles.tittlelogin}>Login</Text>
+          <TextInput style={styles.cx_email}
+            Ionicons = 'lock-closed-outline'
+            placeholder='Email'
+            placeholderTextColor={'#696969'}
+            value={Email}
+            onChangeText={ (Email) => setEmail(Email)}
+            rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
+          ></TextInput>
+          <TextInput 
+            style={styles.cx_senha}
+            placeholder='Senha'
+            placeholderTextColor={'#696969'}
+            value={senha}
+            onChangeText={ (senha) => setSenha(senha)}
+          ></TextInput>
+          <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
+          {/* onPress = {() => navigation.navigate('Home')} */}
 
+        </View>
       </View>
     </View>
   );

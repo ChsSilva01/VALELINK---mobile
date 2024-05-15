@@ -6,9 +6,9 @@ export default function Notificacoes(){
     return(
         <View style={styles.NotificationArea}>
             <Image></Image>
-            <View>
+            <View >
                 <Text>Fatec</Text>
-                <Text>Vaga Perdente</Text>
+                <Text style={styles.situation}>Vaga Perdente</Text>
             </View>
         </View>
     )

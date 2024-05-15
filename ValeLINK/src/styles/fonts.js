@@ -1,11 +1,4 @@
-import {
-    useFonts,
-    Jost_400Regular,
-    Jost_600SemiBold,
-  } from '@expo-google-fonts/jost';
-
 export default {
-    heading: 'Poppins_600SemiBold',
+    // title: 'Poppins_100Thin',
     text: 'Poppins_400Regular',
-    complement: 'Poppins_400Regular'
   }

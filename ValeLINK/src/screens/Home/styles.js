@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
       width: '90%',
       height: 500,
       display: 'flex',
-      backgroundColor: '#b1b1b1',
       borderRadius: 15,
       left: '5%',
       top: '5%'
@@ -33,8 +32,8 @@ export const styles = StyleSheet.create({
       borderBottomWidth: 1,
     },
     icon: {
-      width: 35, 
-      height: 35, 
+      width: 40, 
+      height: 40, 
       borderRadius: 50, 
       left: '25%'
     },
@@ -52,6 +51,7 @@ export const styles = StyleSheet.create({
       backgroundColor: '#b7b789'
     },
     textpost: {
+      fontSize: 14,
       width: '100%',
       height: '15%',
       backgroundColor: '#c98768'

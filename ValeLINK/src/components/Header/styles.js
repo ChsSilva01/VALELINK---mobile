@@ -5,37 +5,30 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     // Header
-    containerheader: {
-        top: '10%',
-        width: '100%',
-        height: 75,
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: '3%'
-    },
     menuheaderbutton: {
-        width: 30,
-        height: 30
+        left: 24,
+        top: 18
+    },
+    Iconheader: {
+        width: 40,
+        height: 40,
+        borderRadius: 50
     },
     logoheader: {
+        left: 75, 
+        top: 18,
         flexDirection: 'row',
         alignItems: 'center',
-        width: '45%',
-        left: '20%',
     },
     header:{
         backgroundColor: '#fafafa',
+        width: '100%',
         borderBottomRightRadius: 5,
         borderBottomLeftRadius: 5,
-        height: 85,
-        borderBottomWidth: 0.5
-    },
-
-    menu:{
-        position: 'absolute',
-        left: 20,
-        alignSelf: "center",
-        top: 13,
+        height: 95,
+        borderBottomWidth: 0.5,
+        flexDirection: 'row',
+        alignItems: "center",
     },
 
     logo:{
@@ -43,12 +36,6 @@ export const styles = StyleSheet.create({
         height: 35,
         alignSelf: "center",
         marginTop:15,
-    },
-
-    containerHeader:{
-        flexDirection: 'row',
-        justifyContent: "center",
-        alignItems: "center",
     },
 
     tituloHeader:{
