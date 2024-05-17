@@ -7,15 +7,41 @@ export const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
     },
+    config: {
+      height: 140,
+      width: 393,
+    },
     titlefromconfig: {
       width: 393,
       height: 43,
-      top: 73,
-      backgroundColor: '#00C16C1A'
+      backgroundColor: '#00C16C1A',
+      justifyContent: 'center'
     },
     titlefromconfigtext: {
+      fontFamily: fonts.title,
+      fontSize: 24,
+      left: 21
+    },
+    configfromarea: {
+      width: 393,
+      height: 97,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: 15
+    },
+    configtext: {
       fontFamily: fonts.titleconfig,
-      fontSize: 24
-    }
+      color: '#696969',
+      fontSize: 16,
+      
+    },
+    gotosettings: {
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    icon: {
+      alignItems: 'center'
+    },
     
   });

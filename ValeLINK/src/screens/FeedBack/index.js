@@ -1,27 +1,32 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground } from 'react-native';
 import { styles } from './styles';
 
-export default function Login({ navigation }) {
+import imagefeed from '../../../assets/feedback_image.png'
+import fonts from '../../styles/fonts';
+
+export default function Login() {
   return (
     <View style={styles.container}>
-      <View style={styles.headerlogin}>
-        <Text style={styles.headerlabel}>VALELINK</Text>
-      </View>
+      <View style={styles.headerfeed}></View>
+      <Image source={imagefeed} style={styles.imagefeeddimensions}></Image>
+      <View style={styles.areaforevaluation}>       
+        <View>
+          <Text style={{fontSize: 16, fontFamily: fonts.title}}>Por favor avalie sua experiência</Text>
+          <View style={{width: 311, height: 65, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
+            <TouchableOpacity style={{width: 50, height: 50, backgroundColor: '#d9d9d9', borderRadius: 50}}></TouchableOpacity>
+            <TouchableOpacity style={{width: 50, height: 50, backgroundColor: '#d9d9d9', borderRadius: 50}}></TouchableOpacity>
+            <TouchableOpacity style={{width: 50, height: 50, backgroundColor: '#d9d9d9', borderRadius: 50}}></TouchableOpacity>
+            <TouchableOpacity style={{width: 50, height: 50, backgroundColor: '#d9d9d9', borderRadius: 50}}></TouchableOpacity>
+            <TouchableOpacity style={{width: 50, height: 50, backgroundColor: '#d9d9d9', borderRadius: 50}}></TouchableOpacity>
+          </View>
+        </View>
+        <View>
+          <Text style={{fontFamily: fonts.title, fontSize: 16}}>Adicione um comentário:</Text>
+          <TextInput style={{width: 311, height: 137, backgroundColor: '#E9E9E9'}}>
 
-      <View style={styles.imagelogin}>
-        <Image source={require('../../../assets/login_image.png')} style={styles.imagedimensions}></Image>
-      </View>
-      
-      <View style={{display: 'flex', width: '100%', height: '50%', justifyContent: 'space-evenly', alignItems: 'center'}}>
-        <Text style={{fontWeight: 'bold', color: '#696969', fontSize: 50}}>Login</Text>
-        <TextInput style={styles.cx_email}
-          Ionicons = 'lock-closed-outline'
-          placeholder='Email'
-        ></TextInput>
-        <TextInput style={styles.cx_senha}
-          placeholder='Senha'
-        ></TextInput>
-        <TouchableOpacity style={{width: 223, height: 58, backgroundColor: '#03BD60',borderRadius: 13}} onPress = {() => navigation.reset('Home')}><Text style={{color: '#fff'}}>Entrar</Text></TouchableOpacity>
+          </TextInput>
+        </View>
+        <TouchableOpacity style={{width: 311, height: 33, backgroundColor: '#00C16C', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}><Text style={{color: '#fff', fontSize: 14, fontFamily: fonts.title}}>Enviar</Text></TouchableOpacity>
       </View>
     </View>
   );
