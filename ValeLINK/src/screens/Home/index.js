@@ -17,20 +17,20 @@ export default function Home({ navigation }) {
               <Image source={icone} style={styles.imageIcon}></Image>
             </View>
             <View style={styles.nameUser}>
-              <Text>Coca-Cola</Text>
+              <Text style={styles.nameUsertext}>Coca-Cola</Text>
             </View>
           </View>
           <View style={styles.infopost}>
             <View style={styles.textpost}>
-              <Text>Venha trabalhar em nossa empresa</Text>
+              <Text style={styles.textposstyle}>Venha trabalhar em nossa empresa</Text>
             </View>
             <View style={styles.imagepost}>
               <Image source={post}></Image>
             </View>
             <View style={styles.actionspost}>
-                <Ionicons name='heart-outline' size={30}></Ionicons>
-                <Ionicons name='chatbubble-outline' size={25}></Ionicons>
-                <Ionicons name='share-social-outline' size={25}></Ionicons>
+                <Ionicons name='heart' size={30} style={styles.iconactionspost}></Ionicons>
+                <Ionicons name='chatbubble' size={25} style={styles.iconactionspost}></Ionicons>
+                <Ionicons name='share-social' size={25} style={styles.iconactionspost}></Ionicons>
                 <TouchableOpacity style={styles.buttonC}>
                     <Text style={styles.textButton}>Se Cadastrar!!!</Text>
                 </TouchableOpacity>

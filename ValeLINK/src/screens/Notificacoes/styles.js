@@ -10,10 +10,20 @@ export const styles = StyleSheet.create({
         height: 67,
         top: 5,
         backgroundColor: '#00C16C1A',
-
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 24 
+    },
+    informationofcompany: {
+        left: 10
+    },
+    companyimage: {
+        width: 40,
+        height: 40,
+        borderRadius: 50
     },
     company: {
-
+        fontFamily: fonts.title
     },
     situation: {
         fontFamily: fonts.text

@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
 
+import fonts from "../../styles/fonts";
+
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#F7F7F8',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -20,7 +22,10 @@ export const styles = StyleSheet.create({
       display: 'flex',
       borderRadius: 15,
       left: '5%',
-      top: '5%'
+      top: '5%',
+      backgroundColor: '#fff',
+      borderWidth: 1,
+      borderColor: '#ff80'
     },
     // Parte da conta da pessoa que postou
     profile: {
@@ -29,7 +34,6 @@ export const styles = StyleSheet.create({
       display: 'flex', 
       flexDirection: 'row', 
       alignItems: 'center',
-      borderBottomWidth: 1,
     },
     icon: {
       width: 40, 
@@ -40,6 +44,9 @@ export const styles = StyleSheet.create({
     nameUser: {
       left: '50%'
     },
+    nameUsertext: {
+      fontFamily: fonts.title
+    },
     imageIcon: {
         width: '100%',
         height: '100%'
@@ -47,26 +54,25 @@ export const styles = StyleSheet.create({
     // Informações do post
     infopost: {
       width: '100%', 
-      height: '90%',
-      backgroundColor: '#b7b789'
     },
     textpost: {
       fontSize: 14,
       width: '100%',
-      height: '15%',
-      backgroundColor: '#c98768'
+    },
+    textposstyle: {
+      fontFamily: fonts.text
     },
     imagepost: {
       width: '100%',
-      height: '65%',
-      backgroundColor: '#f4f4'
     },
     actionspost: {
+      top: 10,
       width: '100%',
       height: '15%',
-      backgroundColor: '#f9b762',
       flexDirection: 'row',
-      justifyContent: 'space-around'
+    },
+    iconactionspost: {
+      margin: 10
     },
 
     // Botões
@@ -85,7 +91,8 @@ export const styles = StyleSheet.create({
         height: 25, 
         borderRadius: 10, 
         alignItems: 'center', 
-        justifyContent: 'center'
+        justifyContent: 'center',
+        margin: 10
     },
     textButton: {
         color: '#fff', 
