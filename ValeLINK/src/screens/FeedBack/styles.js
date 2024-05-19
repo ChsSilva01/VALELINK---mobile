@@ -24,6 +24,19 @@ export const styles = StyleSheet.create({
         elevation: 4,
         alignItems: 'center',
         justifyContent: 'space-evenly'
-    }
+    },
+    feedback: {
+        width: 50, 
+        height: 50, 
+        borderRadius: 50
+    },
+    send: {
+        width: 311, 
+        height: 33, 
+        backgroundColor: '#00C16C', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        borderRadius: 5
+    },
 
   });

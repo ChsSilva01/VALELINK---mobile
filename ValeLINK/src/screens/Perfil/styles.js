@@ -66,9 +66,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: 70,
-        borderBottomWidth: 0.5,
+        borderBottomWidth: 1,
         justifyContent: 'space-between',
-        padding: 10
+        padding: 10,
+        borderColor: '#E9E9E9'
         
     },
     textpersonalinformation: {

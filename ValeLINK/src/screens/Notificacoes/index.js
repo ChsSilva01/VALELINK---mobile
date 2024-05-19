@@ -1,14 +1,27 @@
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import bonitao from '../../../assets/bonitão.jpg'
 import { styles } from './styles'
 
 export default function Notificacoes(){
     return(
-        <View style={styles.NotificationArea}>
-            <Image source={bonitao} style={styles.companyimage}></Image>
-            <View style={styles.informationofcompany}>
-                <Text style={styles.company}>Fatec</Text>
-                <Text style={styles.situation}>Vaga Perdente</Text>
+        <View style={styles.container}>
+            <View style={styles.areafromactions}>
+                <TouchableOpacity style={styles.actions}><Text style={styles.markasread}>Marcar como lido</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.actions}><Text style={styles.cleanall}>Limpar tudo</Text></TouchableOpacity>
+            </View>
+            <View style={styles.NotificationArea}>
+                <View style={styles.circle}></View>
+                <Image source={bonitao} style={styles.companyimage}></Image>
+                <View style={styles.informationofcompany}>
+                    <View style={styles.companyandtime}>
+                        <Text style={styles.company}>Fatec</Text>
+                        <View style={styles.smallcircle}></View>
+                        <Text style={styles.timestyle}>2hrs atrás</Text>
+                    </View>
+                    <View>
+                        <Text style={styles.situation}>Vaga Perdente</Text>
+                    </View>
+                </View>
             </View>
         </View>
     )
