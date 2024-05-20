@@ -8,11 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import PictureProfile from '../../../assets/bonitão.jpg';
 
-import ProfileScreen from '../../screens/Perfil';
-import HomeScreen from '../../screens/Home';
-import ConfigScreen from '../../screens/Configuracoes';
-import FeedbackScreen from '../../screens/FeedBack';
-import HelpScreen from '../../screens/Ajuda';
+import logodrawer from '../../../assets/logo_drawer.png';
 
 const CustomDrawer= FC = () => {
     const navigation=  any= useNavigation();
@@ -41,7 +37,7 @@ const CustomDrawer= FC = () => {
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <View style={styles.HeaderDrawer}>
-                <View style={styles.logo}></View>
+                <View style={styles.logo}><Image source={logodrawer} size={57}></Image></View>      
                 <View style={styles.boxpicture}><Image source={PictureProfile} style={styles.pictureprofile}></Image></View>
                 <Text style={styles.nameprofile}>Carlos</Text>
             </View>

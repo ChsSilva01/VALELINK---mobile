@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import { View, Text, Touchable, TextInput } from 'react-native';
 import { styles } from "./styles";
 
 import {Ionicons} from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
-
+import { Picker } from "@react-native-picker/picker";
 
 
 export default function InformacoesPessoais({ navigation }){
+    const [selectedDeficiency, setSelectedDeficiency] = useState("java");
+    const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("java");       
+
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -34,6 +37,64 @@ export default function InformacoesPessoais({ navigation }){
                     style={styles.dateinput}
                     >
                     </TextInput>
+
+                    {/*  */}
+                    <Text style={styles.infostyle}>RG</Text>
+                    <TextInput
+                    style={styles.rginput}
+                    >
+                    </TextInput>
+                    {/*  */}
+
+                    {/*  */}
+                    <Text style={styles.infostyle}>RG</Text>
+                    <TextInput
+                    style={styles.rginput}
+                    >
+                    </TextInput>
+                    {/*  */}
+
+                    {/*  */}
+                    <Text style={styles.infostyle}>Possui algum tipo de defiência?</Text>
+                    <View style={styles.rginput}>
+                        <Picker
+                            selectedDeficiency={selectedDeficiency}
+                            onValueChange={(itemValue, itemIndex) => setSelectedDeficiency(itemValue)}
+                        >
+                            <Picker.Item label="Java" value="java" />
+                            <Picker.Item label="JavaScript" value="js" />
+                            <Picker.Item label="Python" value="python" />
+                            <Picker.Item label="C++" value="cpp" />
+                        </Picker>
+                    </View>
+                    {/*  */}
+
+                    <Text style={styles.infostyle}>Estado cívil</Text>
+                    <View style={styles.rginput}>
+                        <Picker
+                            selectedMaritalStatus={selectedMaritalStatus}
+                            onValueChange={(itemValue, itemIndex) => setSelectedMaritalStatus(itemValue)}
+                        >
+                            <Picker.Item label="Java" value="java" />
+                            <Picker.Item label="JavaScript" value="js" />
+                            <Picker.Item label="Python" value="python" />
+                            <Picker.Item label="C++" value="cpp" />
+                        </Picker>
+                    </View>
+                    {/*  */}
+
+                    <Text style={styles.infostyle}>Especifique</Text>
+                    <TextInput
+                    style={styles.rginput}
+                    >
+                    </TextInput>
+                    {/*  */}
+                    <Text style={styles.infostyle}>Especifique</Text>
+                    <TextInput
+                    style={styles.rginput}
+                    >
+                    </TextInput>
+                    {/*  */}
             </View>
         </View>
     )

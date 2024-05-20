@@ -36,7 +36,8 @@ export const styles = StyleSheet.create({
         height: 39,
         borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00000040'
+        borderColor: '#00000040',
+        justifyContent: 'center'
     },
     dateinput: {
         width: 169,
@@ -44,5 +45,14 @@ export const styles = StyleSheet.create({
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'
-    }
+    },
+    // 
+    checkboxContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+      },
+      checkbox: {
+        alignSelf: 'center',
+      },
 })

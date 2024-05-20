@@ -1,30 +1,32 @@
 import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
 
 
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
         padding: 10,
-        top: 155
         
     },
     HeaderDrawer: {
-        top: 114,
-        left: 24,
         width: '100%',
-        height: 150,
+        height: 250,
         justifyContent: 'center',
+        backgroundColor: '#01E581',
     },
     logo: {
         width: '100%',
-        height: '40%'
+        height: '40%',
+        alignItems: 'flex-end',
+        padding: 15
     },
     boxpicture: {
-        width: '45%',
-        height: '75%',
+        width: 93,
+        height: 93,
         borderWidth: 2,
         borderRadius: 50,
-        left: 10
+        left: 10,
+        borderColor: '#ffff'
     },
     pictureprofile: {
         width: '100%',
@@ -32,8 +34,10 @@ export const styles = StyleSheet.create({
         borderRadius: 50
     },
     nameprofile: {
-        left: 10,
-        fontSize: 20
+        left: 20,
+        fontSize: 20,
+        color: '#FFFF',
+        fontFamily: fonts.title
     },
     separate: { 
         width: '90%', 
@@ -41,7 +45,6 @@ export const styles = StyleSheet.create({
         height: 0.5, 
         alignSelf: 'center', 
         marginBottom: 5, 
-        top: 150 
     },
     Pages:{
         flexDirection: 'row',
