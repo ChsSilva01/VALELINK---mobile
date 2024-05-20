@@ -17,7 +17,7 @@ export default function Home({ navigation }) {
               <Image source={icone} style={styles.imageIcon}></Image>
             </View>
             <View style={styles.nameUser}>
-              <Text style={styles.nameUsertext}>Coca-Cola</Text>
+              <TouchableOpacity onPress = {() => navigation.navigate("Perfildaempresa")}><Text style={styles.nameUsertext}>Coca-Cola</Text></TouchableOpacity>
             </View>
           </View>
           <View style={styles.infopost}>

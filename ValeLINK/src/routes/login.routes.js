@@ -10,6 +10,7 @@ import HelpScreen from '../screens/Ajuda';
 import PersonalinformationScreen from '../screens/Informacoes_pessoais';
 import SecurityScreen from '../screens/Seguranca';
 import FilteringScreen from '../screens/Filtragem';
+import CompanyprofileScreen from '../screens/Perfil da empresa';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const AuthStack = () => (
     <Stack.Screen name="InformacoesPessoais" component={PersonalinformationScreen} />
     <Stack.Screen name="Segurança" component={SecurityScreen} />
     <Stack.Screen name="Filtragem" component={FilteringScreen} />
+    <Stack.Screen name="Perfildaempresa" component={CompanyprofileScreen} />
   </Stack.Navigator>
 );
 
