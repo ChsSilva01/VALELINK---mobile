@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
 
 export const styles = StyleSheet.create({
     container: {
@@ -48,11 +49,12 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     infostatus: {
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: 10
     },
     Settingsprofile: {
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     Settingsname: {
         alignItems: 'center'
@@ -98,5 +100,18 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 5
+    },
+    amount: {
+        color: '#004443', 
+        fontSize: 15.14,
+        fontFamily: fonts.title
+    },
+    quantityofwhat: {
+        color: '#00755C', 
+        fontSize: 13.12,
+        fontFamily: fonts.title
+    },
+    followtext: {
+        color: '#FFFF'
     }
 })
