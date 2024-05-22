@@ -15,7 +15,8 @@ const TabRoutes = () => {
         screenOptions={({ route }) => ({
         headerShown:false,
          tabBarStyle:{
-        backgroundColor: '#00C16C'
+          backgroundColor: '#00C16C',
+          height: 54
         },
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
@@ -38,7 +39,7 @@ const TabRoutes = () => {
         }
         
         //aqui define os ícones que irão aparecer nas Tabs
-        return <Ionicons name={iconName} size={size} color={color} />;
+        return <Ionicons name={iconName} size={size} color={color} style={{top: 7}}/>;
       },
       labelStyle:{
         fontSize: 12,
