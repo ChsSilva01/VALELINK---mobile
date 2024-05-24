@@ -12,25 +12,24 @@ export const styles = StyleSheet.create({
     
     // Área para as postagens
     scrollfunctions: {
-      width: '100%',
+      width: 390,
       
     },
     // Post
     post: {
-      width: '90%',
-      height: 500,
+      width: 345,
+      height: 350,
       display: 'flex',
-      borderRadius: 15,
       left: '5%',
       top: '5%',
       backgroundColor: '#fff',
       borderWidth: 1,
-      borderColor: '#ff80'
+      borderBottomWidth: 1
     },
     // Parte da conta da pessoa que postou
     profile: {
-      width: '100%', 
-      height: '10%', 
+      width: 345, 
+      height: 45, 
       display: 'flex', 
       flexDirection: 'row', 
       alignItems: 'center',
@@ -53,26 +52,32 @@ export const styles = StyleSheet.create({
       },
     // Informações do post
     infopost: {
-      width: '100%', 
+      width: 345,
+      height: 268, 
     },
     textpost: {
-      fontSize: 14,
       width: '100%',
     },
     textposstyle: {
-      fontFamily: fonts.text
+      fontFamily: fonts.text,
+      fontSize: 14,
+      left: 10
+      
     },
     imagepost: {
-      width: '100%',
+      width: 323,
+      height: 202,
+      borderRadius: 7
     },
     actionspost: {
       top: 10,
-      width: '100%',
-      height: '15%',
+      width: 345,
+      height: 50,
       flexDirection: 'row',
+      borderBottomWidth: 1
     },
     iconactionspost: {
-      margin: 10
+      padding: 10
     },
 
     // Botões

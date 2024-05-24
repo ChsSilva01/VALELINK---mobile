@@ -16,7 +16,7 @@ export default function Login() {
 
   const [logged, setLogged] = useState(0);
 
-  const [Email, setEmail] = useState('');
+  const [email, setemail] = useState('');
   const [senha, setSenha] = useState('');
   
   // const [fontLoaded] = useFonts({
@@ -28,7 +28,7 @@ export default function Login() {
   // }
 
   async function login(){      
-    const obj = { Email, senha };
+    const obj = { email, senha };
     const res = await api.post('apiVALELINK/login/login.php', obj);
 
     if(res.data.result === 'Dados Incorretos!'){
@@ -79,8 +79,8 @@ export default function Login() {
             Ionicons = 'lock-closed-outline'
             placeholder='Email'
             placeholderTextColor={'#696969'}
-            value={Email}
-            onChangeText={ (Email) => setEmail(Email)}
+            value={email}
+            onChangeText={ (email) => setemail(email)}
             rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
           ></TextInput>
           <TextInput 

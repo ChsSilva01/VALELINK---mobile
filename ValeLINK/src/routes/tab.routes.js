@@ -1,3 +1,4 @@
+import { TouchableOpacity, StyleSheet } from 'react-native-gesture-handler';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -9,14 +10,16 @@ import Empresas from '../screens/Empresas';
 
 const Tab = createBottomTabNavigator();
 
-const TabRoutes = () => {
+
+const TabRoutes = ({ navigation}) => {
     return (
      <Tab.Navigator
         screenOptions={({ route }) => ({
         headerShown:false,
          tabBarStyle:{
           backgroundColor: '#00C16C',
-          height: 54
+          height: 54,
+          width: 395,
         },
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
@@ -59,10 +62,30 @@ const TabRoutes = () => {
     >
       {/* Cada tab direciona para a página que eu quiser' */}
       <Tab.Screen name= "Home" component={Home} options={{tabBarLabel: ''}}></Tab.Screen>
-      <Tab.Screen name= "Pesquisar" component={Pesquisar} options={{tabBarLabel: ''}}></Tab.Screen>
+      <Tab.Screen name= "Pesquisar" options={{
+        tabBarLabel: '',
+        tabBarButton: (props) => (
+          <TouchableOpacity 
+          {...props}
+          style={[props.style, {
+          justifyContent: 'center',
+          alignItems: 'center',
+          flex: 1,}]} 
+          onPress={() => {
+            // Navegação direta para a tela de detalhes
+            navigation.navigate('Pesquisar');
+          }}
+          >
+            <Ionicons name="search-outline" color={'#fff'} size={35} />
+          </TouchableOpacity>
+        ),
+        }}>
+          {() => null}
+        </Tab.Screen>
       <Tab.Screen name= "Empresas" component={Empresas} options={{tabBarLabel: ''}}></Tab.Screen>
       <Tab.Screen name= "Notificações" component={Notificacoes} options={{tabBarLabel: ''}}></Tab.Screen>
     </Tab.Navigator>
     )
 }
+
 export default TabRoutes;
