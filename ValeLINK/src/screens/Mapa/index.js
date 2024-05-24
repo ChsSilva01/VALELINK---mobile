@@ -7,7 +7,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import { styles } from './styles';
 
-import config from '../../config';
+// import config from '../../config';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
 

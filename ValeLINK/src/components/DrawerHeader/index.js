@@ -63,7 +63,7 @@ const CustomDrawer= FC = () => {
                     <TouchableOpacity
                         style={styles.Pages}
                         onPress={() => {
-                            navigation.navigate("Mapa")
+                            navigation.navigate("Configuracoes")
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
