@@ -62,27 +62,30 @@ const TabRoutes = ({ navigation}) => {
     >
       {/* Cada tab direciona para a página que eu quiser' */}
       <Tab.Screen name= "Home" component={Home} options={{tabBarLabel: ''}}></Tab.Screen>
-      <Tab.Screen name= "Pesquisar" options={{
+      <Tab.Screen
+    name="Pesquisar"
+    options={{
         tabBarLabel: '',
         tabBarButton: (props) => (
-          <TouchableOpacity 
-          {...props}
-          style={[props.style, {
-          justifyContent: 'center',
-          alignItems: 'center',
-          flex: 1,}]} 
-          onPress={() => {
-            // Navegação direta para a tela de detalhes
-            navigation.navigate('Pesquisar');
-          }}
-          >
-            <Ionicons name="search-outline" color={'#fff'} size={35} />
-          </TouchableOpacity>
+            <TouchableOpacity
+                {...props}
+                style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+                onPress={() => {
+                    navigation.navigate('Pesquisar');
+                }}
+            >
+                <Ionicons name="search-outline" color={'#fff'} size={35} />
+            </TouchableOpacity>
         ),
-        }}>
-          {() => null}
-        </Tab.Screen>
-      <Tab.Screen name= "Empresas" component={Empresas} options={{tabBarLabel: ''}}></Tab.Screen>
+    }}
+>
+    {() => null}
+</Tab.Screen>
+      <Tab.Screen name= "Empresas" component={Empresas} options={{tabBarLabel: '',tabBarStyle:{marginStart: 10}}}></Tab.Screen>
       <Tab.Screen name= "Notificações" component={Notificacoes} options={{tabBarLabel: ''}}></Tab.Screen>
     </Tab.Navigator>
     )
