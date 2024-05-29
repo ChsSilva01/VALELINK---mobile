@@ -37,6 +37,24 @@ export default function Perfil({ navigation }){
                             </View>
                             <View style={styles.personalinformation}>
                                 <View style={styles.organize}>
+                                    <Ionicons name='locate-outline' color='#01E581' size={25}></Ionicons>
+                                    <Text style={styles.textpersonalinformation}>Endereço</Text>
+                                </View>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Segurança")}>
+                                    <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.personalinformation}>
+                                <View style={styles.organize}>
+                                    <Ionicons name='ellipsis-horizontal-outline' color='#01E581' size={25}></Ionicons>
+                                    <Text style={styles.textpersonalinformation}>Outros</Text>  
+                                </View>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Filtragem")}>
+                                    <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.personalinformation}>
+                                <View style={styles.organize}>
                                     <Ionicons name='lock-closed-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Segurança</Text>
                                 </View>

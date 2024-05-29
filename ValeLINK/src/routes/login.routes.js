@@ -11,8 +11,9 @@ import PersonalinformationScreen from '../screens/Informacoes_pessoais';
 import SecurityScreen from '../screens/Seguranca';
 import FilteringScreen from '../screens/Filtragem';
 import CompanyprofileScreen from '../screens/Perfil da empresa';
-import MapScreen from '../screens/Mapa';
+// import MapScreen from '../screens/Mapa';
 import SearchScreen from '../screens/Pesquisar';
+import WaveScreen from '../screens/Vagas';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ const AuthStack = () => (
     <Stack.Screen name="Perfildaempresa" component={CompanyprofileScreen} />
     {/* <Stack.Screen name="Mapa" component={MapScreen} /> */}
     <Stack.Screen name="Pesquisar" component={SearchScreen} />
+    <Stack.Screen name="Vagas" component={WaveScreen} />
   </Stack.Navigator>
 );
 

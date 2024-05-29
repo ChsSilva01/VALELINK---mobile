@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     configfromarea: {
       width: 393,
-      height: 97,
+      height: 50,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',

@@ -5,7 +5,7 @@ import {Ionicons} from '@expo/vector-icons';
 
 import bonitao from '../../../assets/bonitão.jpg'
 
-export default function Empresas({ Navigation }){
+export default function Empresas({ navigation }){
     return(
     <View style={styles.container}>
         <View style={styles.NotificationArea}>
@@ -22,7 +22,7 @@ export default function Empresas({ Navigation }){
                 </View>
             </View>
         </View>
-        <TouchableOpacity style={styles.vacancie}><Ionicons name='briefcase-outline' size={38} color={'#01E581'}></Ionicons></TouchableOpacity>
+        <TouchableOpacity style={styles.vacancie} onPress={() => navigation.navigate('Vagas')}><Ionicons name='briefcase-outline' size={38} color={'#01E581'}></Ionicons></TouchableOpacity>
     </View>
     )
 }
