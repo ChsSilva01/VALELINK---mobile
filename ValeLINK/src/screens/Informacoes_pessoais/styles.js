@@ -20,6 +20,11 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: fonts.infostyle
     },
+    infostyleDeficiety: {
+        fontSize: 18,
+        fontFamily: fonts.infostyle,
+        width: 254
+    },
     input: {
         width: '100%',
         height: '100%',
@@ -45,6 +50,13 @@ export const styles = StyleSheet.create({
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'
+    },
+    maritalstatusinput: {
+        width: 155.8,
+        height: 38.63,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040',
     },
     // 
     checkboxContainer: {
