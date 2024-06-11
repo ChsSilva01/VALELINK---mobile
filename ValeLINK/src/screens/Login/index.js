@@ -83,7 +83,8 @@ export default function Login() {
             onChangeText={ (email) => setemail(email)}
             rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
           ></TextInput>
-          <TextInput 
+          <TextInput
+          secureTextEntry={true} 
             style={styles.cx_senha}
             placeholder='Senha'
             placeholderTextColor={'#696969'}

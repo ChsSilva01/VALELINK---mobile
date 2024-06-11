@@ -11,7 +11,7 @@ import { RadioButton } from 'react-native-paper';
 export default function InformacoesPessoais({ navigation }){
     const [selectedDeficiency, setSelectedDeficiency] = useState("sim");
     const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("java");    
-    const [nome,setNome] = useState(data.nome)
+    const [nome,setNome] = useState("")
 
     const [selectedValue, setSelectedValue] = useState('option1');
 

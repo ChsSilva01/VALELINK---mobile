@@ -24,8 +24,71 @@ export const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    nameinput: {
-        width: 200,
+    cityinput: {
+        width: 198.47,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    numberinput: {
+        width: 130.99,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    addressinput: {
+        width: 197.48,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    CEPinput: {
+        width: 130.99,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    residencetimeinput: {
+        width: 115.11,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    typeofresidenceinput: {
+        width: 155.8,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    referencepointinput: {
+        width: 262.98,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    referencepointinput: {
+        width: 262.98,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    valueinput: {
+        width: 115.11,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+    },
+    neighborhood: {
+        width: 155.8,
         height: 39,
         borderRadius: 6,
         borderWidth: 1,

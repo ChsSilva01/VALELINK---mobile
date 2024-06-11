@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 import { styles } from './styles';
 
+import Header from '../../components/Header'
 import {Ionicons} from '@expo/vector-icons';
 
 
@@ -10,6 +11,9 @@ export default function Configuracoes() {
 
 return (
     <View style={styles.container}>
+      
+      <Header title='Configurações'/>
+
       <View style={{width: '100%', height: 43}}></View>
       <View style={styles.config}>
         <View style={styles.titlefromconfig}>

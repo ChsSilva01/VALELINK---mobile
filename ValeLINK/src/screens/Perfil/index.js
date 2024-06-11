@@ -40,7 +40,7 @@ export default function Perfil({ navigation }){
                                     <Ionicons name='locate-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Endereço</Text>
                                 </View>
-                                <TouchableOpacity onPress = {() => navigation.navigate("Segurança")}>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Seguranca")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>
@@ -58,7 +58,7 @@ export default function Perfil({ navigation }){
                                     <Ionicons name='lock-closed-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Segurança</Text>
                                 </View>
-                                <TouchableOpacity onPress = {() => navigation.navigate("Segurança")}>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Seguranca")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>

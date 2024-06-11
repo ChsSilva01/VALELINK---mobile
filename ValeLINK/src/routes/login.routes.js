@@ -27,7 +27,7 @@ const AuthStack = () => (
     <Stack.Screen name="FeedBack" component={FeedbackScreen} />
     <Stack.Screen name="Ajuda" component={HelpScreen} />
     <Stack.Screen name="InformacoesPessoais" component={PersonalinformationScreen} />
-    <Stack.Screen name="Segurança" component={SecurityScreen} />
+    <Stack.Screen name="Seguranca" component={SecurityScreen} />
     <Stack.Screen name="Filtragem" component={FilteringScreen} />
     <Stack.Screen name="Perfildaempresa" component={CompanyprofileScreen} />
     {/* <Stack.Screen name="Mapa" component={MapScreen} /> */}
