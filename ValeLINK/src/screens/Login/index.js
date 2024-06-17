@@ -16,7 +16,7 @@ export default function Login() {
 
   const [logged, setLogged] = useState(0);
 
-  const [email, setemail] = useState('');
+  const [CPF, setCPF] = useState('');
   const [senha, setSenha] = useState('');
   
   // const [fontLoaded] = useFonts({
@@ -28,7 +28,7 @@ export default function Login() {
   // }
 
   async function login(){      
-    const obj = { email, senha };
+    const obj = { CPF, senha };
     const res = await api.post('apiVALELINK/login/login.php', obj);
 
     if(res.data.result === 'Dados Incorretos!'){
@@ -77,10 +77,10 @@ export default function Login() {
           <Text style={styles.tittlelogin}>Login</Text>
           <TextInput style={styles.cx_email}
             Ionicons = 'lock-closed-outline'
-            placeholder='Email'
+            placeholder='CPF'
             placeholderTextColor={'#696969'}
-            value={email}
-            onChangeText={ (email) => setemail(email)}
+            value={CPF}
+            onChangeText={ (CPF) => setCPF(CPF)}
             rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
           ></TextInput>
           <TextInput

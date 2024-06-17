@@ -20,10 +20,9 @@ export default function InformacoesPessoais({ navigation }){
             <View style={styles.header}>
                 <TouchableOpacity onPress = {() => navigation.navigate("Perfil")}><Ionicons name="close" size={30}></Ionicons></TouchableOpacity>
                 <Text style={styles.tittle}>Informações Pessoais</Text>
-            </View>
-            <Ionicons name="create-outline" size={33} color={'#01E581'} style={{left: 330, top: 10}}></Ionicons>     
+            </View>     
                  <View style={styles.input}>
-                    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View style={{flexDirection: 'row'}}>
                         <View>
                             <Text style={styles.infostyle}>Nome Completo</Text>
                             <TextInput 
@@ -32,7 +31,7 @@ export default function InformacoesPessoais({ navigation }){
                             </TextInput>
                         </View>
                         {/*  */}
-                        <View>
+                        <View style={{left: 27}}>
                             <Text style={styles.infostyle}>RG</Text>
                             <TextInput
                             style={styles.rginput}
@@ -41,7 +40,7 @@ export default function InformacoesPessoais({ navigation }){
                         </View>
                         {/*  */}
                     </View>
-                    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View style={{flexDirection: 'row'}}>
                         <View>
                             <Text style={styles.infostyle}>Data de nascimento</Text>
                             <TextInput
@@ -50,7 +49,7 @@ export default function InformacoesPessoais({ navigation }){
                             </TextInput>
                         </View>
                         {/*  */}
-                        <View>
+                        <View style={{left: 35}}>
                             <Text style={styles.infostyle}>CPF</Text>
                             <TextInput
                             style={styles.rginput}
@@ -62,7 +61,7 @@ export default function InformacoesPessoais({ navigation }){
                     </View>
 
                     {/*  */}
-                    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View>
                             <View style={styles.infostyleDeficiety}>
                                 <Text style={styles.infostyle}>Possui algum tipo de defiência?</Text>
@@ -78,7 +77,7 @@ export default function InformacoesPessoais({ navigation }){
                             </View>
                         </View>
                         {/*  */}
-                        <View>
+                        <View style={{right: 30}}>
                             <Text style={styles.infostyle}>Estado cívil</Text>
                             <View style={styles.maritalstatusinput}>
                                 <Picker
@@ -111,26 +110,27 @@ export default function InformacoesPessoais({ navigation }){
                         <View style={{flexDirection: 'row'}}>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <RadioButton value="option1" color="green" />
-                            <Text>Masculino</Text>
+                            <Text style={styles.infostyle}>Masculino</Text>
                             </View>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <RadioButton value="option2" color="green" />
-                            <Text>Feminino</Text>
+                            <Text style={styles.infostyle}>Feminino</Text>
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center'}}>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <RadioButton value="option3" color="green" />
-                            <Text>Outro</Text>
+                            <Text style={styles.infostyle}>Outro</Text>
                             </View>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <RadioButton value="option4" color="green" />
-                            <Text>Prefiro não dizer</Text>
+                            <Text style={styles.infostyle}>Prefiro não dizer</Text>
                             </View>
                         </View>
                     </RadioButton.Group>
                     {/*  */}
             </View>
+            <TouchableOpacity style={styles.changedatabutton}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }

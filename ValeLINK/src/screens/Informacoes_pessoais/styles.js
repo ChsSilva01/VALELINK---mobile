@@ -26,8 +26,8 @@ export const styles = StyleSheet.create({
         width: 254
     },
     input: {
-        width: '100%',
-        height: '100%',
+        top: 20,
+        left: 21
     },
     nameinput: {
         width: 200,
@@ -52,11 +52,12 @@ export const styles = StyleSheet.create({
         borderColor: '#00000040'
     },
     maritalstatusinput: {
-        width: 155.8,
-        height: 38.63,
+        width: 117,
+        height: 39,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040',
+        justifyContent: 'center'
     },
     // 
     checkboxContainer: {
@@ -67,4 +68,19 @@ export const styles = StyleSheet.create({
       checkbox: {
         alignSelf: 'center',
       },
+      changedatabutton: {
+        width: 200,
+        height: 40,
+        backgroundColor: '#004443',
+        borderRadius: 10,
+        top: 250,
+        left: 96,
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      textbutton: {
+        fontSize: 14,
+        color: '#fff',
+        fontFamily: fonts.titleconfig
+      }
 })
