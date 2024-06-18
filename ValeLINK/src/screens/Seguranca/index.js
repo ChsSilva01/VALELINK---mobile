@@ -16,83 +16,36 @@ export default function Seguranca({ navigation }){
                 <Text style={styles.tittle}>Segurança</Text>
             </View>
             <View style={styles.input}>
-                    <Text style={styles.infostyle}>Cidade</Text>
+                    <Text style={styles.infostyle}>Telefone para recuperação</Text>
+                    <TextInput 
+                    style={styles.phonenumberforverification}
+                    >
+                    </TextInput>
+                    {/*  */}
+
+                    <Text style={styles.infostyle}>Email de verificação</Text>
+                    <TextInput 
+                    style={styles.verificationemail}
+                    >
+                    </TextInput>
+                    {/*  */}
+
+                    <Text style={styles.infostyle}>Email</Text>
+                    <TextInput 
+                    style={styles.email}
+                    >
+                    </TextInput>
+                    {/*  */}
+
+                    <Text style={styles.infostyle}>Senha</Text>
                     <TextInput 
                     style={styles.cityinput}
                     >
                     </TextInput>
                     {/*  */}
 
-                    <Text style={styles.infostyle}>Número</Text>
-                    <TextInput 
-                    style={styles.numberinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Endereço</Text>
-                    <TextInput 
-                    style={styles.addressinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>CEP</Text>
-                    <TextInput 
-                    style={styles.CEPinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Tempo de Resid.</Text>
-                    <TextInput 
-                    style={styles.residencetimeinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Tipo de Resid.</Text>
-                    <TextInput 
-                    style={styles.typeofresidenceinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Ponto de referência</Text>
-                    <TextInput 
-                    style={styles.referencepointinput}
-                    >
-                    </TextInput>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Valor</Text>
-                    <Picker
-                            selectedMaritalStatus={selectedValue}
-                            onValueChange={(itemValue, itemIndex) => setValue(itemValue)}
-                            style={styles.valueinput}
-                        >
-                            <Picker.Item label="Solteiro" value="solteiro" />
-                            <Picker.Item label="Casado" value="casado" />
-                            <Picker.Item label="Separado" value="separado" />
-                            <Picker.Item label="Divorciado" value="divorciado" />
-                            <Picker.Item label="Viúvo" value="viuvo" />
-                    </Picker>
-                    {/*  */}
-
-                    <Text style={styles.infostyle}>Bairro</Text>
-                    <Picker
-                            selectedMaritalStatus={selectneighborhood}
-                            onValueChange={(itemValue, itemIndex) => setNeighborhood(itemValue)}
-                            style={styles.neighborhoodinput}
-                        >
-                            <Picker.Item label="Solteiro" value="solteiro" />
-                            <Picker.Item label="Casado" value="casado" />
-                            <Picker.Item label="Separado" value="separado" />
-                            <Picker.Item label="Divorciado" value="divorciado" />
-                            <Picker.Item label="Viúvo" value="viuvo" />
-                    </Picker>
-                    {/*  */}
             </View>
+            <TouchableOpacity style={styles.changedatabutton}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }

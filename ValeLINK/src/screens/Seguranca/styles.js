@@ -21,8 +21,8 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.infostyle
     },
     input: {
-        width: '100%',
-        height: '100%',
+        top: 20,
+        left: 21
     },
     cityinput: {
         width: 198.47,
@@ -94,4 +94,47 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#00000040'
     },
+    changedatabutton: {
+        width: 200,
+        height: 40,
+        backgroundColor: '#004443',
+        borderRadius: 10,
+        top: 300,
+        left: 96,
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      textbutton: {
+        fontSize: 14,
+        color: '#fff',
+        fontFamily: fonts.titleconfig
+      },
+      phonenumberforverification: {
+        width: 298,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+      },
+      verificationemail: {
+        width: 297,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+      },
+      email: {
+        width: 269,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+      },
+      password: {
+        width: 262.98,
+        height: 39,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: '#00000040'
+      },
 })

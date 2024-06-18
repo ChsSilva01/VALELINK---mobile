@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Touchable, TextInput } from 'react-native';
 import { styles } from "./styles";
 
@@ -7,6 +7,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Picker } from "@react-native-picker/picker";
 import { RadioButton } from 'react-native-paper';
 
+import api from '../../services/api';
 
 export default function InformacoesPessoais({ navigation }){
     const [selectedDeficiency, setSelectedDeficiency] = useState("sim");
@@ -14,6 +15,28 @@ export default function InformacoesPessoais({ navigation }){
     const [nome,setNome] = useState("")
 
     const [selectedValue, setSelectedValue] = useState('option1');
+
+    const [carlos,setCarlos] = useState('Banana');
+    const [lista,setLista] = useState([]);
+    const [page, setPage] = useState(1);
+
+    useEffect(() => {
+        listarDados();
+    },[])
+
+    async function listarDados(){
+        try {
+            const res = await api.get(`apiVALELINK/usuarios/listar.php?pagina=${page}&limite=10`);
+            setLista(res.data.resultado);
+            setPage(page + 1);
+            if (res.data.resultado.length > 0) {
+              // Armazene o nome do primeiro item da lista
+              setNome(res.data.resultado[0].nome);
+            }
+          } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+          }
+    }
 
     return(
         <View style={styles.container}>
@@ -26,6 +49,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View>
                             <Text style={styles.infostyle}>Nome Completo</Text>
                             <TextInput 
+                            placeholder={nome}
                             style={styles.nameinput}
                             >
                             </TextInput>

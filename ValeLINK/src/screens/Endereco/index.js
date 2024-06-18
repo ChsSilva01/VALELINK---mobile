@@ -25,7 +25,7 @@ export default function Seguranca({ navigation }){
                             </TextInput>
                         </View>
                         {/*  */}
-                        <View>
+                        <View style={{left: 24}}>
                             <Text style={styles.infostyle}>Número</Text>
                             <TextInput 
                             style={styles.numberinput}
@@ -43,7 +43,7 @@ export default function Seguranca({ navigation }){
                             </TextInput>
                             {/*  */}
                         </View>
-                        <View>
+                        <View style={{left: 24}}>
                             <Text style={styles.infostyle}>CEP</Text>
                             <TextInput 
                             style={styles.CEPinput}
@@ -61,7 +61,7 @@ export default function Seguranca({ navigation }){
                             </TextInput>
                             {/*  */}
                         </View>
-                        <View>
+                        <View style={{left: 45}}>
                             <Text style={styles.infostyle}>Tipo de Resid.</Text>
                             <TextInput 
                             style={styles.typeofresidenceinput}
@@ -94,7 +94,7 @@ export default function Seguranca({ navigation }){
                             </View>
                             {/*  */}
                         </View>
-                            <View>
+                            <View style={{left: 82}}>
                             <Text style={styles.infostyle}>Bairro</Text>
                             <View style={styles.neighborhoodinput}>
                             <Picker

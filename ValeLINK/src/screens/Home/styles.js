@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
       left: '5%',
       top: '5%',
       backgroundColor: '#fff',
-      borderWidth: 1,
-      borderBottomWidth: 1
+      borderWidth: 0.5,
+      borderBottomWidth: 0.5
     },
     // Parte da conta da pessoa que postou
     profile: {
@@ -74,7 +74,7 @@ export const styles = StyleSheet.create({
       width: 345,
       height: 50,
       flexDirection: 'row',
-      borderBottomWidth: 1
+      borderBottomWidth: 0.5
     },
     iconactionspost: {
       padding: 10

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
 import { styles } from './styles';
 
@@ -7,14 +7,15 @@ import Header from '../../components/Header'
 import {Ionicons} from '@expo/vector-icons';
 
 
-export default function Configuracoes() {
+export default function Configuracoes({ navigation }) {
 
 return (
     <View style={styles.container}>
       
-      <Header title='Configurações'/>
-
-      <View style={{width: '100%', height: 43}}></View>
+      <View style={styles.header}>
+        <TouchableOpacity onPress = {() => navigation.navigate("Home")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
+        <Text style={styles.tittle}>Configurações</Text>
+      </View>  
       <View style={styles.config}>
         <View style={styles.titlefromconfig}>
           <Text style={styles.titlefromconfigtext}>Geral</Text>

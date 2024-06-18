@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Modal, TouchableOpacity, SafeAreaView, TextInpu
 import { styles } from "./styles";
 
 import {Ionicons} from '@expo/vector-icons';
-import api from '../../services/api'
+import api from '../../services/api';
 export default function Filtragem({ navigation }){
     const [carlos,setCarlos] = useState('Banana');
     const [lista,setLista] = useState([]);

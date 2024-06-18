@@ -43,5 +43,15 @@ export const styles = StyleSheet.create({
     icon: {
       alignItems: 'center'
     },
-    
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingTop: 45,
+      paddingStart: 10
+  },
+  tittle: {
+      fontSize: 24,
+      left: 56,
+      fontFamily: fonts.title
+  },
   });

@@ -4,16 +4,23 @@ import { styles } from './styles';
 import imagefeed from '../../../assets/feedback_image.png'
 import fonts from '../../styles/fonts';
 
+import {Ionicons} from '@expo/vector-icons';
+
 import onestar from '../../../assets/umaestrela.png';
 import twostar from '../../../assets/duasestrela.png';
 import treestar from '../../../assets/tresestrela.png';
 import fourstar from '../../../assets/quatroestrela.png';
 import fivestar from '../../../assets/cincoestrela.png';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.headerfeed}></View>
+      <View style={styles.headerfeed}>
+      <View style={styles.header}>
+                <TouchableOpacity onPress = {() => navigation.navigate("Home")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
+                <Text style={styles.tittle}>FeedBack</Text>
+            </View>  
+      </View>
       <Image source={imagefeed} style={styles.imagefeeddimensions}></Image>
       <View style={styles.areaforevaluation}>       
         <View>

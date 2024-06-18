@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
 
 export const styles = StyleSheet.create({
     container: {
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
     },
     headerfeed: {
         width: 393,
-        height: 70,
+        height: 80,
     },
     imagefeeddimensions: {
         width: 283,
@@ -37,6 +38,17 @@ export const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center', 
         borderRadius: 5
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: 45,
+        paddingStart: 10
+    },
+    tittle: {
+        fontSize: 24,
+        left: 85,
+        fontFamily: fonts.title
     },
 
   });
