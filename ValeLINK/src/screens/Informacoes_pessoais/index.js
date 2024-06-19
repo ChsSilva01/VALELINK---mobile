@@ -12,7 +12,13 @@ import api from '../../services/api';
 export default function InformacoesPessoais({ navigation }){
     const [selectedDeficiency, setSelectedDeficiency] = useState("sim");
     const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("java");    
-    const [nome,setNome] = useState("")
+    const [nome,setNome] = useState("");
+    const [CPF,setCPF] = useState("");
+    const [data_nascimento,setData_nascimento] = useState("");
+    const [Deficiencia,setDeficiencia] = useState("");
+    const [Estado_Civil,setEstado_Civil] = useState("");
+    const [Sexo,setSexo] = useState("");
+    const [Especifique,setEspecifique] = useState("");
 
     const [selectedValue, setSelectedValue] = useState('option1');
 
@@ -32,6 +38,12 @@ export default function InformacoesPessoais({ navigation }){
             if (res.data.resultado.length > 0) {
               // Armazene o nome do primeiro item da lista
               setNome(res.data.resultado[0].nome);
+              setCPF(res.data.resultado[1].CPF);
+              setData_nascimento(res.data.resultado[2].data_nascimento);
+              setDeficiencia(res.data.resultado[3].Deficiencia);
+              setEstado_Civil(res.data.resultado[4].Estado_Civil);
+              setSexo(res.data.resultado[5].Sexo);
+              setSexo(res.data.resultado[6].Especifique);
             }
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -68,6 +80,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View>
                             <Text style={styles.infostyle}>Data de nascimento</Text>
                             <TextInput
+                            placeholder={data_nascimento}
                             style={styles.dateinput}
                             >
                             </TextInput>
@@ -77,7 +90,7 @@ export default function InformacoesPessoais({ navigation }){
                             <Text style={styles.infostyle}>CPF</Text>
                             <TextInput
                             style={styles.rginput}
-                            placeholder={nome}
+                            placeholder={CPF}
                             >
                             </TextInput>
                         </View>
@@ -121,6 +134,7 @@ export default function InformacoesPessoais({ navigation }){
 
                     <Text style={styles.infostyle}>Especifique</Text>
                     <TextInput
+                    placeholder={Especifique}
                     style={styles.rginput}
                     >
                     </TextInput>
