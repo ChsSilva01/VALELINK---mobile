@@ -43,7 +43,7 @@ export default function InformacoesPessoais({ navigation }){
               setDeficiencia(res.data.resultado[3].Deficiencia);
               setEstado_Civil(res.data.resultado[4].Estado_Civil);
               setSexo(res.data.resultado[5].Sexo);
-              setSexo(res.data.resultado[6].Especifique);
+              setEspecifique(res.data.resultado[6].Especifique);
             }
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
