@@ -15,9 +15,9 @@ export default function InformacoesPessoais({ navigation }){
     const [nome,setNome] = useState("");
     const [CPF,setCPF] = useState("");
     const [data_nascimento,setData_nascimento] = useState("");
-    const [Deficiencia,setDeficiencia] = useState("");
-    const [Estado_Civil,setEstado_Civil] = useState("");
-    const [Sexo,setSexo] = useState("");
+    // const [Deficiencia,setDeficiencia] = useState("");
+    // const [Estado_Civil,setEstado_Civil] = useState("");
+    // const [Sexo,setSexo] = useState("");
     const [Especifique,setEspecifique] = useState("");
 
     const [selectedValue, setSelectedValue] = useState('option1');
@@ -37,13 +37,13 @@ export default function InformacoesPessoais({ navigation }){
             setPage(page + 1);
             if (res.data.resultado.length > 0) {
               // Armazene o nome do primeiro item da lista
-              setNome(res.data.resultado[0].nome);
-              setCPF(res.data.resultado[1].CPF);
+              setNome(res.data.resultado[1].nome);
+              setCPF(res.data.resultado[0].CPF);
               setData_nascimento(res.data.resultado[2].data_nascimento);
-              setDeficiencia(res.data.resultado[3].Deficiencia);
-              setEstado_Civil(res.data.resultado[4].Estado_Civil);
-              setSexo(res.data.resultado[5].Sexo);
-              setEspecifique(res.data.resultado[6].Especifique);
+            //   setDeficiencia(res.data.resultado[3].Deficiencia);
+            //   setEstado_Civil(res.data.resultado[4].Estado_Civil);
+            //   setSexo(res.data.resultado[5].Sexo);
+            //   setEspecifique(res.data.resultado[6].Especifique);
             }
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -70,6 +70,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View style={{left: 27}}>
                             <Text style={styles.infostyle}>RG</Text>
                             <TextInput
+                            placeholder='77777'
                             style={styles.rginput}
                             >
                             </TextInput>
@@ -134,7 +135,7 @@ export default function InformacoesPessoais({ navigation }){
 
                     <Text style={styles.infostyle}>Especifique</Text>
                     <TextInput
-                    placeholder={Especifique}
+                    placeholder="Sei la"
                     style={styles.rginput}
                     >
                     </TextInput>

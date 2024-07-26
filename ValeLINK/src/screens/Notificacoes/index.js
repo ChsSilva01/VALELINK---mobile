@@ -1,5 +1,5 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import bonitao from '../../../assets/bonitão.jpg'
+import foto from '../../../assets/foto_coringa.png'
 import { styles } from './styles'
 
 export default function Notificacoes(){
@@ -11,7 +11,7 @@ export default function Notificacoes(){
             </View>
             <View style={styles.NotificationArea}>
                 <View style={styles.circle}></View>
-                <Image source={bonitao} style={styles.companyimage}></Image>
+                <Image source={foto} style={styles.companyimage}></Image>
                 <View style={styles.informationofcompany}>
                     <View style={styles.companyandtime}>
                         <Text style={styles.company}>Fatec</Text>

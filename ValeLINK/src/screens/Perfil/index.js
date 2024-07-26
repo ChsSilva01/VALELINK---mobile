@@ -2,7 +2,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Ionicons} from '@expo/vector-icons';
-import  Bonitao  from '../../../assets/bonitão.jpg';
+import  Arthur  from '../../../assets/arthur.png';
 
 export default function Perfil({ navigation }){
     return(
@@ -18,12 +18,12 @@ export default function Perfil({ navigation }){
             </View>
             <View style={styles.areaprofile}>
                 <View style={styles.circleimage}>
-                    <Image source={Bonitao} style={styles.profileimage}></Image>
+                    <Image source={Arthur} style={styles.profileimage}></Image>
                 </View>
                 <View style={styles.Settingsprofile}>
                     <View style={styles.Settingsname}>
                         <Text style={styles.nameprofile}>Arthur Albino</Text>
-                        <Text style={styles.descriptionsprofile}>Text Product</Text>
+                        <Text style={styles.descriptionsprofile}>Designer</Text>
                     </View>
                     <View style={styles.Settingsfromperson}>  
                             <View style={styles.personalinformation}>
