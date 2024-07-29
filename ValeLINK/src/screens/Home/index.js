@@ -44,12 +44,16 @@ export default function Home({ navigation }) {
       
       <ScrollView style={styles.scrollfunctions}>
         {lista.map(item =>(
-          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, backgroundColor: '#d9d9', borderWidth: 1, left: 26}}>
-            <View style={{width: 345, height: 71, backgroundColor: '#d9d9'}}>
-              <Text>{item.nome_empresa}</Text>
+          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, borderWidth: 1, left: 26}}>
+            <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center'}}>
+              <Image source={icone} style={{width: 40,height: 40}}></Image>
+              <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
+              <Text style={{color: '#959595', fontSize: 12}}>{item.hora_do_post}</Text>
+              <TouchableOpacity style={styles.buttonC}><Text style={styles.textButton}>Seguir</Text></TouchableOpacity>
             </View>
-            <View style={{width: 345, height: 210, backgroundColor: '#d9d9d9'}}>
-
+            <View style={{width: 345, height: 210}}>
+              <Text>{item.comentario}</Text>
+              <Image source={vagas} style={{width: 323, height: 202}}></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row'}}>
             <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
