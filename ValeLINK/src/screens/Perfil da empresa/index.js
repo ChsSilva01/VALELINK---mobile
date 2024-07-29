@@ -1,13 +1,13 @@
 import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import { styles } from './styles';
 import {Ionicons} from '@expo/vector-icons';
-import icone from '../../../assets/foto_de_perfil_coca_cola.png';
+import icone from '../../../assets/foto_coringa.png';
 
 export default function Perfildaempresa({ navigation }){
     return(
         <ImageBackground
             style={styles.container}
-            source={require('../../../assets/papel_de_parede_coca_cola.png')}
+            // source={require('../../../assets/papel_de_parede_coca_cola.png')}
         >
             <View style={styles.back}>
                 <TouchableOpacity onPress = {() => navigation.navigate("Home")}><Ionicons name='arrow-back' size={25} style={styles.actionsprofile}></Ionicons></TouchableOpacity>

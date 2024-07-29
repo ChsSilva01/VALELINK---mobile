@@ -30,9 +30,9 @@ export default function Home({ navigation }) {
           if (res.data.resultado.length > 0) {
             // Armazene o nome do primeiro item da lista
             setImagem(res.data.resultado[0].imagem);
-            // setComentario(res.data.resultado[2].comentario);
-            // setData_do_post(res.data.resultado[3].data_do_post);
-            // setHora_do_post(res.data.resultado[4].hora_do_post);
+            setComentario(res.data.resultado[0].comentario);
+            setData_do_post(res.data.resultado[0].data_do_post);
+            setHora_do_post(res.data.resultado[0].hora_do_post);
           }
         } catch (error) {
           console.error('Erro ao buscar dados:', error);
@@ -43,21 +43,40 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       
       <ScrollView style={styles.scrollfunctions}>
-        <View style={styles.post}>
+        {lista.map(item =>(
+          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, backgroundColor: '#d9d9', borderWidth: 1, left: 26}}>
+            <View style={{width: 345, height: 71, backgroundColor: '#d9d9'}}>
+              <Text>{item.nome_empresa}</Text>
+            </View>
+            <View style={{width: 345, height: 210, backgroundColor: '#d9d9d9'}}>
+
+            </View>
+            <View style={{width: 345, height: 36, flexDirection: 'row'}}>
+            <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+                <TouchableOpacity><Ionicons name='chatbubble-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+                <TouchableOpacity><Ionicons name='share-social-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+                <TouchableOpacity style={styles.buttonC}>
+                    <Text style={styles.textButton}>Se Cadastrar!!!</Text>
+                </TouchableOpacity>
+            </View>
+          </View>
+          
+        ))}
+        {/* <View style={styles.post}>
           <View style={styles.profile}>
             <View style={styles.icon}>
               <Image source={icone} style={styles.imageIcon}></Image>
             </View>
             <View style={styles.nameUser}>
-              <TouchableOpacity onPress = {() => navigation.navigate("Perfildaempresa")}><Text style={styles.nameUsertext}>Coca-Cola</Text></TouchableOpacity>
+              <TouchableOpacity onPress = {() => navigation.navigate("Perfildaempresa")}><Text style={styles.nameUsertext}>Etec de Registro</Text></TouchableOpacity>
             </View>
           </View>
           <View style={styles.infopost}>
             <View style={styles.textpost}>
-              <Text style={styles.textposstyle}>{imagem}</Text>
+              <Text style={styles.textposstyle}>{comentario}</Text>
             </View>
             <View style={{alignItems: 'center'}}>
-              <Image source={vagas} style={styles.imagepost}></Image>
+              <Image source={require("../../../assets/post_etec.png")} style={styles.imagepost}></Image>
             </View>
             <View style={styles.actionspost}>
                 <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
@@ -68,7 +87,7 @@ export default function Home({ navigation }) {
                 </TouchableOpacity>
             </View>
           </View>
-        </View>
+        </View> */}
         
       </ScrollView>
     </View>

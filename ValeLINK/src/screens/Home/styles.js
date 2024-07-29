@@ -77,7 +77,7 @@ export const styles = StyleSheet.create({
       borderBottomWidth: 0.5
     },
     iconactionspost: {
-      padding: 10
+      padding: 5 
     },
 
     // Botões
