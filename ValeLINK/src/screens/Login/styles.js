@@ -5,33 +5,31 @@ import margins from "../../styles/margins";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#FCFFF9',
     },
     containergrid: {
         marginHorizontal: margins.marginH
     },
     cx_email: {
         width: 342,
-        height: 58,
+        height: 49,
         fontSize: 20,
-        borderBottomWidth: 1,
-        borderColor: '#d9d9d9'
+        borderRadius: 13,
+        backgroundColor: '#F5F5F5'
     },
     cx_senha: {
+        top: 31,
         width: 342,
-        height: 58,
+        height: 49,
         fontSize: 20,  
-        borderBottomWidth: 1,
-        borderColor: '#d9d9d9'
+        borderRadius: 13,
+        backgroundColor: '#F5F5F5'
+        
     },
     headerlogin: {
-        width: '100%', 
-        height: '10%', 
-        top: '7%',
         flexDirection: 'row',
         alignItems: 'center',
+        top: 35
         
     },
     logologin: {
@@ -49,9 +47,8 @@ export const styles = StyleSheet.create({
         height: 316.75, 
     },
     inputslogin: {
+        top: 138,
         display: 'flex', 
-        width: '100%', 
-        height: '50%', 
         justifyContent: 'space-evenly', 
         alignItems: 'center',
     },
@@ -62,9 +59,10 @@ export const styles = StyleSheet.create({
         right: '25%',
     },
     buttonlogin: {
-        width: 223, 
-        height: 45, 
-        backgroundColor: '#03BD60',
+        top: 90,
+        width: 342, 
+        height: 49, 
+        backgroundColor: '#01E581',
         borderRadius: 13,
         alignItems: 'center',
         justifyContent: 'center',
@@ -73,5 +71,33 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 22,
         fontWeight: 'bold'
+    },
+
+    margin: {
+        marginLeft: 24, 
+        marginTop: 28
+    }, 
+    texttitle: {
+        fontSize: 20, 
+        color: '#01E581',
+        fontFamily: fonts.title
+    },
+    texttitlelogin: {
+        fontSize: 30, 
+        color: '#01E581',
+        fontFamily: fonts.title
+    },
+    textwelcome: {
+        fontSize: 20, 
+        color: '#424242', 
+        width: 217,
+        textAlign: 'center',
+        fontFamily: fonts.text
+    },
+    textnohaveacount: {
+        top: 34, 
+        left: 70, 
+        color: '#01E581',
+        fontFamily: fonts.infostyle
     }
   });

@@ -13,6 +13,7 @@ export default function Home({ navigation }) {
   const [comentario,setComentario] = useState("");
   const [data_do_post,setData_do_post] = useState("");
   const [hora_do_post,setHora_do_post] = useState("");
+  const [seila, setSeila] = useState("arthur.png");
 
   const [lista,setLista] = useState([]);
 
@@ -39,6 +40,8 @@ export default function Home({ navigation }) {
         }
   }
 
+  let imagenicon = require("../../../assets/duasestrela.png");
+
   return (
     <View style={styles.container}>
       
@@ -46,7 +49,7 @@ export default function Home({ navigation }) {
         {lista.map(item =>(
           <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, borderWidth: 1, left: 26}}>
             <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center'}}>
-              <Image source={icone} style={{width: 40,height: 40}}></Image>
+              <Image source={{imagenicon}} style={{width: 40,height: 40}}></Image>
               <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
               <Text style={{color: '#959595', fontSize: 12}}>{item.hora_do_post}</Text>
               <TouchableOpacity style={styles.buttonC}><Text style={styles.textButton}>Seguir</Text></TouchableOpacity>
