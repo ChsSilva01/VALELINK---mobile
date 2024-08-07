@@ -27,7 +27,7 @@ export default function Login() {
   // if (!fontLoaded){
   //   return null;
   // }
-  const CPFplaceholder = <Ionicons name='house'><Text>|  CPF</Text></Ionicons>
+  // const CPFplaceholder = <Ionicons name='house'><Text>|  CPF</Text></Ionicons>
   async function login(){      
     const obj = { CPF, senha };
     const res = await api.post('apiVALELINK/login/login.php', obj);
@@ -123,7 +123,7 @@ export default function Login() {
           <View style={styles.inputslogin}>
           <TextInput style={styles.cx_email}
             Ionicons = 'lock-closed-outline'
-            placeholder="cpf"
+            placeholder="  | CPF"
             placeholderTextColor={'#696969'}
             value={CPF}
             onChangeText={ (CPF) => setCPF(CPF)}
@@ -137,7 +137,7 @@ export default function Login() {
             value={senha}
             onChangeText={ (senha) => setSenha(senha)}
           ></TextInput>
-          <Text style={styles.textnohaveacount}>Ainda não tenho uma conta </Text>
+          <TouchableOpacity onPress= {() => navigation.navigate("Inicial")}><Text style={styles.textnohaveacount}>Ainda não tenho uma conta </Text></TouchableOpacity>
           <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
           {/* onPress = {() => navigation.navigate('Home')} */}
 

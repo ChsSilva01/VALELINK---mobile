@@ -15,11 +15,14 @@ import MapScreen from '../screens/Mapa';
 import SearchScreen from '../screens/Pesquisar';
 import WaveScreen from '../screens/Vagas';
 import AddressScreen from '../screens/Endereco';
+import InitialScreen from '../screens/Inicial';
+ 
 
 const Stack = createStackNavigator();
 
 const AuthStack = () => (
-  <Stack.Navigator screenOptions={{headerShown: false}}>
+  <Stack.Navigator initialRouteName='Inicial' screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Inicial" component={InitialScreen} />
     <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Home" component={DrawerRoutes} />
     <Stack.Screen name="HomeScreen" component={HomeScreen} />
