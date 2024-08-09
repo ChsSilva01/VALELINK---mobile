@@ -12,9 +12,11 @@ export default function Inicial({ navigation }){
                     <Text style={styles.texttitle}>VALELINK</Text>
                 </View>
                 <Image source={ImagemInicial} style={styles.ImagemInicial}></Image>
-                <Text>Seu emprego ideal está esperando por você!</Text>
-                <Text>Você deve realizar o cadastro utilizando seu computador</Text>
-                <TouchableOpacity onPress = {() => navigation.navigate("Login")} style={styles.button}><Text>Login</Text></TouchableOpacity>
+                <View style={styles.viewtextinfo}>
+                    <Text style={styles.textinfo}>Seu emprego ideal está esperando por você!</Text>
+                    <Text style={styles.textinfosecond}>Você deve realizar o cadastro utilizando seu computador</Text>
+                    <TouchableOpacity onPress = {() => navigation.navigate("Login")} style={styles.button}><Text style={styles.textbutton}>Login</Text></TouchableOpacity>
+                </View>
             </View>
         </View>
     )

@@ -34,7 +34,8 @@ export default function Login() {
 
     if(res.data.result === 'Dados Incorretos!'){
       Alert.alert('Ops!', 'Dados Incorretos!');
-    }else{
+    }
+    else{
       await AsyncStorage.setItem('@user', JSON.stringify(res.data.result[0].cod_usuario));
       await AsyncStorage.setItem('@senha', JSON.stringify(res.data.result[0].senha));
       
