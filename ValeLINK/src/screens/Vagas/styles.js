@@ -9,6 +9,66 @@ export const styles = StyleSheet.create({
     },
     header: {
         width: 390,
-        height: 90
+        height: 90,
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderBottomWidth: 0.5
+    },
+    logoimage: {
+        width: 46,
+        height: 37,
+        resizeMode: 'stretch'
+    },
+    searchview: {
+        width: 348,
+        height: 122,
+        left: 22,
+        top: 17,
+        elevation: 2,
+        backgroundColor: '#ffff',
+        borderRadius: 15,
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
+    },
+    course: {
+        width: 307,
+        height: 44,
+        backgroundColor: '#F5F5F5',
+        borderWidth: 1,
+        borderRadius: 13
+    },
+    pickerContainer: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 8,
+        paddingHorizontal: 8,
+        overflow: 'hidden',
+        width: 125,
+        height: 29,
+        marginTop: 30
+    },
+    pickertypeofwork: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#fff',
+        justifyContent: 'center'
+    },
+    pickeritem: {
+        fontSize: 12,
+        height: 44,
+        borderRadius: 5
+    },
+    button: {
+        width: 342,
+        height: 49,
+        backgroundColor: '#01E581',
+        borderRadius: 7,
+        left: 25,
+        top: 400,
+        elevation: 2
+    },
+    textbutton: {
+        color: '#fff',
+        fontSize: 20
     }
 })
