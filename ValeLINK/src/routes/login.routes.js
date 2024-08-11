@@ -16,6 +16,8 @@ import SearchScreen from '../screens/Pesquisar';
 import WaveScreen from '../screens/Vagas';
 import AddressScreen from '../screens/Endereco';
 import InitialScreen from '../screens/Inicial';
+import VagueSearchesScreen from '../screens/Buscas_Vagas';
+import VacancyAnalysisScreen from '../screens/Analise_de_vaga';
  
 
 const Stack = createStackNavigator();
@@ -38,6 +40,8 @@ const AuthStack = () => (
     <Stack.Screen name="Pesquisar" component={SearchScreen} />
     <Stack.Screen name="Vagas" component={WaveScreen} />
     <Stack.Screen name="Endereco" component={AddressScreen} />
+    <Stack.Screen name="BuscasVagas" component={VagueSearchesScreen} />
+    <Stack.Screen name="AnaliseDeVagas" component={VacancyAnalysisScreen} />
   </Stack.Navigator>
 );
 

@@ -139,8 +139,8 @@ export default function Login() {
             onChangeText={ (senha) => setSenha(senha)}
           ></TextInput>
           <TouchableOpacity onPress= {() => navigation.navigate("Inicial")}><Text style={styles.textnohaveacount}>Ainda não tenho uma conta </Text></TouchableOpacity>
-          <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
-          {/* onPress = {() => navigation.navigate('Home')} */}
+          <TouchableOpacity style={styles.buttonlogin} onPress = {() => navigation.navigate('Home')}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
+          {/*  onPress={login}*/}
 
         </View>
         <Svg

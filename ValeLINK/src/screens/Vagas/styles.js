@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
 
 export const styles = StyleSheet.create({
     container:{
@@ -65,10 +66,38 @@ export const styles = StyleSheet.create({
         borderRadius: 7,
         left: 25,
         top: 400,
-        elevation: 2
+        elevation: 2,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     textbutton: {
         color: '#fff',
         fontSize: 20
+    },
+    vacancies: {
+        width: 390,
+        height: 70,
+        backgroundColor: '#ffff',
+        top: 17,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    imagecompany: {
+        width: 58,
+        height: 58,
+    },
+    line: {
+        width: 2,
+        height: 38,
+        backgroundColor: '#01E581',
+    },
+    texttitlevacancie: {
+        fontSize: 14,
+        fontFamily: fonts.title
+    },
+    textnamecompany: {
+        fontSize: 14,
+        fontFamily: fonts.text,
+        color: '#444444'
     }
 })
