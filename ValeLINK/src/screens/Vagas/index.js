@@ -3,7 +3,9 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import logo from '../../../assets/logo.png';
 import { Picker } from '@react-native-picker/picker';
-import company from '../../../assets/companyexemple.png'
+import company from '../../../assets/companyexemple.png';
+import fonts from '../../styles/fonts';
+
 
 export default function Vagas({ navigation }){
     const [selectedTypeOfWork, setSelectedTypeOfWork] = useState("");
@@ -11,10 +13,11 @@ export default function Vagas({ navigation }){
     return(
         <View style={styles.container}>
             <View style={styles.margin}>
-                <View style={styles.header}>
-                    <Image source={logo} style={styles.logoimage}></Image>
-                    <Text style={{fontSize: 24}}>VAGAS</Text>     
-                </View>
+            <View style={styles.header}>
+                <Image source={logo} style={styles.logoimage}></Image>
+                <Text style={{fontSize: 24, right: 15, bottom: 0,fontFamily: fonts.title}}>Vagas</Text>
+                <View></View>     
+            </View>
                 <View style={styles.searchview}>
                     <TextInput 
                         style={styles.course}

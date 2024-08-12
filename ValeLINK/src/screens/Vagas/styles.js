@@ -11,14 +11,16 @@ export const styles = StyleSheet.create({
     header: {
         width: 390,
         height: 90,
-        alignItems: 'center',
+        justifyContent: 'space-around',
+        alignItems: 'flex-end',
         flexDirection: 'row',
-        borderBottomWidth: 0.5
+        borderBottomWidth: 0.5,
     },
     logoimage: {
-        width: 46,
-        height: 37,
-        resizeMode: 'stretch'
+        width: 50,
+        height: 30,
+        resizeMode: 'stretch',
+        bottom: 5
     },
     searchview: {
         width: 348,
@@ -65,14 +67,16 @@ export const styles = StyleSheet.create({
         backgroundColor: '#01E581',
         borderRadius: 7,
         left: 25,
-        top: 400,
+        top: 350,
         elevation: 2,
         justifyContent: 'center',
         alignItems: 'center'
+        
     },
     textbutton: {
         color: '#fff',
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: fonts.title
     },
     vacancies: {
         width: 390,
