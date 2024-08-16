@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         flex: 1,
       },
       map: {
-          height: '70%'
+          height: '30%'
       },
       search: {
           height: '30%'
@@ -26,4 +26,26 @@ export const styles = StyleSheet.create({
         left: 125,
         fontFamily: fonts.title
     },
+    map:{
+        height: '70%',
+        
+    },
+    search:{
+        height: '30%'
+    },
+    distancia:{
+       marginTop: -40
+    },
+    marcador: {
+        width: 90,
+        height: 70,
+        flexDirection: 'column',
+        borderRadius: 8,
+        alignItems: 'center'
+    },
+    marcadorImage: {
+        width: 70,
+        height: 70,
+        resizeMode: 'cover'
+    }
 })

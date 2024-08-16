@@ -13,7 +13,7 @@ export default function Home({ navigation }) {
   const [comentario,setComentario] = useState("");
   const [data_do_post,setData_do_post] = useState("");
   const [hora_do_post,setHora_do_post] = useState("");
-  const [seila, setSeila] = useState("arthur.png");
+  const [cod_post, setCod_post] = useState("arthur.png");
 
   const [lista,setLista] = useState([]);
 
@@ -31,6 +31,7 @@ export default function Home({ navigation }) {
           if (res.data.resultado.length > 0) {
             // Armazene o nome do primeiro item da lista
             setImagem(res.data.resultado[0].imagem);
+            setCod_post(res.data.resultado[0].cod_post);
             setComentario(res.data.resultado[0].comentario);
             setData_do_post(res.data.resultado[0].data_do_post);
             setHora_do_post(res.data.resultado[0].hora_do_post);
@@ -47,11 +48,17 @@ export default function Home({ navigation }) {
       
       <ScrollView style={styles.scrollfunctions}>
         {lista.map(item =>(
-          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, borderWidth: 1, left: 26}}>
-            <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center'}}>
-              <Image source={{imagenicon}} style={{width: 40,height: 40}}></Image>
-              <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
-              <Text style={{color: '#959595', fontSize: 12}}>{item.hora_do_post}</Text>
+          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, left: 26, elevation: 2, borderRadius: 10}}>
+            <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  key={item.cod_post} 
+                  source={icone}
+                  style={{width: 40,height: 40}}
+                ></Image>
+                <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
+                <Text style={{color: '#959595', fontSize: 12}}>{item.hora_do_post}</Text>
+              </View>
               <TouchableOpacity style={styles.buttonC}><Text style={styles.textButton}>Seguir</Text></TouchableOpacity>
             </View>
             <View style={{width: 345, height: 210}}>
