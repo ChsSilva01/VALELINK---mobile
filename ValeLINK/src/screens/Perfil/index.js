@@ -1,10 +1,38 @@
+import React, { useEffect, useState } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Ionicons} from '@expo/vector-icons';
 import  Arthur  from '../../../assets/arthur.png';
+import api from '../../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Perfil({ navigation }){
+    const[foto_usuario, setImage] = useState(null);
+    const [nome_usuario, setNome] = useState("");
+    const [isLoading, setIsLoading] = useState(true); 
+    const [refreshing, setRefreshing] = useState(false); 
+
+    async function listarDadosid() {
+        try {
+            const user = await AsyncStorage.getItem('@user');
+            const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);
+            setNome(res.data.nome_usuario);
+            setImage(res.data.foto_usuario);
+    
+        } catch (error) {
+            console.log("Erro ao Listar " + error);
+        } finally {
+            setIsLoading(false);
+            setRefreshing(false);
+    
+        }
+      }
+      useEffect(() => {
+        listarDadosid();
+      }, []); 
+
     return(
         <LinearGradient
             colors={['#01E581', '#00C16C', '#00755C']}
@@ -18,11 +46,11 @@ export default function Perfil({ navigation }){
             </View>
             <View style={styles.areaprofile}>
                 <View style={styles.circleimage}>
-                    <Image source={Arthur} style={styles.profileimage}></Image>
+                    <Image source={{uri: foto_usuario}} style={styles.profileimage}></Image>
                 </View>
                 <View style={styles.Settingsprofile}>
                     <View style={styles.Settingsname}>
-                        <Text style={styles.nameprofile}>Arthur Albino</Text>
+                        <Text style={styles.nameprofile}>{nome_usuario}</Text>
                         <Text style={styles.descriptionsprofile}>Designer</Text>
                     </View>
                     <View style={styles.Settingsfromperson}>  

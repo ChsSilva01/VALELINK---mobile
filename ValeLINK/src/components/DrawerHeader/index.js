@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -10,8 +10,14 @@ import PictureProfile from '../../../assets/bonitão.jpg';
 
 import logodrawer from '../../../assets/logo_drawer.png';
 
+import api from '../../services/api';
+
 const CustomDrawer= FC = () => {
     const navigation=  any= useNavigation();
+    const [nome_usuario, setNome] = useState("");
+    const [isLoading, setIsLoading] = useState(true); 
+    const [refreshing, setRefreshing] = useState(false); 
+
 
     async function logout() {
         Alert.alert('Sair', `Você tem certeza que quer sair?`, [
@@ -33,13 +39,31 @@ const CustomDrawer= FC = () => {
             }
         ])
     }
+    async function listarDadosid() {
+ 
+        try {
+            const user = await AsyncStorage.getItem('@user');
+            const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);
+            setNome(res.data.nome_usuario);
+    
+        } catch (error) {
+            console.log("Erro ao Listar " + error);
+        } finally {
+            setIsLoading(false);
+            setRefreshing(false);
+    
+        }
+      }
+      useEffect(() => {
+        listarDadosid();
+      }, []); 
 
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <View style={styles.HeaderDrawer}>
                 <View style={styles.logo}><Image source={logodrawer} size={57}></Image></View>      
                 <View style={styles.boxpicture}><Image source={PictureProfile} style={styles.pictureprofile}></Image></View>
-                <Text style={styles.nameprofile}>Carlos</Text>
+                <Text style={styles.nameprofile}>{nome_usuario}</Text>
             </View>
 
             <View style={styles.separate}></View>

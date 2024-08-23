@@ -10,6 +10,7 @@ import fonts from '../../styles/fonts';
 export default function Vagas({ navigation }){
     const [selectedTypeOfWork, setSelectedTypeOfWork] = useState("");
 
+    const handleValueChange=(itemValue, itemIndex) =>setPokemon(itemValue)
     return(
         <View style={styles.container}>
             <View style={styles.margin}>
@@ -21,44 +22,23 @@ export default function Vagas({ navigation }){
                 <View style={styles.searchview}>
                     <TextInput 
                         style={styles.course}
-                        placeholder='Vaga'
+                        placeholder=' Vaga'
                     ></TextInput>
                     <TextInput 
                         style={styles.course}
-                        placeholder='Cidade'
+                        placeholder=' Cidade'
                     ></TextInput>
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            selectedTypeOfWork={selectedTypeOfWork}
-                            onValueChange={(itemValue, itemIndex) => setSelectedTypeOfWork(itemValue)}
-                            style={styles.pickertypeofwork}
-                            itemStyle={styles.pickeritem}
-                        >
-                            <Picker.Item label='Carlos' value='Carlos'/>
-                        </Picker>
-                    </View>
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            selectedTypeOfWork={selectedTypeOfWork}
-                            onValueChange={(itemValue, itemIndex) => setSelectedTypeOfWork(itemValue)}
-                            style={styles.pickertypeofwork}
-                            itemStyle={styles.pickeritem}
-                        >
-                            <Picker.Item label='Carlos' value='Carlos'/>
-                        </Picker>
-                    </View>
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            selectedTypeOfWork={selectedTypeOfWork}
-                            onValueChange={(itemValue, itemIndex) => setSelectedTypeOfWork(itemValue)}
-                            style={styles.pickertypeofwork}
-                            itemStyle={styles.pickeritem}
-                        >
-                            <Picker.Item label='Carlos' value='Carlos'/>
-                        </Picker>
-                    </View>
+                <Picker
+                    style={styles.pickerStyles}
+                    selectedValue={selectedTypeOfWork}
+                    onValueChange={handleValueChange}
+                >
+                    <Picker.Item label="Pikachu" value="pikachu" />
+                    <Picker.Item label="Charmander" value="charmander" />
+                    <Picker.Item label="Squirtle" value="Squirtle" />
+                </Picker>
                 </View>
                 <TouchableOpacity onPress = {() => navigation.navigate('AnaliseDeVagas')}>
                     <View style={styles.vacancies}>

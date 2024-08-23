@@ -38,28 +38,14 @@ export const styles = StyleSheet.create({
         height: 44,
         backgroundColor: '#F5F5F5',
         borderWidth: 1,
-        borderRadius: 13
+        borderRadius: 13,
+        fontSize: 18
     },
-    pickerContainer: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 8,
-        paddingHorizontal: 8,
-        overflow: 'hidden',
-        width: 125,
-        height: 29,
-        marginTop: 30
-    },
-    pickertypeofwork: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#fff',
-        justifyContent: 'center'
-    },
-    pickeritem: {
-        fontSize: 12,
-        height: 44,
-        borderRadius: 5
+    pickerStyles:{
+        width:'25%',
+        backgroundColor:'gray',
+        color:'white',  
+        borderRadius: 15
     },
     button: {
         width: 342,
@@ -82,7 +68,7 @@ export const styles = StyleSheet.create({
         width: 390,
         height: 70,
         backgroundColor: '#ffff',
-        top: 17,
+        top: 150,
         flexDirection: 'row',
         alignItems: 'center'
     },

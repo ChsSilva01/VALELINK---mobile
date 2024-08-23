@@ -9,7 +9,7 @@ import vagas from '../../../assets/vagas.png'
 import api from '../../services/api';
 
 export default function Home({ navigation }) {
-  const [imagem,setImagem] = useState("");
+  const [foto_empresa,setImagem] = useState(null);
   const [comentario,setComentario] = useState("");
   const [data_do_post,setData_do_post] = useState("");
   const [hora_do_post,setHora_do_post] = useState("");
@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
           setPage(page + 1);
           if (res.data.resultado.length > 0) {
             // Armazene o nome do primeiro item da lista
-            setImagem(res.data.resultado[0].imagem);
+            setImagem(res.data.resultado[0].foto_empresa);
             setCod_post(res.data.resultado[0].cod_post);
             setComentario(res.data.resultado[0].comentario);
             setData_do_post(res.data.resultado[0].data_do_post);
@@ -63,7 +63,7 @@ export default function Home({ navigation }) {
             </View>
             <View style={{width: 345, height: 210}}>
               <Text>{item.comentario}</Text>
-              <Image source={vagas} style={{width: 323, height: 202}}></Image>
+              <Image source={{uri: item.foto_empresa}} style={{width: 323, height: 202}}></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row'}}>
             <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
