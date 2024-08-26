@@ -41,7 +41,7 @@ export default function Home({ navigation }) {
         }
   }
 
-  let imagenicon = require("../../../assets/duasestrela.png");
+  let imagemdopost = foto_empresa;
 
   return (
     <View style={styles.container}>
@@ -63,7 +63,7 @@ export default function Home({ navigation }) {
             </View>
             <View style={{width: 345, height: 210}}>
               <Text>{item.comentario}</Text>
-              <Image source={{uri: item.foto_empresa}} style={{width: 323, height: 202}}></Image>
+              <Image source={{uri: imagemdopost}} ></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row'}}>
             <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>

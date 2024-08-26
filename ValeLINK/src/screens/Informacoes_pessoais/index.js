@@ -8,13 +8,15 @@ import { Picker } from "@react-native-picker/picker";
 import { RadioButton } from 'react-native-paper';
 
 import api from '../../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function InformacoesPessoais({ navigation }){
     const [selectedDeficiency, setSelectedDeficiency] = useState("sim");
     const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("java");    
-    const [nome,setNome] = useState("");
+    const [nome_usuario,setNome_usuario] = useState("");
     const [CPF,setCPF] = useState("");
-    const [data_nascimento,setData_nascimento] = useState("");
+    const [RG,setRG] = useState("");
+    const [data_de_nascimento,setData_de_nascimento] = useState("");
     // const [Deficiencia,setDeficiencia] = useState("");
     // const [Estado_Civil,setEstado_Civil] = useState("");
     // const [Sexo,setSexo] = useState("");
@@ -22,9 +24,7 @@ export default function InformacoesPessoais({ navigation }){
 
     const [selectedValue, setSelectedValue] = useState('option1');
 
-    const [carlos,setCarlos] = useState('Banana');
-    const [lista,setLista] = useState([]);
-    const [page, setPage] = useState(1);
+    
 
     useEffect(() => {
         listarDados();
@@ -32,19 +32,13 @@ export default function InformacoesPessoais({ navigation }){
 
     async function listarDados(){
         try {
-            const res = await api.get(`apiVALELINK/usuarios/listar.php?pagina=${page}&limite=10`);
-            setLista(res.data.resultado);
-            setPage(page + 1);
-            if (res.data.resultado.length > 0) {
-              // Armazene o nome do primeiro item da lista
-              setNome(res.data.resultado[1].nome);
-              setCPF(res.data.resultado[0].CPF);
-              setData_nascimento(res.data.resultado[2].data_nascimento);
-            //   setDeficiencia(res.data.resultado[3].Deficiencia);
-            //   setEstado_Civil(res.data.resultado[4].Estado_Civil);
-            //   setSexo(res.data.resultado[5].Sexo);
-            //   setEspecifique(res.data.resultado[6].Especifique);
-            }
+            const user = await AsyncStorage.getItem('@user');
+            const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);
+            setNome_usuario(res.data.nome_usuario);
+            setCPF(String(res.data.CPF));
+            setRG(String(res.data.RG));
+            setData_de_nascimento(String(res.data.data_de_nascimento));
+
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
           }
@@ -61,7 +55,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View>
                             <Text style={styles.infostyle}>Nome Completo</Text>
                             <TextInput 
-                            placeholder={nome}
+                            placeholder={nome_usuario}
                             style={styles.nameinput}
                             >
                             </TextInput>
@@ -70,7 +64,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View style={{left: 27}}>
                             <Text style={styles.infostyle}>RG</Text>
                             <TextInput
-                            placeholder='77777'
+                            placeholder={RG}
                             style={styles.rginput}
                             >
                             </TextInput>
@@ -81,7 +75,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View>
                             <Text style={styles.infostyle}>Data de nascimento</Text>
                             <TextInput
-                            placeholder={data_nascimento}
+                            placeholder={data_de_nascimento}
                             style={styles.dateinput}
                             >
                             </TextInput>
