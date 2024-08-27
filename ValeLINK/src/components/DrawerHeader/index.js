@@ -40,7 +40,6 @@ const CustomDrawer= FC = () => {
         ])
     }
     async function listarDadosid() {
- 
         try {
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);

@@ -7,6 +7,7 @@ import icone from '../../../assets/coca-cola-logo.png';
 import vagas from '../../../assets/vagas.png'
 
 import api from '../../services/api';
+import url from '../../services/url.js';
 
 export default function Home({ navigation }) {
   const [foto_empresa,setImagem] = useState(null);
@@ -28,14 +29,6 @@ export default function Home({ navigation }) {
           const res = await api.get(`apiVALELINK/post/listar.php?pagina=${page}&limite=10`);
           setLista(res.data.resultado);
           setPage(page + 1);
-          if (res.data.resultado.length > 0) {
-            // Armazene o nome do primeiro item da lista
-            setImagem(res.data.resultado[0].foto_empresa);
-            setCod_post(res.data.resultado[0].cod_post);
-            setComentario(res.data.resultado[0].comentario);
-            setData_do_post(res.data.resultado[0].data_do_post);
-            setHora_do_post(res.data.resultado[0].hora_do_post);
-          }
         } catch (error) {
           console.error('Erro ao buscar dados:', error);
         }
@@ -59,16 +52,16 @@ export default function Home({ navigation }) {
                 <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 <Text style={{color: '#959595', fontSize: 12}}>{item.hora_do_post}</Text>
               </View>
-              <TouchableOpacity style={styles.buttonC}><Text style={styles.textButton}>Seguir</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
             </View>
             <View style={{width: 345, height: 210}}>
               <Text>{item.comentario}</Text>
-              <Image source={{uri: imagemdopost}} ></Image>
+              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.imagem}`}} style={{width: 323, height: 202}}></Image>
             </View>
-            <View style={{width: 345, height: 36, flexDirection: 'row'}}>
-            <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity><Ionicons name='chatbubble-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity><Ionicons name='share-social-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+            <View style={{width: 345, height: 36, flexDirection: 'row', top: 5}}>
+            <TouchableOpacity><Ionicons name='heart-outline' size={28} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+                <TouchableOpacity><Ionicons name='chatbubble-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
+                <TouchableOpacity><Ionicons name='share-social-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity style={styles.buttonC}>
                     <Text style={styles.textButton}>Se Cadastrar!!!</Text>
                 </TouchableOpacity>

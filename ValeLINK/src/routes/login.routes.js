@@ -18,6 +18,7 @@ import AddressScreen from '../screens/Endereco';
 import InitialScreen from '../screens/Inicial';
 import VagueSearchesScreen from '../screens/Buscas_Vagas';
 import VacancyAnalysisScreen from '../screens/Analise_de_vaga';
+import enterprisemapScreen from '../screens/Mapa_Empresa';
  
 
 const Stack = createStackNavigator();
@@ -42,6 +43,7 @@ const AuthStack = () => (
     <Stack.Screen name="Endereco" component={AddressScreen} />
     <Stack.Screen name="BuscasVagas" component={VagueSearchesScreen} />
     <Stack.Screen name="AnaliseDeVagas" component={VacancyAnalysisScreen} />
+    <Stack.Screen name="MapaEmpresa" component={enterprisemapScreen} />
   </Stack.Navigator>
 );
 
