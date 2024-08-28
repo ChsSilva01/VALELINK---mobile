@@ -24,16 +24,10 @@ export default function InformacoesPessoais({ navigation }){
 
     const [selectedValue, setSelectedValue] = useState('option1');
 
-    
-
-    useEffect(() => {
-        listarDados();
-    },[])
-
     async function listarDados(){
         try {
             const user = await AsyncStorage.getItem('@user');
-            const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);
+            const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setNome_usuario(res.data.nome_usuario);
             setCPF(String(res.data.CPF));
             setRG(String(res.data.RG));
@@ -43,7 +37,9 @@ export default function InformacoesPessoais({ navigation }){
             console.error('Erro ao buscar dados:', error);
           }
     }
-
+    useEffect(() => {
+        listarDados();
+    },[])
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -163,7 +159,7 @@ export default function InformacoesPessoais({ navigation }){
                     </RadioButton.Group>
                     {/*  */}
             </View>
-            <TouchableOpacity style={styles.changedatabutton}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(nome_usuario)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }
