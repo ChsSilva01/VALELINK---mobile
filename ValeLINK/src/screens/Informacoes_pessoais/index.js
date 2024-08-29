@@ -21,6 +21,8 @@ export default function InformacoesPessoais({ navigation }){
     // const [Estado_Civil,setEstado_Civil] = useState("");
     // const [Sexo,setSexo] = useState("");
     const [Especifique,setEspecifique] = useState("");
+    const [isLoading, setIsLoading] = useState(true); 
+    const [refreshing, setRefreshing] = useState(false); 
 
     const [selectedValue, setSelectedValue] = useState('option1');
 
@@ -29,17 +31,21 @@ export default function InformacoesPessoais({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setNome_usuario(res.data.nome_usuario);
-            setCPF(String(res.data.CPF));
-            setRG(String(res.data.RG));
-            setData_de_nascimento(String(res.data.data_de_nascimento));
+            setCPF(res.data.CPF);
+            setRG(res.data.RG);
+            setData_de_nascimento(res.data.data_de_nascimento);
 
-          } catch (error) {
-            console.error('Erro ao buscar dados:', error);
-          }
+        } catch (error) {
+            console.log("Erro ao Listar " + error);
+        } finally {
+            setIsLoading(false);
+            setRefreshing(false);
+        }
     }
     useEffect(() => {
         listarDados();
     },[])
+
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -159,7 +165,7 @@ export default function InformacoesPessoais({ navigation }){
                     </RadioButton.Group>
                     {/*  */}
             </View>
-            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(nome_usuario)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(CPF)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }

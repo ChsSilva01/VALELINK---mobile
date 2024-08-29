@@ -31,17 +31,15 @@ export default function Seguranca({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setCidade(res.data.cidade);
-            // setNumero(String(res.data.numero));
-            // setRua(res.data.rua);
-            // setCEP(String(res.data.CEP));
-            // setTempo_de_residencia(String(res.data.tempo_de_residencia));
-            // setTipo_de_residencia(res.data.tipo_de_residencia);
-            // setPonto_de_referencia(res.data.ponto_de_referencia);
-          } catch (error) {
-            console.error('Erro ao buscar dados:', error);
-          }
-    }
+            
 
+        } catch (error) {
+            console.log("Erro ao Listar " + error);
+        } finally {
+            setIsLoading(false);
+            setRefreshing(false);
+        }
+    }
     useEffect(() => {
         listarDados();
     },[])
@@ -57,7 +55,7 @@ export default function Seguranca({ navigation }){
                             <Text style={styles.infostyle}>Cidade{cidade}</Text>
                             <TextInput 
                             style={styles.cityinput}
-                            // placeholder={cidade}
+                            placeholder={cidade}
                             >
                             </TextInput>
                         </View>
