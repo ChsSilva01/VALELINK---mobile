@@ -62,7 +62,6 @@ const TabRoutes = ({ navigation}) => {
     >
       {/* Cada tab direciona para a página que eu quiser' */}
       <Tab.Screen name= "Home" component={Home} options={{tabBarLabel: ''}}></Tab.Screen>
-      <Tab.Screen name= "Pesquisar" component={Pesquisar} options={{tabBarLabel: ''}}></Tab.Screen>
       <Tab.Screen name= "Empresas" component={Empresas} options={{tabBarLabel: ''}}></Tab.Screen>
       <Tab.Screen name= "Notificações" component={Notificacoes} options={{tabBarLabel: ''}}></Tab.Screen>
     </Tab.Navigator>

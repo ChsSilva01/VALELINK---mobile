@@ -15,9 +15,9 @@ export default function Seguranca({ navigation }){
     const [selectneighborhood, setNeighborhood] = useState("sim");
     
     const [cidade, setCidade] = useState("");
-    const [numero, setNumero] = useState(0);
+    const [numero, setNumero] = useState("");
     const [rua, setRua] = useState("");
-    const [CEP, setCEP] = useState(0);
+    const [CEP, setCEP] = useState("");
     const [tempo_de_residencia, setTempo_de_residencia] = useState("");
     const [tipo_de_residencia, setTipo_de_residencia] = useState("");
     const [ponto_de_referencia, setPonto_de_referencia] = useState("");
@@ -31,8 +31,12 @@ export default function Seguranca({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setCidade(res.data.cidade);
-            
-
+            setNumero(res.data.numero);
+            setCEP(res.data.CEP);
+            setRua(res.data.rua);
+            setTempo_de_residencia(res.data.tempo_de_residencia);
+            setTipo_de_residencia(res.data.tipo_de_residencia);
+            setPonto_de_referencia(res.data.ponto_de_referencia);
         } catch (error) {
             console.log("Erro ao Listar " + error);
         } finally {
@@ -52,7 +56,7 @@ export default function Seguranca({ navigation }){
             <View style={styles.input}>
                     <View style={{flexDirection: 'row'}}>
                         <View>
-                            <Text style={styles.infostyle}>Cidade{cidade}</Text>
+                            <Text style={styles.infostyle}>Cidade</Text>
                             <TextInput 
                             style={styles.cityinput}
                             placeholder={cidade}
@@ -64,7 +68,7 @@ export default function Seguranca({ navigation }){
                             <Text style={styles.infostyle}>Número</Text>
                             <TextInput 
                             style={styles.numberinput}
-                            // placeholder={numero}
+                            placeholder={numero}
                             >
                             </TextInput>
                             {/*  */}
@@ -72,10 +76,10 @@ export default function Seguranca({ navigation }){
                     </View>
                     <View style={{flexDirection: 'row'}}>
                         <View>
-                            <Text style={styles.infostyle}>Endereço</Text>
+                            <Text style={styles.infostyle}>Rua</Text>
                             <TextInput 
                             style={styles.addressinput}
-                            // placeholder={rua}
+                            placeholder={rua}
                             >
                             </TextInput>
                             {/*  */}
@@ -84,7 +88,7 @@ export default function Seguranca({ navigation }){
                             <Text style={styles.infostyle}>CEP</Text>
                             <TextInput 
                             style={styles.CEPinput}
-                            // placeholder={CEP}
+                            placeholder={CEP}
                             >
                             </TextInput>
                             {/*  */}
@@ -95,7 +99,7 @@ export default function Seguranca({ navigation }){
                             <Text style={styles.infostyle}>Tempo de Resid.</Text>
                             <TextInput 
                             style={styles.residencetimeinput}
-                            // placeholder={tempo_de_residencia}
+                            placeholder={tempo_de_residencia}
                             >
                             </TextInput>
                             {/*  */}
@@ -104,7 +108,7 @@ export default function Seguranca({ navigation }){
                             <Text style={styles.infostyle}>Tipo de Resid.</Text>
                             <TextInput 
                             style={styles.typeofresidenceinput}
-                            // placeholder={tipo_de_residencia}
+                            placeholder={tipo_de_residencia}
                             >
                             </TextInput>
                             {/*  */}
@@ -113,7 +117,7 @@ export default function Seguranca({ navigation }){
                     <Text style={styles.infostyle}>Ponto de referência</Text>
                     <TextInput 
                     style={styles.referencepointinput}
-                    // placeholder={ponto_de_referencia}
+                    placeholder={ponto_de_referencia}
                     >
                     </TextInput>
                     {/*  */}
@@ -153,7 +157,7 @@ export default function Seguranca({ navigation }){
                     </View>
                     {/*  */}
             </View>
-            <TouchableOpacity style={styles.changedatabutton}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(ponto_de_referencia)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }
