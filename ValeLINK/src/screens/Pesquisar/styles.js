@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     searchbar: {
-      top: 50
+      width: 300,
+      height: 50,
+      borderRadius: 10,
     }
 });

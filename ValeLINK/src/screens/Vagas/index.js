@@ -8,9 +8,6 @@ import fonts from '../../styles/fonts';
 
 
 export default function Vagas({ navigation }){
-    const [selectedTypeOfWork, setSelectedTypeOfWork] = useState("");
-
-    const handleValueChange=(itemValue, itemIndex) =>setPokemon(itemValue)
     return(
         <View style={styles.container}>
             <View style={styles.margin}>
@@ -29,18 +26,12 @@ export default function Vagas({ navigation }){
                         placeholder=' Cidade'
                     ></TextInput>
                 </View>
-                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-                <Picker
-                    style={styles.pickerStyles}
-                    selectedValue={selectedTypeOfWork}
-                    onValueChange={handleValueChange}
-                >
-                    <Picker.Item label="Pikachu" value="pikachu" />
-                    <Picker.Item label="Charmander" value="charmander" />
-                    <Picker.Item label="Squirtle" value="Squirtle" />
-                </Picker>
+                <View style={{flexDirection: 'row',justifyContent: 'center', top: 40}}>
+                    <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Trabalho</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Senioridade</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Cidade</Text></TouchableOpacity>
                 </View>
-                <TouchableOpacity onPress = {() => navigation.navigate('AnaliseDeVagas')}>
+                <TouchableOpacity onPress = {() => navigation.navigate('AnaliseDeVagas')} style={{top: 60}}>
                     <View style={styles.vacancies}>
                         <Image source={company} style={styles.imagecompany}></Image>
                         <View style={styles.line}></View>

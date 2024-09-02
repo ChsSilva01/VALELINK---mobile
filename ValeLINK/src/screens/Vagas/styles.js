@@ -42,10 +42,9 @@ export const styles = StyleSheet.create({
         fontSize: 18
     },
     pickerStyles:{
-        width:'25%',
-        backgroundColor:'gray',
-        color:'white',  
-        borderRadius: 15
+        width:'100%',
+        height: '100%',   
+        overflow: 'hidden'
     },
     button: {
         width: 342,
@@ -68,7 +67,6 @@ export const styles = StyleSheet.create({
         width: 390,
         height: 70,
         backgroundColor: '#ffff',
-        top: 150,
         flexDirection: 'row',
         alignItems: 'center'
     },
@@ -89,5 +87,19 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: fonts.text,
         color: '#444444'
+    },
+    filters: {
+        width: 92, 
+        height: 29, 
+        backgroundColor: '#ffff',
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        borderRadius: 5, 
+        elevation: 2,
+    },
+    filterstext: {
+        fontWeight: 'bold',
+        color: '#01E581', 
+        fontSize: 14,
     }
 })

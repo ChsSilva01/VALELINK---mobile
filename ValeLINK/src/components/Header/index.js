@@ -9,7 +9,6 @@ import fonts from '../../styles/fonts';
 
 const DadosProps = {
     title: string="",  
-    navigation: any
 }
 
 export const Header = ({ title, navigation }= DadosProps) => {
