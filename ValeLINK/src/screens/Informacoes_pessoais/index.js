@@ -31,8 +31,8 @@ export default function InformacoesPessoais({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setNome_usuario(res.data.nome_usuario);
-            setCPF(res.data.CPF);
-            setRG(res.data.RG);
+            setRG(res.data.RG.toString());
+            setCPF(res.data.CPF.toString());
             setData_de_nascimento(res.data.data_de_nascimento);
 
         } catch (error) {
@@ -66,8 +66,8 @@ export default function InformacoesPessoais({ navigation }){
                         <View style={{left: 27}}>
                             <Text style={styles.infostyle}>RG</Text>
                             <TextInput
-                            placeholder={RG}
                             style={styles.rginput}
+                            placeholder={RG}
                             >
                             </TextInput>
                         </View>
@@ -165,7 +165,7 @@ export default function InformacoesPessoais({ navigation }){
                     </RadioButton.Group>
                     {/*  */}
             </View>
-            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(CPF)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.changedatabutton} onPress={() => console.log(RG)}><Text style={styles.textbutton}>Alterar dados</Text></TouchableOpacity>
         </View>
     )
 }

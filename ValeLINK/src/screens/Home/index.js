@@ -69,33 +69,6 @@ export default function Home({ navigation }) {
           </View>
           
         ))}
-        {/* <View style={styles.post}>
-          <View style={styles.profile}>
-            <View style={styles.icon}>
-              <Image source={icone} style={styles.imageIcon}></Image>
-            </View>
-            <View style={styles.nameUser}>
-              <TouchableOpacity onPress = {() => navigation.navigate("Perfildaempresa")}><Text style={styles.nameUsertext}>Etec de Registro</Text></TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.infopost}>
-            <View style={styles.textpost}>
-              <Text style={styles.textposstyle}>{comentario}</Text>
-            </View>
-            <View style={{alignItems: 'center'}}>
-              <Image source={require("../../../assets/post_etec.png")} style={styles.imagepost}></Image>
-            </View>
-            <View style={styles.actionspost}>
-                <TouchableOpacity><Ionicons name='heart-outline' size={30} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity><Ionicons name='chatbubble-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity><Ionicons name='share-social-outline' size={25} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity style={styles.buttonC}>
-                    <Text style={styles.textButton}>Se Cadastrar!!!</Text>
-                </TouchableOpacity>
-            </View>
-          </View>
-        </View> */}
-        
       </ScrollView>
     </View>
   );
