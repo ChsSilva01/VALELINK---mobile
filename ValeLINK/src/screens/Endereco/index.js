@@ -31,8 +31,8 @@ export default function Seguranca({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setCidade(res.data.cidade);
-            setNumero(res.data.numero);
-            setCEP(res.data.CEP);
+            setNumero(res.data.numero.toString());
+            setCEP(res.data.CEP.toString());
             setRua(res.data.rua);
             setTempo_de_residencia(res.data.tempo_de_residencia);
             setTipo_de_residencia(res.data.tipo_de_residencia);
