@@ -40,8 +40,8 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       
       <ScrollView style={styles.scrollfunctions}>
-        {lista.map(item =>(
-          <View key={item.cod_post} style={{marginTop: 26,width: 345, height: 317, left: 26, elevation: 2, borderRadius: 10}}>
+        {lista.map((item, index) =>(
+          <View key={`${item.cod_post}-${index}`} style={{marginTop: 26,width: 345, height: 317, left: 26, elevation: 2, borderRadius: 10}}>
             <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
               <View style={{flexDirection: 'row'}}>
                 <Image
@@ -54,9 +54,9 @@ export default function Home({ navigation }) {
               </View>
               <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
             </View>
-            <View style={{width: 345, height: 210}}>
-              <Text>{item.comentario}</Text>
-              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.imagem}`}} style={{width: 323, height: 202}}></Image>
+            <View style={{width: 345, height: 210, alignItems: 'center'}}>
+              <View style={{alignContent: 'flex-start'}}><Text>{item.comentario}</Text></View>
+              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.imagem}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row', top: 5}}>
             <TouchableOpacity><Ionicons name='heart-outline' size={28} style={styles.iconactionspost}></Ionicons></TouchableOpacity>

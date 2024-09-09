@@ -11,6 +11,7 @@ import url from '../../services/url';
 export default function Vagas({ navigation }){
     const [lista, setLista] = useState([]);
     const [page, setPage] = useState(1);
+    const [cod, setCod] = useState("");
 
     useEffect(() => {
         listarDados();
@@ -21,6 +22,7 @@ export default function Vagas({ navigation }){
             const res = await api.get(`apiVALELINK/vagas/listar.php?pagina=${page}&limite=10`);
             setLista(res.data.resultado);
             setPage(page + 1);
+            setCod(res.data.cod_vagas);
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
           }
@@ -49,7 +51,7 @@ export default function Vagas({ navigation }){
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Cidade</Text></TouchableOpacity>
                 </View>
                 {lista.map(item =>(
-                    <TouchableOpacity onPress = {() => navigation.navigate('AnaliseDeVagas')} style={{top: 60}}>
+                    <TouchableOpacity onPress = {() =>{ navigation.navigate('AnaliseDeVagas'); console.log("Carlos")}} style={{top: 60}}>
                     <View style={styles.vacancies}>
                         <Image source={{uri: `${url}/apiVALELINK/imagem/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
                         <View style={styles.line}></View>
@@ -60,7 +62,7 @@ export default function Vagas({ navigation }){
                     </View>
                 </TouchableOpacity>
                 ))}   
-                <TouchableOpacity style={styles.button} onPress = {() => navigation.navigate('BuscasVagas')}><Text style={styles.textbutton}>Buscar</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress = {() =>{ navigation.navigate('BuscasVagas'); console.log(cod)}}><Text style={styles.textbutton}>Buscar</Text></TouchableOpacity>
             </View>
         </View>
     )
