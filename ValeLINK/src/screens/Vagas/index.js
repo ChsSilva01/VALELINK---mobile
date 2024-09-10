@@ -7,6 +7,7 @@ import company from '../../../assets/companyexemple.png';
 import fonts from '../../styles/fonts';
 import api from '../../services/api';
 import url from '../../services/url';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Vagas({ navigation }){
     const [lista, setLista] = useState([]);
@@ -20,9 +21,11 @@ export default function Vagas({ navigation }){
     async function listarDados(){
         try {
             const res = await api.get(`apiVALELINK/vagas/listar.php?pagina=${page}&limite=10`);
+            await AsyncStorage.setItem('@cod_vagas', JSON.stringify(res.data.resultado[0].cod_vagas));
             setLista(res.data.resultado);
             setPage(page + 1);
-            setCod(res.data.cod_vagas);
+            
+
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
           }
@@ -51,7 +54,7 @@ export default function Vagas({ navigation }){
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Cidade</Text></TouchableOpacity>
                 </View>
                 {lista.map(item =>(
-                    <TouchableOpacity onPress = {() =>{ navigation.navigate('AnaliseDeVagas'); console.log("Carlos")}} style={{top: 60}}>
+                    <TouchableOpacity onPress = {() =>{ navigation.navigate('AnaliseDeVagas'); console.log(cod)}} style={{top: 60}}>
                     <View style={styles.vacancies}>
                         <Image source={{uri: `${url}/apiVALELINK/imagem/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
                         <View style={styles.line}></View>

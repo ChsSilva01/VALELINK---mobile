@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { styles } from './styles';
 import logo from '../../../assets/logo.png'
@@ -6,8 +7,26 @@ import contract_time_icon from '../../../assets/contract_time_icon.png';
 import time_of_work from '../../../assets/time_of_work.png';
 import wage from '../../../assets/wage.png';
 import fonts from '../../styles/fonts';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import api from '../../services/api';
 
 export default function AnaliseDeVagas(){
+    const [nome_empresa, setNomeEmpresa] = useState("");
+    
+    useEffect(() => {
+        listarDados();
+    },[])
+  
+    async function listarDados(){
+        try {
+            const cod_vagas = await AsyncStorage.getItem('@cod_vagas');
+            const res = await api.get(`apiVALELINK/vagas/listaempresa.php?cod_vagas=${cod_vagas}`);
+            setNomeEmpresa(res.data.nome_empresa);
+
+          } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+          }
+    }
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -19,7 +38,7 @@ export default function AnaliseDeVagas(){
                 <Image source={logocompany} style={styles.logocompany}></Image>
                 <View style={{top: 27, left: 23}}>
                     <Text>Desenvolvimento de Jogos</Text>
-                    <Text>Sherpel</Text>
+                    <Text>{nome_empresa}</Text>
                 </View>
                 <View style={{flexDirection: 'row', top: 27, width: 353, height: 43, justifyContent: 'space-around', alignItems: 'center'}}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -41,7 +60,7 @@ export default function AnaliseDeVagas(){
                         <Text style={{fontSize: 16, left: 5}}>R$1300</Text>
                     </View>
                 </View>
-                <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.button}><Text style={styles.textbutton} onPress={() => console.log(nome_empresa)}>Enviar curriculo</Text></TouchableOpacity>
                 <Text style={styles.descriptiontext}>Descrição da empresa</Text>
             </View>
         </View>
