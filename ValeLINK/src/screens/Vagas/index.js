@@ -24,8 +24,6 @@ export default function Vagas({ navigation }){
             await AsyncStorage.setItem('@cod_vagas', JSON.stringify(res.data.resultado[0].cod_vagas));
             setLista(res.data.resultado);
             setPage(page + 1);
-            
-
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
           }

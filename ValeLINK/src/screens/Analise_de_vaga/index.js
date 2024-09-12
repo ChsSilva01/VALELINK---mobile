@@ -20,7 +20,7 @@ export default function AnaliseDeVagas(){
     async function listarDados(){
         try {
             const cod_vagas = await AsyncStorage.getItem('@cod_vagas');
-            const res = await api.get(`apiVALELINK/vagas/listaempresa.php?cod_vagas=${cod_vagas}`);
+            const res = await api.get(`apiVALELINK/vagas/listarempresa.php?cod_vagas=${cod_vagas}`);
             setNomeEmpresa(res.data.nome_empresa);
 
           } catch (error) {
