@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 -- Copiando dados para a tabela apptcc.empresa: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
 INSERT INTO `empresa` (`quantidade_de_funcionarios`, `nome_empresa`, `CNPJ`, `CEP`, `cidade`, `rua`, `bairro`, `numero`, `data_de_criacao`, `area_de_atuacao`, `proprietario`, `foto_empresa`, `video_empresa`, `imagem_banner`, `cod_empresa`, `email_empresa`, `telefone_empresa`) VALUES
-	(250, 'Etec', 11111, 1190000, 'registro', 'jacatirão', 'villa tupy', 296, '2024-07-26', 'educação', 'Paula Souza', '0a77d8bb-45fe-4853-8776-690d5afba616.jpeg', 'etec.mp4', 'etec_banner.png', 1, 'etec@gmail.com', '190'),
+	(250, 'Etec', 11111, 1190000, 'registro', 'jacatirão', 'villa tupy', 296, '2024-07-26', 'educação', 'Paula Souza', 'post_etec.png', 'etec.mp4', 'etec_banner.png', 1, 'etec@gmail.com', '190'),
 	(1270, 'Coca Cola', 222222, 190, 'Registro', 'pipoca', 'vila Nova', 10, '2024-07-29', 'produção', 'Arthur Albino', 'bonitão.jpg', 'coca.mp4', 'coca_banner.png', 2, 'coca@gmail.com', '188');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 
@@ -102,14 +102,16 @@ INSERT INTO `usuario` (`cod_usuario`, `CPF`, `deficiencia`, `estado_civil`, `ema
 
 -- Copiando estrutura para tabela apptcc.vagas
 CREATE TABLE IF NOT EXISTS `vagas` (
+  `cod_vagas` int(11) NOT NULL AUTO_INCREMENT,
   `regalias` varchar(50) DEFAULT NULL,
   `pre_requisitos` varchar(50) DEFAULT NULL,
   `sobre` varchar(50) DEFAULT NULL,
   `data_postado` varchar(50) DEFAULT NULL,
   `carga_horaria` varchar(50) DEFAULT NULL,
   `horario_postado` varchar(50) DEFAULT NULL,
-  `cod_vagas` int(11) NOT NULL AUTO_INCREMENT,
   `cod_empresa` int(11) NOT NULL DEFAULT 0,
+  `tempo_de_contrato` varchar(250) DEFAULT NULL,
+  `salario` int(11) DEFAULT NULL,
   PRIMARY KEY (`cod_vagas`),
   KEY `FK_vagas_empresa` (`cod_empresa`),
   CONSTRAINT `FK_vagas_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`)
@@ -117,8 +119,8 @@ CREATE TABLE IF NOT EXISTS `vagas` (
 
 -- Copiando dados para a tabela apptcc.vagas: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `vagas` DISABLE KEYS */;
-INSERT INTO `vagas` (`regalias`, `pre_requisitos`, `sobre`, `data_postado`, `carga_horaria`, `horario_postado`, `cod_vagas`, `cod_empresa`) VALUES
-	('um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, 1);
+INSERT INTO `vagas` (`cod_vagas`, `regalias`, `pre_requisitos`, `sobre`, `data_postado`, `carga_horaria`, `horario_postado`, `cod_empresa`, `tempo_de_contrato`, `salario`) VALUES
+	(1, 'um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, '2 Anos', 1000);
 /*!40000 ALTER TABLE `vagas` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

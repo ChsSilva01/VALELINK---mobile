@@ -9,9 +9,14 @@ import wage from '../../../assets/wage.png';
 import fonts from '../../styles/fonts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../services/api';
+import url from '../../services/url';
 
 export default function AnaliseDeVagas(){
     const [nome_empresa, setNomeEmpresa] = useState("");
+    const [foto_empresa, setFotoEmpresa] = useState("");
+    const [salario, setSalario] = useState("");
+    const [carga_horaria, setCargaHoraria] = useState("");
+    const [tempo_de_contrato, setTempoDeContrato] = useState("");
     
     useEffect(() => {
         listarDados();
@@ -22,6 +27,10 @@ export default function AnaliseDeVagas(){
             const cod_vagas = await AsyncStorage.getItem('@cod_vagas');
             const res = await api.get(`apiVALELINK/vagas/listarempresa.php?cod_vagas=${cod_vagas}`);
             setNomeEmpresa(res.data.nome_empresa);
+            setFotoEmpresa(res.data.foto_empresa);
+            setSalario(res.data.salario);
+            setCargaHoraria(res.data.carga_horaria);
+            setTempoDeContrato(res.data.tempo_de_contrato);
 
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -35,7 +44,7 @@ export default function AnaliseDeVagas(){
                 <View></View>     
             </View>
             <View style={styles.vacancy}>
-                <Image source={logocompany} style={styles.logocompany}></Image>
+                <Image source={{uri: `${url}/apiVALELINK/imagem/${foto_empresa}`}} style={styles.logocompany}></Image>
                 <View style={{top: 27, left: 23}}>
                     <Text>Desenvolvimento de Jogos</Text>
                     <Text>{nome_empresa}</Text>
@@ -45,23 +54,26 @@ export default function AnaliseDeVagas(){
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={contract_time_icon}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>2 Anos</Text>
+                        <Text style={{fontSize: 16, left: 5}}>{tempo_de_contrato}</Text>
                     </View>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={time_of_work}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>8hrs</Text>
+                        <Text style={{fontSize: 16, left: 5}}>{carga_horaria}</Text>
                     </View>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={wage}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>R$1300</Text>
+                        <Text style={{fontSize: 16, left: 5}}>R${salario}</Text>
                     </View>
                 </View>
-                <TouchableOpacity style={styles.button}><Text style={styles.textbutton} onPress={() => console.log(nome_empresa)}>Enviar curriculo</Text></TouchableOpacity>
-                <Text style={styles.descriptiontext}>Descrição da empresa</Text>
+                <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>
+                <Text style={styles.descriptiontext}>
+                    Descrição:
+
+                </Text>
             </View>
         </View>
     )
