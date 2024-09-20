@@ -115,12 +115,13 @@ CREATE TABLE IF NOT EXISTS `vagas` (
   PRIMARY KEY (`cod_vagas`),
   KEY `FK_vagas_empresa` (`cod_empresa`),
   CONSTRAINT `FK_vagas_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela apptcc.vagas: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `vagas` DISABLE KEYS */;
 INSERT INTO `vagas` (`cod_vagas`, `regalias`, `pre_requisitos`, `sobre`, `data_postado`, `carga_horaria`, `horario_postado`, `cod_empresa`, `tempo_de_contrato`, `salario`) VALUES
-	(1, 'um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, '2 Anos', 1000);
+	(1, 'um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, '2 Anos', 1000),
+	(2, 'coca', 'ser ruim', 'facil ', '20/09/2024', '8h', '10:00', 2, 'sempre', 2000);
 /*!40000 ALTER TABLE `vagas` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 if (isset($_GET['cod_vagas'])) {
     $cod_vagas = $_GET['cod_vagas'];
 
-    $query = $pdo->query("SELECT empresa.nome_empresa, empresa.foto_empresa, salario, carga_horaria, tempo_de_contrato FROM vagas INNER JOIN empresa ON vagas.cod_empresa = empresa.cod_empresa WHERE cod_vagas = '$cod_vagas'");
+    $query = $pdo->query("SELECT empresa.nome_empresa, empresa.foto_empresa, salario, carga_horaria, tempo_de_contrato, sobre FROM vagas INNER JOIN empresa ON vagas.cod_empresa = empresa.cod_empresa WHERE cod_vagas = '$cod_vagas'");
 
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
 

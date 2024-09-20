@@ -44,7 +44,8 @@ export const styles = StyleSheet.create({
       left: '50%'
     },
     nameUsertext: {
-      fontFamily: fonts.title
+      fontFamily: fonts.title,
+      left: 10
     },
     imageIcon: {
         width: '100%',

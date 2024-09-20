@@ -8,6 +8,7 @@ import fonts from '../../styles/fonts';
 import api from '../../services/api';
 import url from '../../services/url';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Vagas({ navigation }){
     const [lista, setLista] = useState([]);
@@ -28,6 +29,15 @@ export default function Vagas({ navigation }){
             console.error('Erro ao buscar dados:', error);
           }
     }
+
+    async function salvarCod(cod_vagas) {
+        try {
+          await AsyncStorage.setItem('@cod_vagas', JSON.stringify(cod_vagas));
+          navigation.navigate('AnaliseDeVagas');
+        } catch (error) {
+          console.error('Erro ao salvar o código da vaga:', error);
+        }
+      }
     return(
         <View style={styles.container}>
             <View style={styles.margin}>
@@ -51,18 +61,20 @@ export default function Vagas({ navigation }){
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Senioridade</Text></TouchableOpacity>
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Cidade</Text></TouchableOpacity>
                 </View>
+                <ScrollView style={{height: 350, top: 60}}>
                 {lista.map(item =>(
-                    <TouchableOpacity onPress = {() =>{ navigation.navigate('AnaliseDeVagas'); console.log(cod)}} style={{top: 60}}>
-                    <View style={styles.vacancies}>
-                        <Image source={{uri: `${url}/apiVALELINK/imagem/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
-                        <View style={styles.line}></View>
-                        <View style={{left: 5}}>
-                            <Text style={styles.texttitlevacancie}>Desenvolvimento Web</Text>
-                            <Text style={styles.textnamecompany}>{item.nome_empresa}</Text>
+                    <TouchableOpacity onPress = {() =>{ salvarCod(item.cod_vagas)}} key={item.cod_vagas}>
+                        <View style={styles.vacancies}>
+                            <Image source={{uri: `${url}/apiVALELINK/imagem/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
+                            <View style={styles.line}></View>
+                            <View style={{left: 5}}>
+                                <Text style={styles.texttitlevacancie}>Desenvolvimento Web</Text>
+                                <Text style={styles.textnamecompany}>{item.nome_empresa}</Text>
+                            </View>
                         </View>
-                    </View>
-                </TouchableOpacity>
-                ))}   
+                    </TouchableOpacity>
+                ))}
+                </ScrollView>   
                 <TouchableOpacity style={styles.button} onPress = {() =>{ navigation.navigate('BuscasVagas'); console.log(cod)}}><Text style={styles.textbutton}>Buscar</Text></TouchableOpacity>
             </View>
         </View>
