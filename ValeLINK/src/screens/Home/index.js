@@ -36,11 +36,11 @@ export default function Home({ navigation }) {
 
   async function Iconelike() {
     if(like == 'heart-outline'){
-      setLike('heart-outline');
+      setLike('heart');
       setColor("#d9d9");
     } else {
-      setLike('heart');
-      setColor("#fff");
+      setLike('heart-outline');
+      setColor("#000");
     }
   }
 
@@ -79,7 +79,7 @@ export default function Home({ navigation }) {
               <Image source={{uri: `${url}/apiVALELINK/imagem/${item.imagem}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row', top: 5}}>
-                <TouchableOpacity onLongPress={Iconelike}><Ionicons name={like} size={28} style={styles.iconactionspost} color={color}></Ionicons></TouchableOpacity>
+                <TouchableOpacity onPress={Iconelike}><Ionicons name={like} size={28} style={styles.iconactionspost} color={color}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='chatbubble-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='share-social-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity style={styles.buttonC}>
