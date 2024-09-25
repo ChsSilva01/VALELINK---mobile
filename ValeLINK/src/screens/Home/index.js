@@ -36,10 +36,10 @@ export default function Home({ navigation }) {
 
   async function Iconelike() {
     if(like == 'heart-outline'){
-      setLike('heart');
+      setLike('heart-outline');
       setColor("#d9d9");
     } else {
-      setLike('heart-outline');
+      setLike('heart');
       setColor("#fff");
     }
   }
@@ -47,7 +47,7 @@ export default function Home({ navigation }) {
   async function salvarCod(cod_empresa) {
     try {
       await AsyncStorage.setItem('@cod_empresa', JSON.stringify(cod_empresa));
-      navigation.navigate('PefilEmpresa');
+      navigation.navigate('Perfildaempresa');
     } catch (error) {
       console.error('Erro ao salvar o código da vaga:', error);
     }
@@ -70,7 +70,7 @@ export default function Home({ navigation }) {
                 </TouchableOpacity>
                 <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_do_post}</Text>
               </View>
-              <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item.cod_empresa)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
             </View>
             <View style={{width: 345, height: 210, alignItems: 'center'}}>
               <View style={{alignItems: 'flex-start', width: 323}}>

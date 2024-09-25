@@ -26,6 +26,7 @@ for ($i=0; $i < count($res); $i++) {
         'hora_do_post' => $res[$i]['hora_do_post'],                             
         'nome_empresa' => $res[$i]['nome_empresa'],                             
         'foto_empresa' => $res[$i]['foto_empresa'],                             
+        'cod_empresa' => $res[$i]['cod_empresa'],                             
     );
 
 }

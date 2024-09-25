@@ -1,9 +1,26 @@
+import { useState, useEffect } from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import { styles } from './styles';
 import {Ionicons} from '@expo/vector-icons';
 import icone from '../../../assets/foto_coringa.png';
 
 export default function Perfildaempresa({ navigation }){
+    const [nome_empresa, setNomeEmpresa] = useState("");
+    
+    useEffect(() => {
+        listarDados();
+    },[])
+  
+    async function listarDados(){
+        try {
+            const cod_empresa = await AsyncStorage.getItem('@cod_empresa');
+            const res = await api.get(`apiVALELINK/empresa/listarempresa.php?cod_empresa=${cod_empresa}`);
+            setNomeEmpresa(res.data.nome_empresa);
+
+          } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+          }
+    }
     return(
         <ImageBackground
             style={styles.container}
@@ -28,7 +45,7 @@ export default function Perfildaempresa({ navigation }){
                 </View>
                 <View style={styles.Settingsprofile}>
                     <View style={styles.Settingsname}>
-                        <Text style={styles.nameprofile}>@Coca-Cola</Text>
+                        <Text style={styles.nameprofile}>@{nome_empresa}</Text>
                         <Text style={styles.descriptionsprofile}>Opa, abriu a geladeira e tá sem Coca? Não se preocupe! Peça seu produto Coca‑Cola no Na Sua Casa e receba suas bebidas favoritas</Text>
                         <TouchableOpacity style={styles.follow}><Text style={styles.followtext}>Seguir</Text></TouchableOpacity>
                     </View>  
