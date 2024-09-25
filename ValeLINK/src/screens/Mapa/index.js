@@ -47,7 +47,7 @@ export default function Mapa({ navigation }) {
 
   return(
     <View style={styles.container}>
-       {/* <View style={styles.header}>
+       <View style={styles.header}>
                 <TouchableOpacity onPress = {() => navigation.navigate("Home")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
                 <Text style={styles.tittle}>Mapa</Text>
         </View>  
@@ -57,11 +57,11 @@ export default function Mapa({ navigation }) {
           showsUserLocation={true}
           zoomEnabled={true}
           loadingEnabled={true} 
-              2 parte  busca e rotas  
+              // 2 parte  busca e rotas  
           ref={mapEl}           
           >
-          MARCADOR NO MAPA
-          1
+          {/* MARCADOR NO MAPA */}
+          {/* 1 */}
           
             <Marker
               coordinate={{latitude: -24.492119638680506, longitude: -47.83520075432022}} //lugar onde você quer marcar 
@@ -86,7 +86,7 @@ export default function Mapa({ navigation }) {
 
 
 
-</MapView> */}
+</MapView>
 
 
 

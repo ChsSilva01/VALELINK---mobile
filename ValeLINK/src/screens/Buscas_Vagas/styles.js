@@ -8,20 +8,22 @@ export const styles = StyleSheet.create({
     header: {
         width: 390,
         height: 90,
-        alignItems: 'center',
+        justifyContent: 'space-around',
+        alignItems: 'flex-end',
         flexDirection: 'row',
-        borderBottomWidth: 0.5
-    },
+        borderBottomWidth: 0.5,
+    },  
     logoimage: {
-        width: 46,
-        height: 37,
-        resizeMode: 'stretch'
+        width: 50,
+        height: 30,
+        resizeMode: 'stretch',
+        bottom: 5
     },
     searchvacancies: {
         width: 348,
         height: 546,
         borderRadius: 15,
-        elevation: 0.5,
+        elevation: 1.5,
         left: 22,
         top: 17,
         alignItems: 'center'
@@ -50,7 +52,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#F5F5F5',
         borderWidth: 1,
         borderRadius: 13,
-        marginTop: 10
+        marginTop: 10,
+        fontSize: 18
     },
     button: {
         width: 342,
@@ -58,7 +61,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#01E581',
         borderRadius: 7,
         left: 25,
-        top: 116,
+        top: 75,
         elevation: 2,
         justifyContent: 'center',
         alignItems: 'center'

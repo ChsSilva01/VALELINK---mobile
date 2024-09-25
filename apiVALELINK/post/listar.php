@@ -9,7 +9,7 @@ $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
 
 $inicio = ($limite * $pagina) - $limite; 
 
-$query = $pdo->prepare("SELECT cod_post,imagem,comentario,data_do_post,hora_do_post,empresa.nome_empresa,empresa.foto_empresa FROM post INNER JOIN empresa ON post.cod_empresa = empresa.cod_empresa ORDER BY cod_post DESC LIMIT $inicio, $limite");
+$query = $pdo->prepare("SELECT cod_post,imagem,comentario,data_do_post,hora_do_post,empresa.nome_empresa,empresa.foto_empresa,empresa.cod_empresa FROM post INNER JOIN empresa ON post.cod_empresa = empresa.cod_empresa ORDER BY cod_post DESC LIMIT $inicio, $limite");
 // 
 $query->execute();
 

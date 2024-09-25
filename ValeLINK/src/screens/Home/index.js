@@ -8,11 +8,13 @@ import vagas from '../../../assets/vagas.png'
 
 import api from '../../services/api';
 import url from '../../services/url.js';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Home({ navigation }) {
   const [foto_empresa,setImagem] = useState(null);
   const [like, setLike] = useState("heart-outline");
-  const [color, setColor] = useState("#fff");
+  const [color, setColor] = useState("#000");
+  
 
   const [lista,setLista] = useState([]);
 
@@ -20,6 +22,8 @@ export default function Home({ navigation }) {
 
   useEffect(() => {
       listarDados();
+      Iconelike();
+      salvarCod();
   },[])
 
   async function listarDados(){
@@ -33,10 +37,19 @@ export default function Home({ navigation }) {
   async function Iconelike() {
     if(like == 'heart-outline'){
       setLike('heart');
-      setColor("#d9d9")
+      setColor("#d9d9");
     } else {
       setLike('heart-outline');
-      setColor("#fff")
+      setColor("#fff");
+    }
+  }
+
+  async function salvarCod(cod_empresa) {
+    try {
+      await AsyncStorage.setItem('@cod_empresa', JSON.stringify(cod_empresa));
+      navigation.navigate('PefilEmpresa');
+    } catch (error) {
+      console.error('Erro ao salvar o código da vaga:', error);
     }
   }
   return (
@@ -52,7 +65,7 @@ export default function Home({ navigation }) {
                   source={icone}
                   style={{width: 40,height: 40}}
                 ></Image>
-                <TouchableOpacity onPress={() => navigation.navigate('Perfildaempresa')}>
+                <TouchableOpacity onPress={() => { salvarCod(item.cod_empresa)}} key={item.cod_empresa}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
                 <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_do_post}</Text>

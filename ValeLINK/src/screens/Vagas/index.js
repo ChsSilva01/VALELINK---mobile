@@ -56,7 +56,7 @@ export default function Vagas({ navigation }){
                         placeholder=' Cidade'
                     ></TextInput>
                 </View>
-                <View style={{flexDirection: 'row',justifyContent: 'center', top: 40}}>
+                <View style={{flexDirection: 'row',justifyContent: 'space-around', top: 40}}>
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Trabalho</Text></TouchableOpacity>
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Senioridade</Text></TouchableOpacity>
                     <TouchableOpacity style={styles.filters}><Text style={styles.filterstext}>Cidade</Text></TouchableOpacity>
