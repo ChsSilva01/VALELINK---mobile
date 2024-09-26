@@ -23,7 +23,6 @@ export default function Home({ navigation }) {
   useEffect(() => {
       listarDados();
       Iconelike();
-      salvarCod();
   },[])
 
   async function listarDados(){
@@ -46,6 +45,7 @@ export default function Home({ navigation }) {
 
   async function salvarCod(cod_empresa) {
     try {
+      console.log(cod_empresa)
       await AsyncStorage.setItem('@cod_empresa', JSON.stringify(cod_empresa));
       navigation.navigate('Perfildaempresa');
     } catch (error) {
@@ -62,10 +62,10 @@ export default function Home({ navigation }) {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Image
                   key={item.cod_post} 
-                  source={icone}
-                  style={{width: 40,height: 40}}
+                  source={{uri: `${url}/apiVALELINK/empresa/imgs/${item.foto_empresa}`}}
+                  style={{width: 40,height: 40, borderRadius: 15}}
                 ></Image>
-                <TouchableOpacity onPress={() => { salvarCod(item.cod_empresa)}} key={item.cod_empresa}>
+                <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
                 <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_do_post}</Text>

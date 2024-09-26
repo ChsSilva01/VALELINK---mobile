@@ -4,10 +4,10 @@ include_once('../conexao.php');
 
 header('Content-Type: application/json');
 
-if (isset($_GET['cod_vagas'])) {
-    $cod_vagas = $_GET['cod_vagas'];
+if (isset($_GET['cod_empresa'])) {
+    $cod_empresa = $_GET['cod_empresa'];
 
-    $query = $pdo->query("SELECT empresa.nome_empresa, empresa.foto_empresa, salario, carga_horaria, tempo_de_contrato, sobre FROM vagas INNER JOIN empresa ON vagas.cod_empresa = empresa.cod_empresa WHERE cod_vagas = '$cod_vagas'");
+    $query = $pdo->query("SELECT nome_empresa,descricao_da_empresa,quantidade_de_funcionarios,quantidade_de_seguidores,foto_empresa FROM empresa WHERE cod_empresa = '$cod_empresa'");
 
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -16,16 +16,15 @@ if (isset($_GET['cod_vagas'])) {
         }
             
         $nome_empresa = $res[$i]['nome_empresa'];
+        $descricao_da_empresa = $res[$i]['descricao_da_empresa'];
+        $quantidade_de_funcionarios = $res[$i]['quantidade_de_funcionarios'];
+        $quantidade_de_seguidores = $res[$i]['quantidade_de_seguidores'];
         $foto_empresa = $res[$i]['foto_empresa'];
-        $salario = $res[$i]['salario'];
-        $carga_horaria = $res[$i]['carga_horaria'];
-        $tempo_de_contrato = $res[$i]['tempo_de_contrato'];
-
 
             }
 
             if(count($res) > 0){
-                    $result = json_encode(array('success'=>true, 'nome_empresa'=>$nome_empresa, 'foto_empresa'=>$foto_empresa, 'salario'=>$salario, 'carga_horaria'=>$carga_horaria, 'tempo_de_contrato'=>$tempo_de_contrato));
+                    $result = json_encode(array('success'=>true, 'nome_empresa'=>$nome_empresa, 'descricao_da_empresa'=>$descricao_da_empresa, 'quantidade_de_funcionarios'=>$quantidade_de_funcionarios, 'quantidade_de_seguidores'=>$quantidade_de_seguidores, 'foto_empresa'=>$foto_empresa));
 
                 }else{
                     $result = json_encode(array('success'=>false, 'result'=>'0'));

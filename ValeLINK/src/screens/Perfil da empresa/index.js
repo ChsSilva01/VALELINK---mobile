@@ -3,10 +3,18 @@ import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-nati
 import { styles } from './styles';
 import {Ionicons} from '@expo/vector-icons';
 import icone from '../../../assets/foto_coringa.png';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import api from '../../services/api';
+import url from '../../services/url';
 
 export default function Perfildaempresa({ navigation }){
     const [nome_empresa, setNomeEmpresa] = useState("");
+    const [descricao_da_empresa, setDescricao_da_empresa] = useState("");
+    const [quantidade_de_funcionarios, setQuantidade_de_funcionarios] = useState("");
+    const [quantidade_de_seguidores, setQuantidade_de_seguidores] = useState("");
+    const [foto_empresa, setFoto_empresa] = useState("");
     
+
     useEffect(() => {
         listarDados();
     },[])
@@ -15,8 +23,11 @@ export default function Perfildaempresa({ navigation }){
         try {
             const cod_empresa = await AsyncStorage.getItem('@cod_empresa');
             const res = await api.get(`apiVALELINK/empresa/listarempresa.php?cod_empresa=${cod_empresa}`);
-            setNomeEmpresa(res.data.nome_empresa);
-
+            setNomeEmpresa(res.data.nome_empresa);  
+            setDescricao_da_empresa(res.data.descricao_da_empresa);  
+            setQuantidade_de_funcionarios(res.data.quantidade_de_funcionarios);  
+            setQuantidade_de_seguidores(res.data.quantidade_de_seguidores);  
+            setFoto_empresa(res.data.foto_empresa);  
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
           }
@@ -32,21 +43,21 @@ export default function Perfildaempresa({ navigation }){
             <View style={styles.areaprofile}>
                 <View style={styles.employeefollowersandprofile}>
                     <View style={styles.infostatus}>
-                        <Text style={styles.amount}>1k</Text>
+                        <Text style={styles.amount}>{quantidade_de_seguidores}k</Text>
                         <Text style={styles.quantityofwhat}>Seguidores</Text>
                     </View>
                     <View style={styles.circleimage}>
-                        <Image source={icone} style={styles.profileimage}></Image>
+                        <Image source={{uri: `${url}/apiVALELINK/empresa/imgs/${foto_empresa}`}} style={styles.profileimage}></Image>
                     </View>
                     <View style={styles.infostatus}>
-                        <Text style={styles.amount}>342</Text>
+                        <Text style={styles.amount}>{quantidade_de_funcionarios}</Text>
                         <Text style={styles.quantityofwhat}>Funcionários</Text>
                     </View>
                 </View>
                 <View style={styles.Settingsprofile}>
                     <View style={styles.Settingsname}>
                         <Text style={styles.nameprofile}>@{nome_empresa}</Text>
-                        <Text style={styles.descriptionsprofile}>Opa, abriu a geladeira e tá sem Coca? Não se preocupe! Peça seu produto Coca‑Cola no Na Sua Casa e receba suas bebidas favoritas</Text>
+                        <Text style={styles.descriptionsprofile}>{descricao_da_empresa}</Text>
                         <TouchableOpacity style={styles.follow}><Text style={styles.followtext}>Seguir</Text></TouchableOpacity>
                     </View>  
                     <View style={{flexDirection: 'row', justifyContent: 'space-around', padding: 10, borderBottomWidth: 1, borderColor: '#B5B5B5'}}>  

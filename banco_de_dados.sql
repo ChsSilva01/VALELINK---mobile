@@ -1,15 +1,18 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.32-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           10.4.28-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              9.5.0.5196
+-- HeidiSQL Versão:              12.5.0.6677
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Copiando estrutura do banco de dados para apptcc
@@ -35,15 +38,16 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `cod_empresa` int(11) NOT NULL AUTO_INCREMENT,
   `email_empresa` varchar(50) DEFAULT NULL,
   `telefone_empresa` varchar(50) DEFAULT NULL,
+  `quantidade_de_seguidores` int(11) DEFAULT NULL,
+  `descricao_da_empresa` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`cod_empresa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela apptcc.empresa: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` (`quantidade_de_funcionarios`, `nome_empresa`, `CNPJ`, `CEP`, `cidade`, `rua`, `bairro`, `numero`, `data_de_criacao`, `area_de_atuacao`, `proprietario`, `foto_empresa`, `video_empresa`, `imagem_banner`, `cod_empresa`, `email_empresa`, `telefone_empresa`) VALUES
-	(250, 'Etec', 11111, 1190000, 'registro', 'jacatirão', 'villa tupy', 296, '2024-07-26', 'educação', 'Paula Souza', 'post_etec.png', 'etec.mp4', 'etec_banner.png', 1, 'etec@gmail.com', '190'),
-	(1270, 'Coca Cola', 222222, 190, 'Registro', 'pipoca', 'vila Nova', 10, '2024-07-29', 'produção', 'Arthur Albino', 'bonitão.jpg', 'coca.mp4', 'coca_banner.png', 2, 'coca@gmail.com', '188');
-/*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
+DELETE FROM `empresa`;
+INSERT INTO `empresa` (`quantidade_de_funcionarios`, `nome_empresa`, `CNPJ`, `CEP`, `cidade`, `rua`, `bairro`, `numero`, `data_de_criacao`, `area_de_atuacao`, `proprietario`, `foto_empresa`, `video_empresa`, `imagem_banner`, `cod_empresa`, `email_empresa`, `telefone_empresa`, `quantidade_de_seguidores`, `descricao_da_empresa`) VALUES
+	(250, 'Etec', 11111, 1190000, 'registro', 'jacatirão', 'villa tupy', 296, '2024-07-26', 'educação', 'Paula Souza', 'post_etec.png', 'etec.mp4', 'etec_banner.png', 1, 'etec@gmail.com', '190', 2, 'As Etecs são instituições de ensinos técnico, médio e integrado ao médio, pertencentes ao Centro Estadual de Educação Tecnológica Paula Souza.'),
+	(1270, 'Coca Cola', 222222, 190, 'Registro', 'pipoca', 'vila Nova', 10, '2024-07-29', 'produção', 'Arthur Albino', 'coca-cola-logo.png', 'coca.mp4', 'coca_banner.png', 2, 'coca@gmail.com', '188', 1, 'Opa, abriu a geladeira e tá sem Coca? Não se preocupe! Peça seu produto Coca?Cola no Na Sua Casa e receba suas bebidas favoritas');
 
 -- Copiando estrutura para tabela apptcc.post
 CREATE TABLE IF NOT EXISTS `post` (
@@ -60,11 +64,10 @@ CREATE TABLE IF NOT EXISTS `post` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela apptcc.post: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `post` DISABLE KEYS */;
+DELETE FROM `post`;
 INSERT INTO `post` (`imagem`, `comentario`, `carregar`, `data_do_post`, `hora_do_post`, `cod_post`, `cod_empresa`) VALUES
-	('0a77d8bb-45fe-4853-8776-690d5afba616.jpeg', 'venha para etec', 'a', '26/07/2024', '09:01', 2, 1),
-	('bonitão.jpg', 'contratando para auxiliar de pipoqueiro', 'b', '26/09/2024', '11:06', 3, 2);
-/*!40000 ALTER TABLE `post` ENABLE KEYS */;
+	('post_etec.png', 'venha para etec', 'a', '26/07/2024', '09:01', 2, 1),
+	('4a925321-3163-48ba-97ee-2570717455b4.png', 'contratando estagiários', 'b', '26/09/2024', '11:06', 3, 2);
 
 -- Copiando estrutura para tabela apptcc.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -94,36 +97,33 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`cod_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela apptcc.usuario: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+-- Copiando dados para a tabela apptcc.usuario: ~1 rows (aproximadamente)
+DELETE FROM `usuario`;
 INSERT INTO `usuario` (`cod_usuario`, `CPF`, `deficiencia`, `estado_civil`, `email_usuario`, `nome_usuario`, `RG`, `CEP`, `cidade`, `rua`, `bairro`, `numero`, `tempo_de_residencia`, `valor_de_residencia`, `tipo_de_residencia`, `ponto_de_referencia`, `beneficios`, `foto_usuario`, `CAD`, `telefone_usuario`, `data_de_nascimento`, `sexo`, `senha`) VALUES
-	(1, 567394, 'sim', 'solteiro', 'carlos@gmail.com', 'Carlos', 190, 190, 'Registro', 'jacatirao', 'Vila Nova', 122, '09:06:39', 100000, 'propria', 'perto do cabelereiro do neguinho', 'bolsa', 'http://10.68.36.105/apiVALELINK/imagem/bonit%c3%a3o.jpg', 190, 190, '2024-07-26', 'M', 2134);
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+	(1, 567394, 'sim', 'solteiro', 'carlos@gmail.com', 'Carlos', 190, 190, 'Registro', 'jacatirao', 'Vila Nova', 122, '09:06:39', 100000, 'propria', 'perto do cabelereiro do neguinho', 'bolsa', 'bonitao.jpg', 190, 190, '2024-07-26', 'M', 2134);
 
 -- Copiando estrutura para tabela apptcc.vagas
 CREATE TABLE IF NOT EXISTS `vagas` (
-  `cod_vagas` int(11) NOT NULL AUTO_INCREMENT,
   `regalias` varchar(50) DEFAULT NULL,
   `pre_requisitos` varchar(50) DEFAULT NULL,
   `sobre` varchar(50) DEFAULT NULL,
   `data_postado` varchar(50) DEFAULT NULL,
   `carga_horaria` varchar(50) DEFAULT NULL,
   `horario_postado` varchar(50) DEFAULT NULL,
+  `cod_vagas` int(11) NOT NULL AUTO_INCREMENT,
   `cod_empresa` int(11) NOT NULL DEFAULT 0,
-  `tempo_de_contrato` varchar(250) DEFAULT NULL,
-  `salario` int(11) DEFAULT NULL,
   PRIMARY KEY (`cod_vagas`),
   KEY `FK_vagas_empresa` (`cod_empresa`),
   CONSTRAINT `FK_vagas_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela apptcc.vagas: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `vagas` DISABLE KEYS */;
-INSERT INTO `vagas` (`cod_vagas`, `regalias`, `pre_requisitos`, `sobre`, `data_postado`, `carga_horaria`, `horario_postado`, `cod_empresa`, `tempo_de_contrato`, `salario`) VALUES
-	(1, 'um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, '2 Anos', 1000),
-	(2, 'coca', 'ser ruim', 'facil ', '20/09/2024', '8h', '10:00', 2, 'sempre', 2000);
-/*!40000 ALTER TABLE `vagas` ENABLE KEYS */;
+DELETE FROM `vagas`;
+INSERT INTO `vagas` (`regalias`, `pre_requisitos`, `sobre`, `data_postado`, `carga_horaria`, `horario_postado`, `cod_vagas`, `cod_empresa`) VALUES
+	('um pão', 'ser bom', 'dificil', '26/07/2024', '20h', '00:00', 1, 1);
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

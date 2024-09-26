@@ -6,7 +6,7 @@ import {Ionicons} from '@expo/vector-icons';
 import  Arthur  from '../../../assets/arthur.png';
 import api from '../../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import url from '../../services/url';
 
 export default function Perfil({ navigation }){
     const[foto_usuario, setImage] = useState(null);
@@ -46,7 +46,7 @@ export default function Perfil({ navigation }){
             </View>
             <View style={styles.areaprofile}>
                 <View style={styles.circleimage}>
-                    <Image source={{uri: foto_usuario}} style={styles.profileimage}></Image>
+                    <Image source={{uri: `${url}/apiVALELINK/usuarios/imgs/${foto_usuario}`}} style={styles.profileimage}></Image>
                 </View>
                 <View style={styles.Settingsprofile}>
                     <View style={styles.Settingsname}>
