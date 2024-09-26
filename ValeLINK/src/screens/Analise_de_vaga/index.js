@@ -10,8 +10,9 @@ import fonts from '../../styles/fonts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../services/api';
 import url from '../../services/url';
+import {Ionicons} from '@expo/vector-icons';
 
-export default function AnaliseDeVagas(){
+export default function AnaliseDeVagas({ navigation }){
     const [nome_empresa, setNomeEmpresa] = useState("");
     const [foto_empresa, setFotoEmpresa] = useState("");
     const [salario, setSalario] = useState("");
@@ -39,7 +40,7 @@ export default function AnaliseDeVagas(){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={logo} style={styles.logoimage}></Image>
+            <TouchableOpacity onPress = {() => navigation.navigate("Vagas")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
                 <Text style={{fontSize: 24, right: 15, bottom: 0,fontFamily: fonts.title}}>Vagas</Text>
                 <View></View>     
             </View>

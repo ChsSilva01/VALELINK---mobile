@@ -9,6 +9,7 @@ import api from '../../services/api';
 import url from '../../services/url';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView } from 'react-native-gesture-handler';
+import {Ionicons} from '@expo/vector-icons';
 
 export default function Vagas({ navigation }){
     const [lista, setLista] = useState([]);
@@ -42,7 +43,7 @@ export default function Vagas({ navigation }){
         <View style={styles.container}>
             <View style={styles.margin}>
             <View style={styles.header}>
-                <Image source={logo} style={styles.logoimage}></Image>
+            <TouchableOpacity onPress = {() => navigation.navigate("Empresas")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
                 <Text style={{fontSize: 24, right: 15, bottom: 0,fontFamily: fonts.title}}>Vagas</Text>
                 <View></View>     
             </View>
