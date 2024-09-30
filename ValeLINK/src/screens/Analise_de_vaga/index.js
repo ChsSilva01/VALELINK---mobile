@@ -15,9 +15,9 @@ import {Ionicons} from '@expo/vector-icons';
 export default function AnaliseDeVagas({ navigation }){
     const [nome_empresa, setNomeEmpresa] = useState("");
     const [foto_empresa, setFotoEmpresa] = useState("");
-    const [salario, setSalario] = useState("");
-    const [carga_horaria, setCargaHoraria] = useState("");
-    const [tempo_de_contrato, setTempoDeContrato] = useState("");
+    const [salario_vagas, setSalario_vagas] = useState("");
+    const [carga_horaria_vagas, setCarga_horaria_vagas] = useState("");
+    const [tempo_contrato_vagas, setTempo_contrato_vagas] = useState("");
     
     useEffect(() => {
         listarDados();
@@ -29,9 +29,9 @@ export default function AnaliseDeVagas({ navigation }){
             const res = await api.get(`apiVALELINK/vagas/listarempresa.php?cod_vagas=${cod_vagas}`);
             setNomeEmpresa(res.data.nome_empresa);
             setFotoEmpresa(res.data.foto_empresa);
-            setSalario(res.data.salario);
-            setCargaHoraria(res.data.carga_horaria);
-            setTempoDeContrato(res.data.tempo_de_contrato);
+            setSalario_vagas(res.data.salario_vagas);
+            setCarga_horaria_vagas(res.data.carga_horaria_vagas);
+            setTempo_contrato_vagas(res.data.tempo_contrato_vagas);
 
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -55,19 +55,19 @@ export default function AnaliseDeVagas({ navigation }){
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={contract_time_icon}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>{tempo_de_contrato}</Text>
+                        <Text style={{fontSize: 16, left: 5}}>{tempo_contrato_vagas}</Text>
                     </View>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={time_of_work}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>{carga_horaria}</Text>
+                        <Text style={{fontSize: 16, left: 5}}>{carga_horaria_vagas}</Text>
                     </View>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={wage}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>R${salario}</Text>
+                        <Text style={{fontSize: 16, left: 5}}>R${salario_vagas}</Text>
                     </View>
                 </View>
                 <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>

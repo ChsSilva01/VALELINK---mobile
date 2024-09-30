@@ -13,7 +13,7 @@ date_default_timezone_set('America/Sao_Paulo');
 $usuario = 'root';
 $senha = '';
 $host = 'localhost';
-$banco = 'apptcc';
+$banco = 'tcc3etim';
 
 try {
 	$pdo = new PDO("mysql:dbname=$banco; host=$host", "$usuario", "$senha");

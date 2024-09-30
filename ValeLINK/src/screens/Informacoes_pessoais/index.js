@@ -131,7 +131,7 @@ export default function InformacoesPessoais({ navigation }){
 
                     <Text style={styles.infostyle}>Especifique</Text>
                     <TextInput
-                    placeholder="Sei la"
+                    placeholder="Não sei dizer"
                     style={styles.rginput}
                     >
                     </TextInput>

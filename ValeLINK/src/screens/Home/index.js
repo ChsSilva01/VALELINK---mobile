@@ -65,18 +65,18 @@ export default function Home({ navigation }) {
                   source={{uri: `${url}/apiVALELINK/empresa/imgs/${item.foto_empresa}`}}
                   style={{width: 40,height: 40, borderRadius: 15}}
                 ></Image>
-                <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
+                <TouchableOpacity onPress={() => console.log(item.cod_empresa)}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
-                <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_do_post}</Text>
+                <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_post}</Text>
               </View>
               <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item.cod_empresa)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
             </View>
             <View style={{width: 345, height: 210, alignItems: 'center'}}>
               <View style={{alignItems: 'flex-start', width: 323}}>
-                <Text>{item.comentario}</Text>
+                <Text>{item.conteudo_post}</Text>
               </View>
-              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.imagem}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
+              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.midia_post}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
             </View>
             <View style={{width: 345, height: 36, flexDirection: 'row', top: 5}}>
                 <TouchableOpacity onPress={Iconelike}><Ionicons name={like} size={28} style={styles.iconactionspost} color={color}></Ionicons></TouchableOpacity>

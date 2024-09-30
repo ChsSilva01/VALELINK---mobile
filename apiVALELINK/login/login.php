@@ -2,10 +2,10 @@
 include_once('../conexao.php');
 
 $postjson = json_decode(file_get_contents("php://input"), true);
-$senha = $postjson['senha'];
-$query_buscar = $pdo->prepare("SELECT * from usuario where CPF = :CPF and senha = :senha ");
-$query_buscar->bindValue(":CPF", "$postjson[CPF]");
-$query_buscar->bindValue(":senha", "$senha");
+$senha_usuario = $postjson['senha_usuario'];
+$query_buscar = $pdo->prepare("SELECT * from usuario where email_usuario = :email_usuario and senha_usuario = :senha_usuario ");
+$query_buscar->bindValue(":email_usuario", "$postjson[email_usuario]");
+$query_buscar->bindValue(":senha_usuario", "$senha_usuario");
 $query_buscar->execute();
 
 $dados_buscar = $query_buscar->fetchAll(PDO::FETCH_ASSOC);
@@ -17,8 +17,8 @@ for ($i=0; $i < count($dados_buscar); $i++) {
 
     $dados[] = array(
         'cod_usuario' => intVal($dados_buscar[$i]['cod_usuario']),
-        'CPF' => $dados_buscar[$i]['CPF'],  
-        'senha' => $dados_buscar[$i]['senha'],   
+        'email_usuario' => $dados_buscar[$i]['email_usuario'],  
+        'senha_usuario' => $dados_buscar[$i]['senha_usuario'],   
     );
 }
 

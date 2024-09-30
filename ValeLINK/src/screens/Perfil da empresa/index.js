@@ -10,8 +10,8 @@ import url from '../../services/url';
 export default function Perfildaempresa({ navigation }){
     const [nome_empresa, setNomeEmpresa] = useState("");
     const [descricao_da_empresa, setDescricao_da_empresa] = useState("");
-    const [quantidade_de_funcionarios, setQuantidade_de_funcionarios] = useState("");
-    const [quantidade_de_seguidores, setQuantidade_de_seguidores] = useState("");
+    const [quantidade_de_funcionario_empresa, setQuantidade_de_funcionario_empresa] = useState("");
+    const [quantidade_de_seguidores_empresa, setQuantidade_de_seguidores_empresa] = useState("");
     const [foto_empresa, setFoto_empresa] = useState("");
     
 
@@ -25,8 +25,8 @@ export default function Perfildaempresa({ navigation }){
             const res = await api.get(`apiVALELINK/empresa/listarempresa.php?cod_empresa=${cod_empresa}`);
             setNomeEmpresa(res.data.nome_empresa);  
             setDescricao_da_empresa(res.data.descricao_da_empresa);  
-            setQuantidade_de_funcionarios(res.data.quantidade_de_funcionarios);  
-            setQuantidade_de_seguidores(res.data.quantidade_de_seguidores);  
+            setQuantidade_de_funcionario_empresa(res.data.quantidade_de_funcionario_empresa);  
+            setQuantidade_de_seguidores_empresa(res.data.quantidade_de_seguidores_empresa);  
             setFoto_empresa(res.data.foto_empresa);  
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -43,14 +43,14 @@ export default function Perfildaempresa({ navigation }){
             <View style={styles.areaprofile}>
                 <View style={styles.employeefollowersandprofile}>
                     <View style={styles.infostatus}>
-                        <Text style={styles.amount}>{quantidade_de_seguidores}k</Text>
+                        <Text style={styles.amount}>{quantidade_de_seguidores_empresa}k</Text>
                         <Text style={styles.quantityofwhat}>Seguidores</Text>
                     </View>
                     <View style={styles.circleimage}>
                         <Image source={{uri: `${url}/apiVALELINK/empresa/imgs/${foto_empresa}`}} style={styles.profileimage}></Image>
                     </View>
                     <View style={styles.infostatus}>
-                        <Text style={styles.amount}>{quantidade_de_funcionarios}</Text>
+                        <Text style={styles.amount}>{quantidade_de_funcionario_empresa}</Text>
                         <Text style={styles.quantityofwhat}>Funcionários</Text>
                     </View>
                 </View>

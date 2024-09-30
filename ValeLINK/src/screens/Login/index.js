@@ -17,8 +17,8 @@ export default function Login() {
 
   const [logged, setLogged] = useState(0);
 
-  const [CPF, setCPF] = useState('');
-  const [senha, setSenha] = useState('');
+  const [email_usuario, setEmail_usuario] = useState('');
+  const [senha_usuario, setSenha_usuario] = useState('');
   
   // const [fontLoaded] = useFonts({
   //   Poppins_300Light,
@@ -29,7 +29,7 @@ export default function Login() {
   // }
   // const CPFplaceholder = <Ionicons name='house'><Text>|  CPF</Text></Ionicons>
   async function login(){      
-    const obj = { CPF, senha };
+    const obj = { email_usuario, senha_usuario };
     const res = await api.post('apiVALELINK/login/login.php', obj);
 
     if(res.data.result === 'Dados Incorretos!'){
@@ -37,7 +37,7 @@ export default function Login() {
     }
     else{
       await AsyncStorage.setItem('@user', JSON.stringify(res.data.result[0].cod_usuario));
-      await AsyncStorage.setItem('@senha', JSON.stringify(res.data.result[0].senha));
+      await AsyncStorage.setItem('@senha', JSON.stringify(res.data.result[0].senha_usuario));
       
       navigation.reset({
         index: 0,
@@ -124,10 +124,10 @@ export default function Login() {
           <View style={styles.inputslogin}>
           <TextInput style={styles.cx_email}
             Ionicons = 'lock-closed-outline'
-            placeholder="  | CPF"
+            placeholder="  | Email"
             placeholderTextColor={'#696969'}
-            value={CPF}
-            onChangeText={ (CPF) => setCPF(CPF)}
+            value={email_usuario}
+            onChangeText={ (email_usuario) => setEmail_usuario(email_usuario)}
             rightIcon={<Ionicons name='user' type='font-awesome' size={50} />}
           ></TextInput>
           <TextInput
@@ -135,8 +135,8 @@ export default function Login() {
             style={styles.cx_senha}
             placeholder='  | Senha'
             placeholderTextColor={'#696969'}
-            value={senha}
-            onChangeText={ (senha) => setSenha(senha)}
+            value={senha_usuario}
+            onChangeText={ (senha_usuario) => setSenha_usuario(senha_usuario)}
           ></TextInput>
           <TouchableOpacity onPress= {() => navigation.navigate("Inicial")}><Text style={styles.textnohaveacount}>Ainda não tenho uma conta </Text></TouchableOpacity>
           <TouchableOpacity style={styles.buttonlogin} onPress={login}><Text style={styles.buttonlogintext}>Entrar</Text></TouchableOpacity>
