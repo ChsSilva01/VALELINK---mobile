@@ -14,13 +14,9 @@ export default function InformacoesPessoais({ navigation }){
     const [selectedDeficiency, setSelectedDeficiency] = useState("sim");
     const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("java");    
     const [nome_usuario,setNome_usuario] = useState("");
-    const [CPF,setCPF] = useState("");
-    const [RG,setRG] = useState("");
-    const [data_de_nascimento,setData_de_nascimento] = useState("");
-    // const [Deficiencia,setDeficiencia] = useState("");
-    // const [Estado_Civil,setEstado_Civil] = useState("");
-    // const [Sexo,setSexo] = useState("");
-    const [Especifique,setEspecifique] = useState("");
+    const [CPF_usuario,setCPF] = useState("");
+    const [RG_usuario,setRG] = useState("");
+    const [data_nascimento_usuario,setData_de_nascimento] = useState("");
     const [isLoading, setIsLoading] = useState(true); 
     const [refreshing, setRefreshing] = useState(false); 
 
@@ -31,9 +27,9 @@ export default function InformacoesPessoais({ navigation }){
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
             setNome_usuario(res.data.nome_usuario);
-            setRG(res.data.RG.toString());
-            setCPF(res.data.CPF.toString());
-            setData_de_nascimento(res.data.data_de_nascimento);
+            setRG(res.data.RG_usuario);
+            setCPF(res.data.CPF_usuario);
+            setData_de_nascimento(res.data.data_nascimento_usuario);
 
         } catch (error) {
             console.log("Erro ao Listar " + error);
@@ -67,7 +63,7 @@ export default function InformacoesPessoais({ navigation }){
                             <Text style={styles.infostyle}>RG</Text>
                             <TextInput
                             style={styles.rginput}
-                            placeholder={RG}
+                            placeholder={RG_usuario}
                             >
                             </TextInput>
                         </View>
@@ -77,7 +73,7 @@ export default function InformacoesPessoais({ navigation }){
                         <View>
                             <Text style={styles.infostyle}>Data de nascimento</Text>
                             <TextInput
-                            placeholder={data_de_nascimento}
+                            placeholder={data_nascimento_usuario}
                             style={styles.dateinput}
                             >
                             </TextInput>
@@ -87,7 +83,7 @@ export default function InformacoesPessoais({ navigation }){
                             <Text style={styles.infostyle}>CPF</Text>
                             <TextInput
                             style={styles.rginput}
-                            placeholder={CPF}
+                            placeholder={CPF_usuario}
                             >
                             </TextInput>
                         </View>

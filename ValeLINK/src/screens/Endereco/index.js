@@ -30,13 +30,13 @@ export default function Seguranca({ navigation }){
         try {
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/listar.php?cod_usuario=${user}`);
-            setCidade(res.data.cidade);
-            setNumero(res.data.numero.toString());
-            setCEP(res.data.CEP.toString());
-            setRua(res.data.rua);
-            setTempo_de_residencia(res.data.tempo_de_residencia);
-            setTipo_de_residencia(res.data.tipo_de_residencia);
-            setPonto_de_referencia(res.data.ponto_de_referencia);
+            setCidade(res.data.cidade_usuario);
+            setNumero(res.data.numero_usuario);
+            setCEP(res.data.CEP_usuario);
+            setRua(res.data.rua_usuario);
+            setTempo_de_residencia(res.data.tempo_de_residencia_usuario);
+            setTipo_de_residencia(res.data.tipo_de_residencia_usuario);
+            setPonto_de_referencia(res.data.ponto_referencia_usuario);
         } catch (error) {
             console.log("Erro ao Listar " + error);
         } finally {

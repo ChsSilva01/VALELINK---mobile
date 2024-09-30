@@ -65,7 +65,7 @@ export default function Home({ navigation }) {
                   source={{uri: `${url}/apiVALELINK/empresa/imgs/${item.foto_empresa}`}}
                   style={{width: 40,height: 40, borderRadius: 15}}
                 ></Image>
-                <TouchableOpacity onPress={() => console.log(item.cod_empresa)}>
+                <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
                 <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_post}</Text>
