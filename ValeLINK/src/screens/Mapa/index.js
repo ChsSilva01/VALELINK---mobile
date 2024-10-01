@@ -35,8 +35,8 @@ export default function Mapa({ navigation }) {
             setOrigin({
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
-                latitudeDelta: 0.00922,
-                longitudeDelta: 0.00421
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421
             })
         } else {
             throw new Error('Location permission not granted');
@@ -80,16 +80,7 @@ export default function Mapa({ navigation }) {
                 <Text style={{color: 'white', fontSize: 13}}> Meu Local </Text>
               </View>         
             </Marker>
-         
-
- 
-
-
-
 </MapView>
-
-
-
 
     </View>
   );

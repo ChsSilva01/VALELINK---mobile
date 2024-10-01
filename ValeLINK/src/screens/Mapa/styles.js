@@ -3,11 +3,8 @@ import fonts from "../../styles/fonts";
 
 
 export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
       map: {
-          height: '30%'
+          height: '100%'
       },
       search: {
           height: '30%'
@@ -26,10 +23,6 @@ export const styles = StyleSheet.create({
         left: 125,
         fontFamily: fonts.title
     },
-    map:{
-        height: '70%',
-        
-    },
     search:{
         height: '30%'
     },
@@ -37,8 +30,7 @@ export const styles = StyleSheet.create({
        marginTop: -40
     },
     marcador: {
-        width: 90,
-        height: 70,
+        resizeMode: 'stretch',
         flexDirection: 'column',
         borderRadius: 8,
         alignItems: 'center'

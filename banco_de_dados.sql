@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `follow` (
   CONSTRAINT `FK_follow_usuario` FOREIGN KEY (`id_user`) REFERENCES `usuario` (`cod_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.follow: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.follow: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `follow` DISABLE KEYS */;
 /*!40000 ALTER TABLE `follow` ENABLE KEYS */;
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   CONSTRAINT `FK_posts_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.post: ~7 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.post: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
 INSERT INTO `post` (`cod_post`, `cod_empresa`, `conteudo_post`, `data_post`, `hora_post`, `midia_post`) VALUES
 	(25, 3, 'Estamos com vagas abertas para desenvolvedores de software! Procuramos profissionais com experiência em React Native, Node.js e bancos de dados SQL. Oferecemos um ambiente de trabalho inovador e a possibilidade de trabalho remoto. Venha fazer parte da nossa equipe!', '2024-09-30', '14:30:00', 'vagas_dev_banner.png'),
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `unicos` (`email_usuario`,`CPF_usuario`,`RG_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.usuario: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.usuario: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`cod_usuario`, `email_usuario`, `senha_usuario`, `nome_usuario`, `RG_usuario`, `CPF_usuario`, `telefone_usuario`, `sexo_usuario`, `foto_usuario`, `CEP_usuario`, `rua_usuario`, `bairro_usuario`, `cidade_usuario`, `numero_usuario`, `beneficios_usuario`, `tipo_de_residencia_usuario`, `tempo_de_residencia_usuario`, `valor_de_residencia_usuario`, `CAD_usuario`, `deficiencia_usuario`, `estado_civil_usuario`, `telefone_contato_usuario`, `ponto_referencia_usuario`, `especifique_usuario`, `data_nascimento_usuario`, `telefone_recado_usuario`) VALUES
 	(5, 'maria.silva@gmail.com', 'senha123', 'Maria Silva', '12.345.678-9', '123.456.789-10', '(11) 91234-5678', 'Feminino', 'foto_maria.png', '01001-000', 'Rua das Flores', 'Centro', 'São Paulo', '123', 'Nenhum', 'Apartamento', '5 anos', '250000', '123456', 'Nenhuma', 'Solteira', '(11) 98765-4321', 'Próximo à padaria', 'Sem especificação', '1990-03-15', '(11) 91234-5679'),
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `vagas` (
   CONSTRAINT `FK_vagas_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.vagas: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.vagas: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `vagas` DISABLE KEYS */;
 INSERT INTO `vagas` (`cod_vagas`, `cod_empresa`, `hora_vagas`, `data_vagas`, `sobre_vagas`, `carga_horaria_vagas`, `pre_requisitos_vagas`, `beneficios_vagas`, `salario_vagas`, `tipos_vagas`, `tempo_contrato_vagas`) VALUES
 	(4, 3, '09:00:00', '2024-10-01', 'Vaga para Desenvolvedor Frontend na Tech Solutions. O profissional será responsável por criar interfaces responsivas e modernas para aplicações web e mobile, utilizando React e React Native. Trabalho em equipe e conhecimento em metodologias ágeis são diferenciais.', '40 horas semanais', 'Experiência com React e React Native, CSS, HTML e JavaScript', 'Vale-transporte, Vale-alimentação, Plano de saúde', 'R$ 5.000,00 - R$ 7.000,00', 'Tempo integral', 'Contrato Indeterminado'),

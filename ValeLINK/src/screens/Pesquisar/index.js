@@ -1,12 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { styles } from './styles';
 import {Ionicons} from '@expo/vector-icons';
+import api from '../../services/api';
 //pegue o parâmetro da tela anterior = route, nome = 
 export default function Pesquisar({ navigation }) {
   const[searchQuery, setSearchQuery] = useState('');
+  const[info, setInfo] = useState('');
+  const[isLoading, setIsLoading] = useState('');
+  const[refreshing, setRefreshing] = useState('');
+  
 
+  async function Pesquisar() {
+    try {
+        const res = await api.get(`apiVALELINK/pesquisa/pesquisar.php?pesquisa=${searchQuery}`);
+        setInfo(res.data);
+    } catch (error) {
+        console.log("Erro ao Listar " + error);
+    } finally {
+        setIsLoading(false);
+        setRefreshing(false);
+
+    }
+  }
+  useEffect(() => {
+    Pesquisar()
+  }, []); 
   return (
     <View style={styles.container}>
       <View style={{alignItems: 'center', flexDirection: 'row', justifyContent: 'space-around', top: 50}}>
@@ -19,6 +39,7 @@ export default function Pesquisar({ navigation }) {
         />
         <View></View>
       </View>
+      <TouchableOpacity onPress={()=> console.log(searchQuery)}><Text>Carlos</Text></TouchableOpacity>
     </View>
   );
 }

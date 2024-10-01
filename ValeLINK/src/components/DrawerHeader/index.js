@@ -11,10 +11,11 @@ import PictureProfile from '../../../assets/bonitão.jpg';
 import logodrawer from '../../../assets/logo_drawer.png';
 
 import api from '../../services/api';
+import url from '../../services/url';
 
 const CustomDrawer= FC = () => {
     const navigation=  any= useNavigation();
-    const [nome_usuario, setNome] = useState("");
+    const [info, setInfo] = useState("");
     const [isLoading, setIsLoading] = useState(true); 
     const [refreshing, setRefreshing] = useState(false); 
 
@@ -43,7 +44,7 @@ const CustomDrawer= FC = () => {
         try {
             const user = await AsyncStorage.getItem('@user');
             const res = await api.get(`apiVALELINK/usuarios/buscarId.php?cod_usuario=${user}`);
-            setNome(res.data.nome_usuario);
+            setInfo(res.data);
     
         } catch (error) {
             console.log("Erro ao Listar " + error);
@@ -61,8 +62,8 @@ const CustomDrawer= FC = () => {
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <View style={styles.HeaderDrawer}>
                 <View style={styles.logo}><Image source={logodrawer} size={57}></Image></View>      
-                <View style={styles.boxpicture}><Image source={PictureProfile} style={styles.pictureprofile}></Image></View>
-                <Text style={styles.nameprofile}>{nome_usuario}</Text>
+                <View style={styles.boxpicture}><Image source={{uri: `${url}/apiVALELINK/usuarios/imgs/${info.foto_usuario}`}} style={styles.pictureprofile}></Image></View>
+                <Text style={styles.nameprofile}>{info.nome_usuario}</Text>
             </View>
 
             <View style={styles.separate}></View>

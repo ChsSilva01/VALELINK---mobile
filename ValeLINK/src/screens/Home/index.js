@@ -74,7 +74,7 @@ export default function Home({ navigation }) {
             </View>
             <View style={{width: 345, height: 210, alignItems: 'center'}}>
               <View style={{alignItems: 'flex-start', width: 323}}>
-                <Text>{item.conteudo_post}</Text>
+                <Text style={{textAlign: 'justify'}}>{item.conteudo_post}</Text>
               </View>
               <Image source={{uri: `${url}/apiVALELINK/imagem/${item.midia_post}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
             </View>
