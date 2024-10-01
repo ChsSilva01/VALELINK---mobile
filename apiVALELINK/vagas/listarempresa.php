@@ -8,7 +8,7 @@ if (isset($_GET['cod_vagas'])) {
     $cod_vagas = $_GET['cod_vagas'];
 
     $query = $pdo->query("SELECT empresa.nome_empresa, empresa.foto_empresa, salario_vagas, carga_horaria_vagas, tempo_contrato_vagas, sobre_vagas FROM vagas INNER JOIN empresa ON vagas.cod_empresa = empresa.cod_empresa WHERE cod_vagas = '$cod_vagas'");
-
+    //  
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
         for ($i=0; $i < count($res); $i++) { 
@@ -17,9 +17,9 @@ if (isset($_GET['cod_vagas'])) {
             
         $nome_empresa = $res[$i]['nome_empresa'];
         $foto_empresa = $res[$i]['foto_empresa'];
-        $salario = $res[$i]['salario_vagas'];
-        $carga_horaria = $res[$i]['carga_horaria_vagas'];
-        $tempo_de_contrato = $res[$i]['tempo_contrato_vagas'];
+        $salario_vagas = $res[$i]['salario_vagas'];
+        $carga_horaria_vagas = $res[$i]['carga_horaria_vagas'];
+        $tempo_contrato_vagas = $res[$i]['tempo_contrato_vagas'];
 
 
             }

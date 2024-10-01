@@ -100,6 +100,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 5
     },
+    buttonD: {
+      backgroundColor: '#00755C', 
+      width: 25, 
+      height: 25, 
+      borderRadius: 10, 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      margin: 5
+  },
     textButton: {
         color: '#fff', 
         fontWeight: 'bold'

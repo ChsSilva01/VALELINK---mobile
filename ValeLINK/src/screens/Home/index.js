@@ -68,9 +68,9 @@ export default function Home({ navigation }) {
                 <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
-                <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.hora_post}</Text>
+                <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.diferenca_hora}</Text>
               </View>
-              <TouchableOpacity style={styles.buttonC} onPress={()=> console.log(item.cod_empresa)}><Text style={styles.textButton} >Seguir</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.buttonD} onPress={()=> console.log(item.cod_empresa)}><Text style={styles.textButton} >+</Text></TouchableOpacity>
             </View>
             <View style={{width: 345, height: 210, alignItems: 'center'}}>
               <View style={{alignItems: 'flex-start', width: 323}}>
@@ -83,7 +83,7 @@ export default function Home({ navigation }) {
                 <TouchableOpacity><Ionicons name='chatbubble-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='share-social-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity style={styles.buttonC}>
-                    <Text style={styles.textButton}>Se Cadastrar!!!</Text>
+                    <Text style={styles.textButton}>Enviar currículo!!!</Text>
                 </TouchableOpacity>
             </View>
           </View>
