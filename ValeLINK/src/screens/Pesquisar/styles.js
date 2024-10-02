@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     },
     searchbar: {
       width: 300,
-      height: 50,
       borderRadius: 10,
     }
 });

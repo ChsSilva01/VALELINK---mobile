@@ -3,13 +3,12 @@
 include_once('../conexao.php');
 
 header('Content-Type: application/json');
-
     $nome_empresa = $_GET['pesquisa'];
 
     $query = $pdo->query("SELECT * FROM empresa WHERE nome_empresa = '$nome_empresa'");
     //
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
-
+    
         for ($i=0; $i < count($res); $i++) { 
         foreach ($res[$i] as $key => $value) {
         }

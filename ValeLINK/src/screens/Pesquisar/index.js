@@ -4,6 +4,7 @@ import { Searchbar } from 'react-native-paper';
 import { styles } from './styles';
 import {Ionicons} from '@expo/vector-icons';
 import api from '../../services/api';
+import { FlatList } from 'react-native-gesture-handler';
 //pegue o parâmetro da tela anterior = route, nome = 
 export default function Pesquisar({ navigation }) {
   const[searchQuery, setSearchQuery] = useState('');
@@ -24,9 +25,6 @@ export default function Pesquisar({ navigation }) {
 
     }
   }
-  useEffect(() => {
-    Pesquisar()
-  }, []); 
   return (
     <View style={styles.container}>
       <View style={{alignItems: 'center', flexDirection: 'row', justifyContent: 'space-around', top: 50}}>
@@ -36,10 +34,10 @@ export default function Pesquisar({ navigation }) {
           placeholder="Pesquisar"
           onChangeText={setSearchQuery}
           value={searchQuery}
+          onIconPress={Pesquisar}
         />
         <View></View>
       </View>
-      <TouchableOpacity onPress={()=> console.log(searchQuery)}><Text>Carlos</Text></TouchableOpacity>
     </View>
   );
 }
