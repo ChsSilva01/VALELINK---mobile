@@ -77,16 +77,16 @@ export default function Perfil({ navigation }){
                                     <Ionicons name='ellipsis-horizontal-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Outros</Text>  
                                 </View>
-                                <TouchableOpacity onPress = {() => navigation.navigate("Filtragem")}>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Outros")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.personalinformation}>
                                 <View style={styles.organize}>
                                     <Ionicons name='lock-closed-outline' color='#01E581' size={25}></Ionicons>
-                                    <Text style={styles.textpersonalinformation}>Segurança</Text>
+                                    <Text style={styles.textpersonalinformation}>Curriculo</Text>
                                 </View>
-                                <TouchableOpacity onPress = {() => navigation.navigate("Seguranca")}>
+                                <TouchableOpacity onPress = {() => navigation.navigate("Curriculo")}>
                                     <Ionicons name='chevron-forward' color='#01E581' size={25}></Ionicons>
                                 </TouchableOpacity>
                             </View>

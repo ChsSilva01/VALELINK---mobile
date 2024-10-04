@@ -8,7 +8,8 @@ import ConfigScreen from '../screens/Configuracoes';
 import FeedbackScreen from '../screens/FeedBack';
 import HelpScreen from '../screens/Ajuda';
 import PersonalinformationScreen from '../screens/Informacoes_pessoais';
-import SecurityScreen from '../screens/Seguranca';
+import CurriculumScreen from '../screens/Curriculo';
+import OthersScreen from '../screens/Outros';
 import FilteringScreen from '../screens/Filtragem';
 import CompanyprofileScreen from '../screens/Perfil da empresa';
 import MapScreen from '../screens/Mapa';
@@ -19,12 +20,14 @@ import InitialScreen from '../screens/Inicial';
 import VagueSearchesScreen from '../screens/Buscas_Vagas';
 import VacancyAnalysisScreen from '../screens/Analise_de_vaga';
 import enterprisemapScreen from '../screens/Mapa_Empresa';
+import SplashScreen from '../screens/Splash';
  
 
 const Stack = createStackNavigator();
 
 const AuthStack = () => (
-  <Stack.Navigator initialRouteName='Inicial' screenOptions={{headerShown: false}}>
+  <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Splash" component={SplashScreen} />
     <Stack.Screen name="Inicial" component={InitialScreen} />
     <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Home" component={DrawerRoutes} />
@@ -34,7 +37,8 @@ const AuthStack = () => (
     <Stack.Screen name="FeedBack" component={FeedbackScreen} />
     <Stack.Screen name="Ajuda" component={HelpScreen} />
     <Stack.Screen name="InformacoesPessoais" component={PersonalinformationScreen} />
-    <Stack.Screen name="Seguranca" component={SecurityScreen} />
+    <Stack.Screen name="Curriculo" component={CurriculumScreen} />
+    <Stack.Screen name="Outros" component={OthersScreen} />
     <Stack.Screen name="Filtragem" component={FilteringScreen} />
     <Stack.Screen name="Perfildaempresa" component={CompanyprofileScreen} />
     <Stack.Screen name="Mapa" component={MapScreen} />
