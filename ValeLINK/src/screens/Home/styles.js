@@ -15,6 +15,50 @@ export const styles = StyleSheet.create({
       width: 390,
       
     },
+    postcontainer: {
+      width: 345,
+      marginTop: 26,
+      left: 26, 
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 3,
+      elevation: 2,
+      borderRadius: 10
+    },
+    headercontainer: {
+      paddingTop: 10,
+      flexDirection: 'row', 
+      alignItems: 'center', 
+      justifyContent: 'space-around'
+    },
+    companylogo: {
+      width: 40,
+      height: 40, 
+      borderRadius: 15
+    },
+    postschedule: {
+      color: '#959595', 
+      fontSize: 12, 
+      left: 20
+    },
+    contentcontainer: {
+      width: 322,
+      left: 11.5,
+      alignItems: 'center'
+    },
+    commentcontainer: {
+      alignItems: 'center'
+    },
+    imagecontent: {
+      width: 323, 
+      height: 202, 
+      resizeMode: 'stretch'
+    },
+    footercontainer: {
+      flexDirection: 'row', 
+      top: 5
+    },
     // Post
     post: {
       width: 345,

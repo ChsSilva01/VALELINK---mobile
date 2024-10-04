@@ -57,28 +57,30 @@ export default function Home({ navigation }) {
       
       <ScrollView style={styles.scrollfunctions}>
         {lista.map((item, index) =>(
-          <View key={`${item.cod_post}-${index}`} style={{marginTop: 26,width: 345, height: 317, left: 26, elevation: 2, borderRadius: 10}}>
-            <View style={{width: 345, height: 71, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
+          <View key={`${item.cod_post}-${index}`} style={styles.postcontainer}>
+            <View style={styles.headercontainer}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Image
                   key={item.cod_post} 
                   source={{uri: `${url}/apiVALELINK/empresa/imgs/${item.foto_empresa}`}}
-                  style={{width: 40,height: 40, borderRadius: 15}}
+                  style={styles.companylogo}
                 ></Image>
                 <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
                   <Text style={styles.nameUsertext}>{item.nome_empresa}</Text>
                 </TouchableOpacity>
-                <Text style={{color: '#959595', fontSize: 12, left: 20}}>{item.diferenca_hora}</Text>
+                <Text style={styles.postschedule}>{item.diferenca_hora}</Text>
               </View>
               <TouchableOpacity style={styles.buttonD} onPress={()=> console.log(item.cod_empresa)}><Text style={styles.textButton} >+</Text></TouchableOpacity>
             </View>
-            <View style={{width: 345, height: 210, alignItems: 'center'}}>
-              <View style={{alignItems: 'flex-start', width: 323}}>
+            <View style={styles.contentcontainer}>
+              <View style={styles.commentcontainer}>
                 <Text style={{textAlign: 'justify'}}>{item.conteudo_post}</Text>
               </View>
-              <Image source={{uri: `${url}/apiVALELINK/imagem/${item.midia_post}`}} style={{width: 323, height: 202, resizeMode: 'stretch'}}></Image>
+              {item.midia_post && ( 
+                <Image source={{uri: `${url}/apiVALELINK/imagem/${item.midia_post}`}} style={styles.imagecontent}></Image>
+              )}
             </View>
-            <View style={{width: 345, height: 36, flexDirection: 'row', top: 5}}>
+            <View style={styles.footercontainer}>
                 <TouchableOpacity onPress={Iconelike}><Ionicons name={like} size={28} style={styles.iconactionspost} color={color}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='chatbubble-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='share-social-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>

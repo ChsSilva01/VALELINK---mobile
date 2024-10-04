@@ -8,10 +8,9 @@ export default function Splash({ navigation }){
         
         <View style={{flex: 1, backgroundColor: '#157ef8'}}>
             <LottieView 
-                source={require('../../../assets/animacao.json')}
-                autoPlay
+                source={require('../../../assets/animacao_dois (1).json')}
                 // onAnimationFinish={() => navigation.navigate("Inicial")}
-                style={{width: '100%', height: '100%'}}
+                style={{width: 10, height: 10}}
             />
         </View>
     )

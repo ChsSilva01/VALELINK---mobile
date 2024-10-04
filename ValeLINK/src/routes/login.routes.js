@@ -21,12 +21,15 @@ import VagueSearchesScreen from '../screens/Buscas_Vagas';
 import VacancyAnalysisScreen from '../screens/Analise_de_vaga';
 import enterprisemapScreen from '../screens/Mapa_Empresa';
 import SplashScreen from '../screens/Splash';
+import TestScreen from '../screens/Teste';
  
 
 const Stack = createStackNavigator();
 
 const AuthStack = () => (
-  <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown: false}}>
+  <Stack.Navigator initialRouteName='Inicial' screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Teste" component={TestScreen} />
+
     <Stack.Screen name="Splash" component={SplashScreen} />
     <Stack.Screen name="Inicial" component={InitialScreen} />
     <Stack.Screen name="Login" component={LoginScreen} />
