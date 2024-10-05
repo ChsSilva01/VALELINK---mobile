@@ -48,12 +48,14 @@ export const styles = StyleSheet.create({
       alignItems: 'center'
     },
     commentcontainer: {
-      alignItems: 'center'
+      alignItems: 'center',
+      paddingTop: 10
     },
     imagecontent: {
       width: 323, 
       height: 202, 
-      resizeMode: 'stretch'
+      resizeMode: 'stretch',
+      borderRadius: 15
     },
     footercontainer: {
       flexDirection: 'row', 

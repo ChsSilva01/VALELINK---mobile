@@ -24,72 +24,9 @@ export const styles = StyleSheet.create({
         top: 20,
         left: 21
     },
-    cityinput: {
-        width: 198.47,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    numberinput: {
-        width: 130.99,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    addressinput: {
-        width: 197.48,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    CEPinput: {
-        width: 130.99,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    residencetimeinput: {
-        width: 115.11,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    typeofresidenceinput: {
-        width: 155.8,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    referencepointinput: {
-        width: 262.98,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    referencepointinput: {
-        width: 262.98,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    valueinput: {
-        width: 115.11,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-    },
-    neighborhood: {
-        width: 155.8,
-        height: 39,
+    skillandcompetencies: {
+        width: 340,
+        height: 138,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'
@@ -99,7 +36,7 @@ export const styles = StyleSheet.create({
         height: 40,
         backgroundColor: '#004443',
         borderRadius: 10,
-        top: 300,
+        top: 125,
         left: 96,
         justifyContent: 'center',
         alignItems: 'center'
@@ -109,30 +46,23 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontFamily: fonts.titleconfig
       },
-      phonenumberforverification: {
-        width: 298,
-        height: 39,
+      objective: {
+        width: 340,
+        height: 104,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'
       },
-      verificationemail: {
-        width: 297,
-        height: 39,
+      professionalhistory: {
+        width: 340,
+        height: 138,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'
       },
-      email: {
-        width: 269,
-        height: 39,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: '#00000040'
-      },
-      password: {
-        width: 262.98,
-        height: 39,
+      academictraining: {
+        width: 340,
+        height: 62,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: '#00000040'

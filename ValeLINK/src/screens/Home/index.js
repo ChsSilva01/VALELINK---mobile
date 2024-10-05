@@ -77,7 +77,7 @@ export default function Home({ navigation }) {
                 <Text style={{textAlign: 'justify'}}>{item.conteudo_post}</Text>
               </View>
               {item.midia_post && ( 
-                <Image source={{uri: `${url}/apiVALELINK/imagem/${item.midia_post}`}} style={styles.imagecontent}></Image>
+                <Image source={{uri: `${url}/apiVALELINK/post/imgs/${item.midia_post}`}} style={styles.imagecontent}></Image>
               )}
             </View>
             <View style={styles.footercontainer}>

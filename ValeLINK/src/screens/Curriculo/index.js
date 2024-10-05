@@ -18,28 +18,28 @@ export default function Curriculo({ navigation }){
             <View style={styles.input}>
                     <Text style={styles.infostyle}>Objetivo</Text>
                     <TextInput 
-                    style={styles.phonenumberforverification}
+                    style={styles.objective}
                     >
                     </TextInput>
                     {/*  */}
 
                     <Text style={styles.infostyle}>Histórico profissional</Text>
                     <TextInput 
-                    style={styles.verificationemail}
+                    style={styles.professionalhistory}
                     >
                     </TextInput>
                     {/*  */}
 
                     <Text style={styles.infostyle}>Formação acadêmica</Text>
                     <TextInput 
-                    style={styles.email}
+                    style={styles.academictraining}
                     >
                     </TextInput>
                     {/*  */}
 
                     <Text style={styles.infostyle}>Habilidade e competências</Text>
                     <TextInput 
-                    style={styles.cityinput}
+                    style={styles.skillandcompetencies}
                     >
                     </TextInput>
                     {/*  */}
