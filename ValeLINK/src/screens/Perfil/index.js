@@ -83,7 +83,7 @@ export default function Perfil({ navigation }){
                             </View>
                             <View style={styles.personalinformation}>
                                 <View style={styles.organize}>
-                                    <Ionicons name='lock-closed-outline' color='#01E581' size={25}></Ionicons>
+                                    <Ionicons name='reader-outline' color='#01E581' size={25}></Ionicons>
                                     <Text style={styles.textpersonalinformation}>Curriculo</Text>
                                 </View>
                                 <TouchableOpacity onPress = {() => navigation.navigate("Curriculo")}>

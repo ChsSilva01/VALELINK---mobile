@@ -14,6 +14,7 @@ export default function Home({ navigation }) {
   const [foto_empresa,setImagem] = useState(null);
   const [like, setLike] = useState("heart-outline");
   const [color, setColor] = useState("#000");
+  const [curriculo, setCurriculo] = useState();
   
 
   const [lista,setLista] = useState([]);
@@ -23,6 +24,7 @@ export default function Home({ navigation }) {
   useEffect(() => {
       listarDados();
       Iconelike();
+      salvarCurriculo();
   },[])
 
   async function listarDados(){
@@ -51,6 +53,23 @@ export default function Home({ navigation }) {
     } catch (error) {
       console.error('Erro ao salvar o código da vaga:', error);
     }
+  }
+
+  async function salvarCurriculo() {
+    const cod_usuario = await AsyncStorage.getItem('@user');
+    const res = await api.get(`apiVALELINK/curriculo/salvarcurriculo.php?cod_usuario=${cod_usuario}`);
+    setCurriculo(res.data.cod_curriculo);
+  }
+  async function enviarCurriculo(cod_empresa) {
+    const cod_usuario = await AsyncStorage.getItem('@user');
+    
+    const res = await api.post(`apiVALELINK/curriculo/salvarcurriculo.php`, {
+        cod_usuario: cod_usuario,
+        cod_curriculo: curriculo,
+        cod_empresa: cod_empresa
+    });
+
+    console.log(res.data.mensagem);
   }
   return (
     <View style={styles.container}>
@@ -84,7 +103,7 @@ export default function Home({ navigation }) {
                 <TouchableOpacity onPress={Iconelike}><Ionicons name={like} size={28} style={styles.iconactionspost} color={color}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='chatbubble-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
                 <TouchableOpacity><Ionicons name='share-social-outline' size={23} style={styles.iconactionspost}></Ionicons></TouchableOpacity>
-                <TouchableOpacity style={styles.buttonC}>
+                <TouchableOpacity style={styles.buttonC} onPress={() => enviarCurriculo(item.cod_empresa)}>
                     <Text style={styles.textButton}>Enviar currículo!!!</Text>
                 </TouchableOpacity>
             </View>

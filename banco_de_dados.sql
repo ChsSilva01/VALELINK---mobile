@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `envio_curriculo` (
   CONSTRAINT `FK_envio_curriculo_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.envio_curriculo: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.envio_curriculo: ~3 rows (aproximadamente)
 DELETE FROM `envio_curriculo`;
 INSERT INTO `envio_curriculo` (`cod_envio_curriculo`, `cod_usuario`, `cod_curriculo`, `cod_empresa`) VALUES
 	(1, 5, 1, 3),
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `notificacoes` (
   CONSTRAINT `FK_notificacoes_usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuario` (`cod_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela tcc3etim.notificacoes: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela tcc3etim.notificacoes: ~3 rows (aproximadamente)
 DELETE FROM `notificacoes`;
 INSERT INTO `notificacoes` (`cod_notificacoes`, `cod_empresa`, `cod_usuario`, `status_notificacoes`) VALUES
 	(1, 3, 5, 'Em Espera'),

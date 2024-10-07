@@ -29,7 +29,8 @@ export const styles = StyleSheet.create({
         height: 138,
         borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00000040'
+        borderColor: '#00000040',
+        textAlignVertical: 'top'
     },
     changedatabutton: {
         width: 200,
@@ -51,20 +52,23 @@ export const styles = StyleSheet.create({
         height: 104,
         borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00000040'
+        borderColor: '#00000040',
+        textAlignVertical: 'top'
       },
       professionalhistory: {
         width: 340,
         height: 138,
         borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00000040'
+        borderColor: '#00000040',
+        textAlignVertical: 'top'
       },
       academictraining: {
         width: 340,
         height: 62,
         borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00000040'
+        borderColor: '#00000040',
+        textAlignVertical: 'top'
       },
 })

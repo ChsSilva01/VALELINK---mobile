@@ -19,6 +19,7 @@ export default function Curriculo({ navigation }){
                     <Text style={styles.infostyle}>Objetivo</Text>
                     <TextInput 
                     style={styles.objective}
+                    multiline={true}
                     >
                     </TextInput>
                     {/*  */}
@@ -26,6 +27,7 @@ export default function Curriculo({ navigation }){
                     <Text style={styles.infostyle}>Histórico profissional</Text>
                     <TextInput 
                     style={styles.professionalhistory}
+                    multiline={true}
                     >
                     </TextInput>
                     {/*  */}
@@ -33,6 +35,7 @@ export default function Curriculo({ navigation }){
                     <Text style={styles.infostyle}>Formação acadêmica</Text>
                     <TextInput 
                     style={styles.academictraining}
+                    multiline={true}
                     >
                     </TextInput>
                     {/*  */}
@@ -40,6 +43,7 @@ export default function Curriculo({ navigation }){
                     <Text style={styles.infostyle}>Habilidade e competências</Text>
                     <TextInput 
                     style={styles.skillandcompetencies}
+                    multiline={true}
                     >
                     </TextInput>
                     {/*  */}

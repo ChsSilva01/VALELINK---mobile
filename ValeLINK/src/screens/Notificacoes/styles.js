@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
         shadowOffset: { width: 1, height: 3 },
         shadowOpacity: 1,
         shadowRadius: 3,
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 10
     },
     line: {
         width: 2,
@@ -64,6 +65,6 @@ export const styles = StyleSheet.create({
     },
     distance: {
         left: 10
-    }
+    },
 
 })
