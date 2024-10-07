@@ -66,10 +66,10 @@ export default function Vagas({ navigation }){
                 {lista.map(item =>(
                     <TouchableOpacity onPress = {() =>{ salvarCod(item.cod_vagas)}} key={item.cod_vagas}>
                         <View style={styles.vacancies}>
-                            <Image source={{uri: `${url}/apiVALELINK/imagem/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
+                            <Image source={{uri: `${url}apiVALELINK/empresa/imgs/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
                             <View style={styles.line}></View>
                             <View style={{left: 5}}>
-                                <Text style={styles.texttitlevacancie}>Desenvolvimento Web</Text>
+                                <Text style={styles.texttitlevacancie}>{item.area_vagas}</Text>
                                 <Text style={styles.textnamecompany}>{item.nome_empresa}</Text>
                             </View>
                         </View>

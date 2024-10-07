@@ -10,7 +10,7 @@ $cod_curriculo = $postjson['cod_curriculo'];
 $cod_empresa = $postjson['cod_empresa'];
 
 // Prepare a query para inserir os dados
-$res = $pdo->prepare("INSERT INTO $tabela (cod_usuario, cod_curriculo, cod_empresa) VALUES (:cod_usuario, :cod_curriculo, :cod_empresa)");
+$res = $pdo->prepare("INSERT INTO $tabela (cod_usuario, cod_curriculo, cod_empresa) VALUES ($cod_usuario, $cod_curriculo, $cod_empresa)");
 
 $res->bindValue(":cod_usuario", $cod_usuario);
 $res->bindValue(":cod_curriculo", $cod_curriculo);

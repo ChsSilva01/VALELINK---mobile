@@ -73,6 +73,7 @@ export const styles = StyleSheet.create({
     imagecompany: {
         width: 58,
         height: 58,
+        borderRadius: 15
     },
     line: {
         width: 2,
