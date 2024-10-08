@@ -10,8 +10,9 @@ $cod_curriculo = $postjson['cod_curriculo'];
 $cod_empresa = $postjson['cod_empresa'];
 
 // Prepare a query para inserir os dados
-$res = $pdo->prepare("INSERT INTO $tabela (cod_usuario, cod_curriculo, cod_empresa) VALUES ($cod_usuario, $cod_curriculo, $cod_empresa)");
+$res = $pdo->prepare("INSERT INTO envio_curriculo(cod_usuario, cod_curriculo, cod_empresa) VALUES (:cod_usuario, :cod_curriculo, :cod_empresa);");
 
+// Bind dos valores nas variáveis
 $res->bindValue(":cod_usuario", $cod_usuario);
 $res->bindValue(":cod_curriculo", $cod_curriculo);
 $res->bindValue(":cod_empresa", $cod_empresa);
@@ -19,8 +20,12 @@ $res->bindValue(":cod_empresa", $cod_empresa);
 if ($res->execute()) {
     $result = json_encode(array('mensagem'=>'Salvo com sucesso!', 'sucesso'=>true));
 } else {
-    $result = json_encode(array('mensagem'=>'Erro ao salvar!', 'sucesso'=>false));
+    // Captura o erro detalhado
+    $error = $res->errorInfo();  
+    $result = json_encode(array('mensagem'=>'Erro ao salvar!', 'erro' => $error, 'sucesso'=>false));
 }
 
+// Retorna a resposta com o cabeçalho correto
+header('Content-Type: application/json');
 echo $result;
 ?>
