@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `envio_curriculo` (
   CONSTRAINT `FK__usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuario` (`cod_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_envio_curriculo_curriculo` FOREIGN KEY (`cod_curriculo`) REFERENCES `curriculo` (`cod_curriculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_envio_curriculo_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela tcc3etim.envio_curriculo: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `envio_curriculo` DISABLE KEYS */;
@@ -90,7 +90,8 @@ INSERT INTO `envio_curriculo` (`cod_envio_curriculo`, `cod_usuario`, `cod_curric
 	(1, 5, 1, 3),
 	(2, 6, 2, 4),
 	(3, 5, 1, 3),
-	(4, 6, 2, 4);
+	(4, 6, 2, 4),
+	(5, 5, 1, 4);
 /*!40000 ALTER TABLE `envio_curriculo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela tcc3etim.notificacoes
@@ -134,8 +135,7 @@ INSERT INTO `post` (`cod_post`, `cod_empresa`, `conteudo_post`, `data_post`, `ho
 	(25, 3, 'Estamos com vagas abertas para desenvolvedores de software! Procuramos profissionais com experiência em React Native, Node.js e bancos de dados SQL. Oferecemos um ambiente de trabalho inovador e a possibilidade de trabalho remoto. Venha fazer parte da nossa equipe!', '2024-09-30', '14:30:00', ''),
 	(26, 3, 'A Tech Solutions está ampliando sua equipe! Estamos em busca de gerentes de projetos com experiência em metodologias ágeis (Scrum e Kanban) para liderar nossos novos projetos de desenvolvimento de software. Envie seu currículo e faça parte do nosso time!', '2024-10-02', '09:00:00', 'gerente_projetos_vaga.png'),
 	(27, 4, 'A Green Energy Solutions está contratando! Procuramos engenheiros elétricos com especialização em energias renováveis. Faça parte de uma empresa inovadora no setor e ajude a construir um futuro sustentável. Envie seu currículo agora mesmo!', '2024-09-28', '11:15:00', 'engenheiro_eletrico_vaga.png'),
-	(28, 4, 'Vagas abertas para técnicos de manutenção! A Green Energy Solutions está em busca de profissionais especializados em manutenção de equipamentos fotovoltaicos e outras tecnologias de energia renovável. Candidate-se agora e contribua para a expansão da energia sustentável!', '2024-10-01', '13:45:00', 'tecnico_manutencao_vaga.png'),
-	(29, 4, 'Abóbora', '2024-10-07', '16:22:39', '9574c53cafcb163f9018c6d2060bfe24.png');
+	(28, 4, 'Vagas abertas para técnicos de manutenção! A Green Energy Solutions está em busca de profissionais especializados em manutenção de equipamentos fotovoltaicos e outras tecnologias de energia renovável. Candidate-se agora e contribua para a expansão da energia sustentável!', '2024-10-01', '13:45:00', 'tecnico_manutencao_vaga.png');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela tcc3etim.usuario
