@@ -51,10 +51,14 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: fonts.title
     },
+    descriptionarea: {
+        top: 35, 
+        width: 325, 
+        left: 13.5,
+    },
     descriptiontext: {
         fontSize: 18,
         fontFamily: fonts.title,
-        top: 40,
-        left: 25
+        left: 25,
     }
 })

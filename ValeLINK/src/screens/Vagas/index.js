@@ -64,11 +64,11 @@ export default function Vagas({ navigation }){
                 </View>
                 <ScrollView style={{height: 350, top: 60}}>
                 {lista.map(item =>(
-                    <TouchableOpacity onPress = {() =>{ salvarCod(item.cod_vagas)}} key={item.cod_vagas}>
+                    <TouchableOpacity onPress = {() =>{ salvarCod(item.cod_vagas)}} key={item.cod_vagas} style={{paddingTop: 5}}>
                         <View style={styles.vacancies}>
                             <Image source={{uri: `${url}apiVALELINK/empresa/imgs/${item.foto_empresa}`}} style={styles.imagecompany}></Image>
                             <View style={styles.line}></View>
-                            <View style={{left: 5}}>
+                            <View style={{left: 25}}>
                                 <Text style={styles.texttitlevacancie}>{item.area_vagas}</Text>
                                 <Text style={styles.textnamecompany}>{item.nome_empresa}</Text>
                             </View>

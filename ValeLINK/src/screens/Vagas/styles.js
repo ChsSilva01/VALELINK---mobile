@@ -68,14 +68,17 @@ export const styles = StyleSheet.create({
         height: 70,
         backgroundColor: '#ffff',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     imagecompany: {
-        width: 58,
-        height: 58,
-        borderRadius: 15
+        width: 50,
+        height: 50,
+        borderRadius: 15,
+        left: 10
     },
     line: {
+        left: 15,
         width: 2,
         height: 38,
         backgroundColor: '#01E581',

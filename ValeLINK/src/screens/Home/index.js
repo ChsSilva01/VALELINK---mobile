@@ -60,6 +60,11 @@ export default function Home({ navigation }) {
     const res = await api.get(`apiVALELINK/curriculo/salvarcurriculo.php?cod_usuario=${cod_usuario}`);
     setCurriculo(res.data.cod_curriculo);
   }
+
+
+
+
+
   async function enviarCurriculo(cod_empresa) {
     try {
       const cod_usuario = await AsyncStorage.getItem('@user');
@@ -67,7 +72,7 @@ export default function Home({ navigation }) {
       console.log('Currículo:', curriculo);
       console.log('Empresa:', cod_empresa);
   
-      const res = await api.post(`apiVALELINK/curriculo/salvarcurriculo.php`, {
+      const res = await api.post(`apiVALELINK/curriculo/enviarcurriculo.php`, {
         cod_usuario: cod_usuario,
         cod_curriculo: curriculo,
         cod_empresa: cod_empresa

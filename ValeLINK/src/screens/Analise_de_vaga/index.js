@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { styles } from './styles';
 import logo from '../../../assets/logo.png'
 import logocompany from '../../../assets/logo_company.png';
@@ -52,7 +52,7 @@ export default function AnaliseDeVagas({ navigation }){
                     <Text>{area_vagas}</Text>
                     <Text>{nome_empresa}</Text>
                 </View>
-                <View style={{flexDirection: 'row', top: 27, width: 353, height: 43, justifyContent: 'space-around', alignItems: 'center'}}>
+                <View style={{ top: 27, width: 353, height: 150, justifyContent: 'space-around', alignItems: 'start', paddingLeft: 20}}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={contract_time_icon}></Image>
@@ -73,10 +73,11 @@ export default function AnaliseDeVagas({ navigation }){
                     </View>
                 </View>
                 <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>
-                <Text style={styles.descriptiontext}>
-                    Descrição:
-
-                </Text>
+                <ScrollView style={styles.descriptionarea}>
+                    <Text style={styles.descriptiontext}>Descrição:</Text>
+                    
+                </ScrollView>
+                
             </View>
         </View>
     )
