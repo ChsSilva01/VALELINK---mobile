@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
         width: 309,
         height: 277,
         left: 23,
-        top: 16
+        top: 16,
+        borderRadius: 15
     },
     button: {
         width: 311,
@@ -53,7 +54,7 @@ export const styles = StyleSheet.create({
     },
     descriptionarea: {
         top: 35, 
-        width: 290, 
+        width: 311, 
         left: 13.5,
     },
     descriptiontext: {
@@ -63,7 +64,7 @@ export const styles = StyleSheet.create({
         top: 5
     },
     description: {
-        left: 10,
+        left: 15,
         textAlign: 'justify'
     }
 })

@@ -6,6 +6,7 @@ import api from '../../services/api';
 import { styles } from './styles';
 import debounce from 'lodash.debounce'; // Biblioteca para debounce
 import url from '../../services/url';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Pesquisar({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,7 +27,7 @@ export default function Pesquisar({ navigation }) {
 
       // Verificar se a resposta tem 'success' como true e se contém a 'nome_empresa'
       if (res.data.success) {
-        setInfo([{ nome_empresa: res.data.nome_empresa, foto_empresa: res.data.foto_empresa }]); // Armazena a resposta como um array
+        setInfo([{ nome_empresa: res.data.nome_empresa, foto_empresa: res.data.foto_empresa, cod_empresa: res.data.cod_empresa }]); // Armazena a resposta como um array
       } else {
         setInfo([]); // Se não houver resultados, limpa a lista
       }
@@ -51,6 +52,15 @@ export default function Pesquisar({ navigation }) {
     console.log("Estado 'info' atualizado:", info);
   }, [info]);
 
+  async function salvarCod(cod_empresa) {
+    try {
+      console.log(cod_empresa)
+      await AsyncStorage.setItem('@cod_empresa', JSON.stringify(cod_empresa));
+      navigation.navigate('Perfildaempresa');
+    } catch (error) {
+      console.error('Erro ao salvar o código da vaga:', error);
+    }
+  }
   return (
     <View style={styles.container}>
       <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-around', top: 50 }}>
@@ -74,11 +84,15 @@ export default function Pesquisar({ navigation }) {
           data={info}
           keyExtractor={(item, index) => index.toString()} // Chave única para cada item
           renderItem={({ item }) => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => salvarCod(item.cod_empresa)}>
               <View style={styles.enterprise}>
-                {/* Exibir o nome da empresa */}
-                <Image source={{uri: `${url}apiVALELINK/empresa/imgs/${item.foto_empresa}`}} style={styles.companyphoto}></Image>
-                <Text>{item.nome_empresa}</Text>
+                       <Image source={{uri: `${url}apiVALELINK/empresa/imgs/${item.foto_empresa}`}} style={styles.companyphoto}></Image>
+                            <View style={styles.line}></View>
+                            <View style={styles.distance}>
+                                <View style={styles.organization}>
+                                    <Text style={styles.companyname}>{item.nome_empresa}</Text>
+                                </View>
+                            </View>
               </View>
             </TouchableOpacity>
           )}

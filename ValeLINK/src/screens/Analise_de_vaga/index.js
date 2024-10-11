@@ -19,7 +19,9 @@ export default function AnaliseDeVagas({ navigation }){
     const [carga_horaria_vagas, setCarga_horaria_vagas] = useState("");
     const [tempo_contrato_vagas, setTempo_contrato_vagas] = useState("");
     const [area_vagas, setArea_vagas] = useState("");
-    const [descricao_da_empresa, setDescricao_da_empresa] = useState("");
+    const [pre_requisitos_vagas, setPre_requisitos_vagas] = useState("");
+    const [beneficios_vagas, setBeneficios_vagas] = useState("");
+    const [foto_vagas, setFoto_vagas] = useState("");
     
     useEffect(() => {
         listarDados();
@@ -35,7 +37,9 @@ export default function AnaliseDeVagas({ navigation }){
             setCarga_horaria_vagas(res.data.carga_horaria_vagas);
             setTempo_contrato_vagas(res.data.tempo_contrato_vagas);
             setArea_vagas(res.data.area_vagas);
-            setDescricao_da_empresa(res.data.descricao_da_empresa);
+            setPre_requisitos_vagas(res.data.pre_requisitos_vagas);
+            setBeneficios_vagas(res.data.beneficios_vagas);
+            setFoto_vagas(res.data.foto_vagas);
 
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -49,7 +53,7 @@ export default function AnaliseDeVagas({ navigation }){
                 <View></View>     
             </View>
             <View style={styles.vacancy}>
-                <Image source={{uri: `${url}/apiVALELINK/imagem/${foto_empresa}`}} style={styles.logocompany}></Image>
+                <Image source={{uri: `${url}apiVALELINK/vagas/imgs/${foto_vagas}`}} style={styles.logocompany}></Image>
                 <View style={{top: 27, left: 23}}>
                     <Text>{area_vagas}</Text>
                     <Text>{nome_empresa}</Text>
@@ -78,7 +82,8 @@ export default function AnaliseDeVagas({ navigation }){
                 <ScrollView style={styles.descriptionarea}>
                     <Text style={styles.descriptiontext}>Descrição:</Text>
                     <Text style={styles.description}>
-                        {descricao_da_empresa}
+                        <Text>Pré-Requisitos: {pre_requisitos_vagas}</Text>
+                        <Text>Benefícios: {beneficios_vagas}</Text>   
                     </Text>
                 </ScrollView>
                 

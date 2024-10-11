@@ -13,12 +13,13 @@ header('Content-Type: application/json');
         foreach ($res[$i] as $key => $value) {
         }
         // Informações Pessoais
+        $cod_empresa = $res[$i]['cod_empresa'];
         $nome_empresa = $res[$i]['nome_empresa'];
         $foto_empresa = $res[$i]['foto_empresa'];
      
         }
             if(count($res) > 0){
-                    $result = json_encode(array('success'=>true, 'nome_empresa'=>$nome_empresa, 'foto_empresa'=>$foto_empresa));
+                    $result = json_encode(array('success'=>true, 'nome_empresa'=>$nome_empresa, 'foto_empresa'=>$foto_empresa, 'cod_empresa'=>$cod_empresa));
                     // 
                 }else{
                     $result = json_encode(array('success'=>false, 'result'=>'0'));

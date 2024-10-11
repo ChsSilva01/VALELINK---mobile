@@ -27,7 +27,27 @@ export const styles = StyleSheet.create({
       width: 60,
       height: 60,
       borderRadius: 50
-    }
+    },
+    line: {
+      width: 2,
+      height: 38,
+      backgroundColor: '#01E581',
+      left: 5
+  },
+
+  distance: {
+      left: 10,
+      width: 100
+  },
+
+  organization: {
+      flexDirection: 'row'
+  },
+
+  companyname: {
+      fontSize: 14,
+      fontFamily: fonts.title
+  },
 
 
 });
