@@ -64,7 +64,8 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
     distance: {
-        left: 10
+        left: 10,
+        width: 100
     },
 
 })

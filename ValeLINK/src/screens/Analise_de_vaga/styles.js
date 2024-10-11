@@ -53,12 +53,17 @@ export const styles = StyleSheet.create({
     },
     descriptionarea: {
         top: 35, 
-        width: 325, 
+        width: 290, 
         left: 13.5,
     },
     descriptiontext: {
         fontSize: 18,
         fontFamily: fonts.title,
-        left: 25,
+        left: 10,
+        top: 5
+    },
+    description: {
+        left: 10,
+        textAlign: 'justify'
     }
 })

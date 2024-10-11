@@ -9,6 +9,7 @@ import url from '../../services/url';
 export default function Notificacoes(){
 
     const [info, setInfo] = useState([]);
+    
     useEffect(() => {
         listarDados();
     },[])

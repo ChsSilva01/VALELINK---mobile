@@ -43,18 +43,18 @@ export default function Vagas({ navigation }){
         <View style={styles.container}>
             <View style={styles.margin}>
             <View style={styles.header}>
-            <TouchableOpacity onPress = {() => navigation.navigate("Empresas")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
+                <TouchableOpacity onPress = {() => navigation.navigate("Empresas")}><Ionicons name="arrow-back" size={30}></Ionicons></TouchableOpacity>
                 <Text style={{fontSize: 24, right: 15, bottom: 0,fontFamily: fonts.title}}>Vagas</Text>
                 <View></View>     
             </View>
                 <View style={styles.searchview}>
                     <TextInput 
                         style={styles.course}
-                        placeholder=' Vaga'
+                        placeholder='   Vaga'
                     ></TextInput>
                     <TextInput 
                         style={styles.course}
-                        placeholder=' Cidade'
+                        placeholder='   Cidade'
                     ></TextInput>
                 </View>
                 <View style={{flexDirection: 'row',justifyContent: 'space-around', top: 40}}>

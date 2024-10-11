@@ -6,6 +6,7 @@ import icone from '../../../assets/foto_coringa.png';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../services/api';
 import url from '../../services/url';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Perfildaempresa({ navigation }){
     const [nome_empresa, setNomeEmpresa] = useState("");
@@ -33,9 +34,11 @@ export default function Perfildaempresa({ navigation }){
           }
     }
     return(
-        <ImageBackground
+        <LinearGradient
             style={styles.container}
-            // source={require('../../../assets/papel_de_parede_coca_cola.png')}
+            colors={['#01E581', '#00C16C', '#00755C']}
+            start={{ x: -2, y: 2 }}
+            end={{ x: 2, y: 2 }}
         >
             <View style={styles.back}>
                 <TouchableOpacity onPress = {() => navigation.navigate("Home")}><Ionicons name='arrow-back' size={25} style={styles.actionsprofile}></Ionicons></TouchableOpacity>
@@ -67,6 +70,6 @@ export default function Perfildaempresa({ navigation }){
                     </View>          
                 </View>
             </View>
-        </ImageBackground>
+        </LinearGradient>
     )
 }

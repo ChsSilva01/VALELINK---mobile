@@ -19,6 +19,7 @@ export default function AnaliseDeVagas({ navigation }){
     const [carga_horaria_vagas, setCarga_horaria_vagas] = useState("");
     const [tempo_contrato_vagas, setTempo_contrato_vagas] = useState("");
     const [area_vagas, setArea_vagas] = useState("");
+    const [descricao_da_empresa, setDescricao_da_empresa] = useState("");
     
     useEffect(() => {
         listarDados();
@@ -34,6 +35,7 @@ export default function AnaliseDeVagas({ navigation }){
             setCarga_horaria_vagas(res.data.carga_horaria_vagas);
             setTempo_contrato_vagas(res.data.tempo_contrato_vagas);
             setArea_vagas(res.data.area_vagas);
+            setDescricao_da_empresa(res.data.descricao_da_empresa);
 
           } catch (error) {
             console.error('Erro ao buscar dados:', error);
@@ -75,7 +77,9 @@ export default function AnaliseDeVagas({ navigation }){
                 <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>
                 <ScrollView style={styles.descriptionarea}>
                     <Text style={styles.descriptiontext}>Descrição:</Text>
-                    
+                    <Text style={styles.description}>
+                        {descricao_da_empresa}
+                    </Text>
                 </ScrollView>
                 
             </View>

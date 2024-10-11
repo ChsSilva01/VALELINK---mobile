@@ -10,9 +10,9 @@ export const styles = StyleSheet.create({
     },
     header: {
         width: 390,
-        height: 90,
+        height: 75,
         justifyContent: 'space-around',
-        alignItems: 'flex-end',
+        paddingTop: 30,
         flexDirection: 'row',
         borderBottomWidth: 0.5,
     },

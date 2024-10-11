@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     },
     situation: {
         fontFamily: fonts.text,
-        left: 10
+        left: 10,
     },
     companyandtime: {
         flexDirection: 'row',
