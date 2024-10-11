@@ -10,6 +10,12 @@ export default function Filtragem({ navigation }){
                 <TouchableOpacity onPress = {() => navigation.navigate("Perfil")}><Ionicons name="close" size={30}></Ionicons></TouchableOpacity>
                 <Text style={styles.tittle}>Filtragem</Text>
             </View> 
+            <View style={styles.professionsarea}>
+                <Text style={styles.professionstittle}>Profissões</Text>
+                <View>
+                    <View style={styles.filtercontainer}></View>
+                </View>
+            </View>
         </View>
     )
 }
