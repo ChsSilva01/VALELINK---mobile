@@ -75,7 +75,7 @@ export default function AnaliseDeVagas({ navigation }){
                         <View style={{width: 34, height: 34,backgroundColor: '#004443', alignItems: 'center', justifyContent: 'center', borderRadius: 6}}>
                             <Image source={wage}></Image>
                         </View>
-                        <Text style={{fontSize: 16, left: 5}}>R${salario_vagas}</Text>
+                        <Text style={{fontSize: 16, left: 5}}>{salario_vagas}</Text>
                     </View>
                 </View>
                 <TouchableOpacity style={styles.button}><Text style={styles.textbutton}>Enviar curriculo</Text></TouchableOpacity>
