@@ -1,0 +1,10 @@
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\bin\Debug\Desktop-TCC.exe.config
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\bin\Debug\Desktop-TCC.exe
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\bin\Debug\Desktop-TCC.pdb
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop-TCC.csprojResolveAssemblyReference.cache
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop_TCC.tela_feedback.resources
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop_TCC.Properties.Resources.resources
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop-TCC.csproj.GenerateResource.Cache
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop-TCC.exe
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop-TCC.pdb
+C:\Users\ds-etim-3\Desktop\Desktop-TCC\Desktop-TCC\obj\Debug\Desktop_TCC.tela_analise_feedback.resources
