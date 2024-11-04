@@ -14,8 +14,50 @@
   <div class="container-fluid">
     <span class="navbar-text"><img src='./img/logo_vale_fish.png' class="logoLoja"></span>
     <span class="navbar-text"><h2>Bem-vindo(a)</h2></span>
-    <button type="button" onClick= "modalCarrinho()" style="background-color: transparent; border: none; resize: none; outline: none;"><i class="bi bi-cart iconCarrinho"></i>
+    <button type="button" class="menu-button" id="toggleMenu" style="background-color: transparent; border: none; resize: none; outline: none;"><i class="bi bi-cart iconCarrinho"></i>
     </button>
+    <div class="menu" id="sideMenu">
+    <?php
+        $cookie_name = "carrinho";
+
+        // Adiciona um produto ao carrinho
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["produto_id"])) {
+            $carrinho = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
+            $carrinho[] = $_POST["produto_id"];
+            setcookie($cookie_name, json_encode($carrinho), time() + 86400, "/");
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit();
+        }
+
+        // Remove um produto do carrinho
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["remove_id"])) {
+            $carrinho = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
+            if (($key = array_search($_POST["remove_id"], $carrinho)) !== false) {
+                unset($carrinho[$key]); // Remove o item
+            }
+            setcookie($cookie_name, json_encode(array_values($carrinho)), time() + 86400, "/");
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit();
+        }
+
+        // Exibe os itens do carrinho
+        if (isset($_COOKIE[$cookie_name])) {
+            $carrinho = json_decode($_COOKIE[$cookie_name], true);
+            echo "Itens no Carrinho:";
+            foreach ($carrinho as $item) {
+                echo "
+                    <p>$item 
+                        <form method='POST' style='display:inline;'>
+                            <input type='hidden' name='remove_id' value='$item'>
+                            <button type='submit'>X</button>
+                        </form>
+                    </p>";
+            }
+        } else {
+            echo "Carrinho vazio.";
+        }
+    ?>
+    </div>
   </div>
 </nav>
 <img src='./img/img_decorativa.png' class="imgDecorativa">
@@ -30,83 +72,67 @@
     ?>
 
 <div class="divItens"> 
-
-<div class='cardItens1'>
-    <form method="POST" action="">
-        <img src="./img/foto_produto.png" class='imgCards'>
-        <h4>testes</h4>
-        <h3>R$200,00</h3>
-        <button type="submit" name="produto_id" value="Guitarra">Adicionar ao Carrinho</button>
-    </form>
+    <div class="divNovidades">Novidades</div>
+    <div class="cardOrganizacoes">
+        <div class='cardItens'>    
+            <form method="POST" action="" class="organizacaoForms">
+                <img src="./img/foto_produto.png" class='imgCards'>
+                <h4>testes</h4>
+                <h3>R$200,00</h3>
+                <button type="submit" name="produto_id" value="Guitarra" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <div class='cardItens'>
+            <form method="POST" action="" class="organizacaoForms">
+                <img src="./img/logo_vale_fish.png" class='imgCards'>
+                <h4>Linha</h4>
+                <h3>R$250,00</h3>
+                <button type="submit" name="produto_id" value="Pandeiro" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <div class='cardItens'>
+            <form method="POST" action="" class="organizacaoForms"> 
+                <img src="./img/img_enfeite.png" class='imgCards'>
+                <h4>Vara maior</h4>
+                <h3>R$300,00</h3>
+                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <div class='cardItens'>
+            <form method="POST" action="" class="organizacaoForms"> 
+                <img src="./img/img_enfeite.png" class='imgCards'>
+                <h4>Vara maior</h4>
+                <h3>R$300,00</h3>
+                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <div class='cardItens'>
+            <form method="POST" action="" class="organizacaoForms"> 
+                <img src="./img/img_enfeite.png" class='imgCards'>
+                <h4>Vara maior</h4>
+                <h3>R$300,00</h3>
+                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <div class='cardItens'>
+            <form method="POST" action="" class="organizacaoForms"> 
+                <img src="./img/img_enfeite.png" class='imgCards'>
+                <h4>Vara maior</h4>
+                <h3>R$300,00</h3>
+                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+    </div>
 </div>
-
-<div class='cardItens2'>
-    <form method="POST" action="">
-        <img src="./img/logo_vale_fish.png" class='imgCards'>
-        <h4>Linha</h4>
-        <h3>R$250,00</h3>
-        <button type="submit" name="produto_id" value="Pandeiro">Adicionar ao Carrinho</button>
-    </form>
-</div>
-
-<div class='cardItens3'>
-    <form method="POST" action=""> 
-        <img src="./img/img_enfeite.png" class='imgCards'>
-        <h4>Vara maior</h4>
-        <h3>R$300,00</h3>
-        <button type="submit" name="produto_id" value="Vara">Adicionar ao Carrinho</button>
-    </form>
-</div>
-
-</div>
-
-
-<?php
-$cookie_name = "carrinho";
-
-// Adiciona um produto ao carrinho
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["produto_id"])) {
-    $carrinho = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
-    $carrinho[] = $_POST["produto_id"];
-    setcookie($cookie_name, json_encode($carrinho), time() + 86400, "/");
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
-}
-
-// Remove um produto do carrinho
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["remove_id"])) {
-    $carrinho = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
-    if (($key = array_search($_POST["remove_id"], $carrinho)) !== false) {
-        unset($carrinho[$key]); // Remove o item
-    }
-    setcookie($cookie_name, json_encode(array_values($carrinho)), time() + 86400, "/");
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
-}
-
-// Exibe os itens do carrinho
-if (isset($_COOKIE[$cookie_name])) {
-    $carrinho = json_decode($_COOKIE[$cookie_name], true);
-    echo "Itens no Carrinho:";
-    foreach ($carrinho as $item) {
-        echo "
-            <p>$item 
-                <form method='POST' style='display:inline;'>
-                    <input type='hidden' name='remove_id' value='$item'>
-                    <button type='submit'>X</button>
-                </form>
-            </p>
-        </div>";
-    }
-} else {
-    echo "Carrinho vazio.";
-}
-?>
     <script>
-       function modalCarrinho(){
-        
-    }
-        </script>
+        const menuButton = document.getElementById('toggleMenu');
+        const sideMenu = document.getElementById('sideMenu');
+
+        menuButton.addEventListener('click', function() {
+            sideMenu.classList.toggle('open');
+
+        });
+    </script>
     </div>
 </body>
 </html>
