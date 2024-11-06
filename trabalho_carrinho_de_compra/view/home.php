@@ -18,6 +18,7 @@
     </button>
     <div class="menu" id="sideMenu">
     <?php
+        include("../controller/funca-listar-produtos.php");
         $cookie_name = "carrinho";
 
         // Adiciona um produto ao carrinho
@@ -38,7 +39,7 @@
             setcookie($cookie_name, json_encode(array_values($carrinho)), time() + 86400, "/");
             header("Location: " . $_SERVER['PHP_SELF']);
             exit();
-        }
+        }   
 
         // Exibe os itens do carrinho
         if (isset($_COOKIE[$cookie_name])) {
@@ -74,54 +75,7 @@
 <div class="divItens"> 
     <div class="divNovidades">Novidades</div>
     <div class="cardOrganizacoes">
-        <div class='cardItens'>    
-            <form method="POST" action="" class="organizacaoForms">
-                <img src="./img/foto_produto.png" class='imgCards'>
-                <h4>testes</h4>
-                <h3>R$200,00</h3>
-                <button type="submit" name="produto_id" value="Guitarra" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
-        <div class='cardItens'>
-            <form method="POST" action="" class="organizacaoForms">
-                <img src="./img/logo_vale_fish.png" class='imgCards'>
-                <h4>Linha</h4>
-                <h3>R$250,00</h3>
-                <button type="submit" name="produto_id" value="Pandeiro" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
-        <div class='cardItens'>
-            <form method="POST" action="" class="organizacaoForms"> 
-                <img src="./img/img_enfeite.png" class='imgCards'>
-                <h4>Vara maior</h4>
-                <h3>R$300,00</h3>
-                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
-        <div class='cardItens'>
-            <form method="POST" action="" class="organizacaoForms"> 
-                <img src="./img/img_enfeite.png" class='imgCards'>
-                <h4>Vara maior</h4>
-                <h3>R$300,00</h3>
-                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
-        <div class='cardItens'>
-            <form method="POST" action="" class="organizacaoForms"> 
-                <img src="./img/img_enfeite.png" class='imgCards'>
-                <h4>Vara maior</h4>
-                <h3>R$300,00</h3>
-                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
-        <div class='cardItens'>
-            <form method="POST" action="" class="organizacaoForms"> 
-                <img src="./img/img_enfeite.png" class='imgCards'>
-                <h4>Vara maior</h4>
-                <h3>R$300,00</h3>
-                <button type="submit" name="produto_id" value="Vara" class="botaoadicionarcarrinho">Adicionar ao Carrinho</button>
-            </form>
-        </div>
+        <?php funcaoProdutos() ?>
     </div>
 </div>
     <script>
