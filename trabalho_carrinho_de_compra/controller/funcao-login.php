@@ -7,9 +7,11 @@
     if(mysqli_num_rows($query)==1){
         $_SESSION['logado'] = true;
         $_SESSION['nome'] = $exibe[1];
+        $_SESSION['cod_login'] = $exibe[0];
         
         header("location:../view/home.php");
     } else {
         header("location:../view");
     }
+
 ?>
