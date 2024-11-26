@@ -61,10 +61,6 @@ export default function Home({ navigation }) {
     setCurriculo(res.data.cod_curriculo);
   }
 
-
-
-
-
   async function enviarCurriculo(cod_empresa) {
     try {
       const cod_usuario = await AsyncStorage.getItem('@user');

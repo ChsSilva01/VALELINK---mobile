@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `envio_curriculo` (
   CONSTRAINT `FK__usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuario` (`cod_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_envio_curriculo_curriculo` FOREIGN KEY (`cod_curriculo`) REFERENCES `curriculo` (`cod_curriculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_envio_curriculo_empresa` FOREIGN KEY (`cod_empresa`) REFERENCES `empresa` (`cod_empresa`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela tcc3etim.envio_curriculo: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `envio_curriculo` DISABLE KEYS */;
@@ -91,8 +91,30 @@ INSERT INTO `envio_curriculo` (`cod_envio_curriculo`, `cod_usuario`, `cod_curric
 	(2, 6, 2, 4),
 	(3, 5, 1, 3),
 	(4, 6, 2, 4),
-	(5, 5, 1, 4);
+	(5, 5, 1, 4),
+	(6, 5, 1, 4);
 /*!40000 ALTER TABLE `envio_curriculo` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela tcc3etim.feedback
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `cod_feedback` int(11) NOT NULL AUTO_INCREMENT,
+  `experiencia_feedback` varchar(250) NOT NULL DEFAULT '0',
+  `comentario_feedback` varchar(250) NOT NULL DEFAULT '0',
+  `cod_usuario` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`cod_feedback`),
+  KEY `FK_feedback_usuario` (`cod_usuario`),
+  CONSTRAINT `FK_feedback_usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuario` (`cod_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Copiando dados para a tabela tcc3etim.feedback: ~5 rows (aproximadamente)
+/*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
+INSERT INTO `feedback` (`cod_feedback`, `experiencia_feedback`, `comentario_feedback`, `cod_usuario`) VALUES
+	(1, '1', '', 5),
+	(2, '1', 'aaaaaaa', 5),
+	(3, '1', 'aaaaaaa', 5),
+	(4, '1', 'Muito bom', 5),
+	(5, '4', 'Muito ruim', 5);
+/*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela tcc3etim.notificacoes
 CREATE TABLE IF NOT EXISTS `notificacoes` (
