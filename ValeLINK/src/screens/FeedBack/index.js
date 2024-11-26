@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ImageBackground, Alert } from 'react-native';
 import { styles } from './styles';
 import { useState, useEffect } from 'react';
 
