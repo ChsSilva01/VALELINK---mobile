@@ -16,7 +16,7 @@ namespace Desktop_TCC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new tela_feedback());
+            Application.Run(new tela_splash_feedback());
         }
     }
 }
